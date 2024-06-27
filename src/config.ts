@@ -25,15 +25,15 @@ export const LOGO_IMAGE = {
 
 export const SOCIALS: SocialObjects = [
   {
-    name: "Github",
-    href: "https://AlexandreXavier/xani.git",
-    linkTitle: ` ${SITE.title} on Github`,
+    name: "Twitter",
+    href: "https://twitter.com/@alexandxavier",
+    linkTitle: `${SITE.title} on Twitter`,
     active: true,
   },
   {
-    name: "Facebook",
-    href: "https://www.facebook.com/alexandre.xavier.porto",
-    linkTitle: `${SITE.title} on Facebook`,
+    name: "Github",
+    href: "https://AlexandreXavier/xani.git",
+    linkTitle: ` ${SITE.title} on Github`,
     active: true,
   },
   {
@@ -43,15 +43,28 @@ export const SOCIALS: SocialObjects = [
     active: true,
   },
   {
-    name: "Twitter",
-    href: "https://twitter.com/@alexand",
-    linkTitle: `${SITE.title} on Twitter`,
-    active: false,
+    name: "Facebook",
+    href: "https://www.facebook.com/alexandre.xavier.porto",
+    linkTitle: `${SITE.title} on Facebook`,
+    active: true,
+  },
+  {
+    name: "Soundcloud",
+    href: "https://soundcloud.com/jaax",
+    linkTitle: `${SITE.title} on Soundcloud`,
+    active: true,
   },
   {
     name: "Mail",
     href: "mailto:jalexandre.xavier@gmail.com",
     linkTitle: `Send an email to ${SITE.title}`,
-    active: false,
+    active: true,
   },
+  {
+    name: "WhatsApp",
+    href: "https://wa.me/351965458663",
+    linkTitle: `${SITE.title} on Whatsapp`,
+    active: true,
+  }
+  
 ];

@@ -1,6 +1,6 @@
 ---
 author: Alexandre Xavier
-pubDatetime: 2024-06-26T15:22:00Z
+pubDatetime: 2024-06-24T15:22:00Z
 modDatetime: 2024-06-26T09:12:47.400Z
 title: Simples explication of NLP and model
 slug: NlP-models
