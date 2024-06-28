@@ -5,7 +5,7 @@ export const SITE: Site = {
   author: "Alexandre Xavier",
   desc: "My Personal Web Site.",
   title: "Alexandre Xavier",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "apple-touch-icon.png",
   lightAndDarkMode: true,
   postPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
@@ -19,7 +19,7 @@ export const LOCALE = {
 export const LOGO_IMAGE = {
   enable: false,
   svg: true,
-  width: 216,
+  width: 46,
   height: 46,
 };
 
@@ -32,7 +32,7 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "Github",
-    href: "https://AlexandreXavier/xani.git",
+    href: "https://github.com/AlexandreXavier/xani.git",
     linkTitle: ` ${SITE.title} on Github`,
     active: true,
   },
