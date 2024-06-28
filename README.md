@@ -22,6 +22,9 @@ Check out the [Demo](https://xani.pt/), hosted on Vercel
 - [x] followed best practices
 - [x] highly customizable
 - [x] dynamic OG image generation for blog posts 
+- [ ] docker support
+- [ ] blog comments
+- [ ] 3d menu
 
 
 ## 🚀 Project Structure
@@ -76,11 +79,6 @@ All blog posts are stored in `src/content/blog` directory.
 **Illustration in About Page** - [https://freesvgillustration.com](https://freesvgillustration.com/)  
 **Linting** - [ESLint](https://eslint.org)
 
-
-
-## Google Site Verification (optional)
-
-You can easily add your [Google Site Verification HTML tag](https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag) in AstroPaper using environment variable. This step is optional. If you don't add the following env variable, the google-site-verification tag won't appear in the html `<head>` section.
 
 ```bash
 # in your environment variable file (.env)

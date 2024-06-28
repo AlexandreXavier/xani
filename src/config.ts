@@ -32,7 +32,7 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "Github",
-    href: "https://AlexandreXavier/xani.git",
+    href: "https://github.comAlexandreXavier/xani.git",
     linkTitle: ` ${SITE.title} on Github`,
     active: true,
   },
