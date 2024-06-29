@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: https://antoniomarcal.pt/sitemap-index.xml
+Sitemap: https://xani.pt/sitemap-index.xml
