@@ -12,12 +12,12 @@ From deciphering complex algorithms to architecting software systems, I thrive o
 If you share a love for sailing, programming, or simply a thirst for discovery, I'd be delighted to embark on this journey together. Fair winds and happy coding! ⛵🖥️
 
 <div>
-  <img src="/assets/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
+  <img src="https://xanipublic.s3.eu-north-1.amazonaws.com/Swan45_700px.jpg" class="sm:w-1/1 mx-auto" alt="coding dev illustration">
 </div>
 
 ## Tech Stack
 
-This theme is written in vanilla JavaScript (+ TypeScript for type checking) and a little bit of ReactJS for some interactions. TailwindCSS is used for styling; and Markdown is used for blog contents.
+This theme is written in TypeScript with Astro framework. TailwindCSS is used for styling; and Markdown is used for blog contents.
 
 ## Features
 

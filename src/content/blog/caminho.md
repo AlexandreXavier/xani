@@ -2,21 +2,54 @@
 author: Alexandre Xavier
 pubDatetime: 2025-01-09T15:22:00Z
 modDatetime: 2025-01-09T18:23:47.400Z
-title: O Caminho 
-slug: Descentralizacao
+title: The Way
+slug: Decentralization
 featured: true
 draft: false
 tags:
   - web3
 description:
-  O perigo da centralização e a importância da descentralização
+  The danger of centralization and the importance of decentralization
 ---
 
 
-**O perigo da centralização e a importância da descentralização**.Se pesquisar no Google as ameaças mais significativas para a humanidade, encontrará aproximadamente três cenários de um holocausto. Guerra nuclear entre nações poderosas, asteroide a colidir com o planeta Terra é uma pandemia global. Mas há um que para mim é mais perigoso! Pois já está em desenvolvimento e ainda não nos apercebemos.
-O monopólio centralizado do conhecimento digital na sua forma mais actual I.A.G(Inteligência Artificial Geral). Ao observar a distribuição mundial do conhecimento hoje, verá que a maioria pertence a poucas empresas muito bem implementadas no nosso planeta global, com o apadrinhamento dos governos. Usamos a nuvem praticamente para tudo. A maioria das empresas, até mesmo os governos, usam a nuvem. Mas quem é o dono da nuvem? Quem são os donos das maiores infraestruturas de IT(Tecnologia da Informação (TI))? São as mesmas empresas que analisam e tratam todos od dados disponiveis na Net inclusive alguns dados nossos privados. Que tal a AI? Acontece que as mesmas empresas, também possuem as maiores Infraestrutura computacionais para os modelos de AI atualmente.
+# The Danger of Centralization and the Importance of Decentralization  
 
- Todos estão numa corrida para provar quem é maior e melhor. O facto é que temos cerca de quatro grandes empresas que controlam os dados mundiais, a infra-estrutura mundial de IT e possuem as maiores capacidades de infra-estrutura de IT, podemos  confiar nelas. A própria confiança está incorporada nas pessoas e nas marcas. Disseram-nos que é assim que o mundo funciona. As corporações podem dizer: não seja paranoico. Os governos dirão que têm planos para o pior caso. Mas acho que é mais complicado que isso. Também acho que o que está  acontecer hoje é uma espécie de repetição do passado. Ao olhar para os tempos antigos, é fácil de ver que impérios e reinos governavam o mundo de uma forma centralizada para optimizar (contexto de sobrevivência) feudalismo. Mantiveram segredos, centralizaram o poder, monopolizaram e tomaram as decisões mais importantes a portas fechadas, independentemente do resultado. Achamos que estamos melhor hoje, mas acho que a estrutura ainda existe, escondida abaixo de nós. Antigamente, os impérios Otomano e Romano controlavam apenas certas partes do mundo, mas penso que hoje, monopólios como a Web 2, têm mais influência do que distribuição do que a maioria dos impérios juntos. Para mim, este poder altamente monopolizado é uma combinação perfeita para o desastre. Deveria ser um xeque-mate para os humanos e deveríamos levar isso muito a sério. Não é apenas mau para as pessoas, mas também é uma ameaça para a democracia. Do ponto de vista democrático, um pequeno grupo de pessoas não decide o que é bom para a sociedade. Deveríamos compartilhar esse direito. As grandes corporações presumem que têm esse direito e o defendem, mas não deveríamos conceder esse direito por padrão. É por isso que a descentralização é muito importante. Imagino um mundo onde a confiança esteja incorporada no design, e não nas marcas ou nas pessoas que o administram. Deveríamos ter tecnologias que fossem imutáveis ​​por concepção e verificadas por verificadores independentes amplamente distribuídos. Quando olho para tecnologia Bitcoin (protocolo de comunicação descentralizado imutável) , considero-a muito interessante e fascinante porque, pela primeira vez na história, temos uma infra-estrutura pública auto-evolutiva e autónoma que está disponível para qualquer pessoa e não pertence ou é controlada por governo ou alguma corporação bem intencionada. É por isto que fui atraído pela Web 3.0  em primeiro lugar. Fiquei muito entusiasmado e inspirado pela esperança de que possamos demonstrar democracia e liberdade usando tecnologia e inovação. Foi muito bonito. Mas o problema da centralização está a repetir-se na Web 3.0 por questões relacionadas à eficiência(escalabilidade/segurança/descentralidade), também conhecido como o trilema da blockchain. Muitos projetos da Web 3.0  escolhem provedores de nuvem centralizados como AWS para hospedar sua infraestrutura crítica e executar nós por causa da conveniência, mas se construir uma AWS, onde está a descentralização.Os monopólios da web 3 em 2020, como a AWS, tinham menos de 40% da participação de mercado da web 3, mas hoje são mais de 80%. Talvez, quem sabe, daqui a alguns anos possam chegar a 90%. Da mesma forma, eles monopolizam a Web 2.0. Esta deveria ser uma grande preocupação para todos nós. Outro ponto é que os gestores de ativos que possuem os monopólios da Web 2.0 também são os maiores custodiantes de criptografia atualmente. Então vamos pensar sobre isso. Na minha opinião, a descentralização está comprometida.Por isso, devemos começar por a base a desenhar uma NET de informação segura por desenho. É por isso que a infraestrutura é tão importante e crítica para manter a Web 3.0 descentralizada. E devemos ter muito cuidado com os princípios de design. Deveríamos ter infraestrutura de código aberto e descentralizada, garantida criptograficamente, a verificação e o resultado devem ser incorporados ao design. Por muitos anos, sou um grande fã de redes de torrent porque grandes redes de torrent como o BigTorrent são incríveis, têm uma capacidade incrível de compartilhar arquivos grandes sem restrição de largura de banda. A rede é gratuita, qualquer pessoa pode acessar, desde que tenha internet e computador. Então pensei e se, em vez de compartilhar filmes e talvez músicas, pudéssemos executar cargas de trabalho de computação. A função de uma carteira web3, especificamente uma carteira de hardware, então a única pessoa que pode acessar sua criptografia é você. KYC, nenhum registro ou licença necessária para acessá-la. Como outras redes públicas, não há nenhuma empresa ou CEO por trás disso. É de código aberto e está disponível para qualquer pessoa.
+If you Google the most significant threats to humanity, you’ll find three common scenarios of a catastrophic event: nuclear war between powerful nations, an asteroid colliding with Earth, or a global pandemic. But there’s another danger—one that is even more insidious because it is already underway and goes largely unnoticed.  
+
+## The Centralized Monopoly of Knowledge  
+
+The centralized monopoly of digital knowledge, especially in its most advanced form—Artificial General Intelligence (AGI)—poses an existential risk. When examining the current global distribution of knowledge, it becomes clear that most of it is concentrated in the hands of a few powerful corporations, backed by governments.  
+
+### Centralized Knowledge: A Growing Concern  
+
+Today, we rely on cloud infrastructure for nearly everything—companies, governments, and individuals alike. But who owns the cloud? Who controls the largest IT infrastructures in the world? Unsurprisingly, it’s the same companies that process and analyze vast amounts of global data, including private data.  
+
+And when it comes to AI? Those same companies have the largest computational infrastructure for training and deploying AI models. This has created a scenario where just four major companies dominate global data, IT infrastructure, and AI capabilities.  
+
+### A Dangerous Cycle  
+
+The narrative pushed by these corporations is one of trust: “Don’t be paranoid,” they say. Governments assure us they have contingency plans. But history shows that centralized power is rarely benevolent. If we look back to ancient times, centralized empires like the Ottomans and Romans ruled much of the known world, hoarding power, monopolizing resources, and making decisions in secrecy.  
+
+Today, modern monopolies—such as those dominating Web 2.0—have even greater global reach and influence than historical empires. These monopolies pose a significant risk to democracy and human freedom. In a truly democratic society, no small group of individuals should unilaterally decide what is good for the rest of us. Yet, large corporations have assumed this role, and we’ve unwittingly granted them that power.  
+
+## The Promise of Decentralization  
+
+This is why decentralization is so critical. Imagine a world where trust is built into the design of systems—where technology itself ensures fairness, security, and immutability, rather than relying on the goodwill of corporations or governments.  
+
+Bitcoin, as a decentralized communication protocol, offers a glimpse of this vision. For the first time in history, we have a self-evolving, autonomous, public infrastructure that is open to everyone and controlled by no one—not a government, not a corporation. This is why I was drawn to Web 3.0 initially. The promise of demonstrating democracy and freedom through innovation and technology was inspiring.  
+
+## The Threat to Web 3.0  
+
+Unfortunately, the problem of centralization is repeating itself within Web 3.0. Challenges related to scalability, security, and decentralization—the so-called “blockchain trilemma”—have driven many projects to rely on centralized cloud providers like AWS to host critical infrastructure and run nodes.  
+
+But if Web 3.0 depends on centralized providers like AWS, where is the decentralization? In 2020, AWS controlled less than 40% of the Web 3.0 market share. Today, that figure exceeds 80%, and it could reach 90% in the coming years. This is deeply troubling, as the same asset managers behind Web 2.0 monopolies are now becoming the largest custodians of crypto assets as well.  
+
+## The Path Forward  
+
+In my opinion, decentralization is already compromised. To protect the future of Web 3.0, we must rebuild from the ground up with secure and decentralized infrastructure as the foundation. This requires careful attention to design principles, prioritizing open-source technologies and decentralized systems.  
+
+Decentralization isn’t just about convenience or idealism—it’s a safeguard for democracy, freedom, and the fair distribution of power. The time to act is now.
 
 
 
