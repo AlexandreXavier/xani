@@ -74,3 +74,29 @@ export const SOCIALS: SocialObjects = [
   }
   
 ];
+
+export const PROJECTS = [
+  {
+    name: "Spotifu Music",
+    summary: "A music streaming app that emulates Spotify's core features.",
+    linkPreview: "/",
+    linkSource: "https://github.com/immois/astro-zen",
+    image: "/spotifu.png",
+  },
+  {
+    name: "Shopp App",
+    summary: "An e-commerce platform that replicates Shopify's key features.",
+    linkPreview: "/",
+    linkSource: "https://github.com/immois/astro-zen",
+    image: "/shopify-clon.png",
+  },
+  {
+    name: "ClonTagram",
+    summary: "A social network that replicates the features of Instagram",
+    linkPreview: "/",
+    linkSource: "https://github.com/immois/astro-zen",
+    image: "/clone-ig.png",
+  },
+];
+
+
