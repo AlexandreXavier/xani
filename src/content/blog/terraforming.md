@@ -1,9 +1,9 @@
 ---
 author: Alexandre Xavier
-pubDatetime: 2025-02-20T07:23:00Z
-modDatetime: 2025-02-20T07:23:47.400Z
-title: All in Error
-slug: all-in-error
+pubDatetime: 2025-02-26T07:15:00Z
+modDatetime: 2025-02-26T07:20:47.400Z
+title: Terraforming of a society
+slug: terraforming
 featured: true
 draft: true
 tags:

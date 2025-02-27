@@ -81,21 +81,21 @@ export const PROJECTS = [
     summary: "A music streaming app that emulates Spotify's core features.",
     linkPreview: "/",
     linkSource: "https://github.com/immois/astro-zen",
-    image: "/spotifu.png",
+    image: "/assets/logo.svg",
   },
   {
     name: "Shopp App",
     summary: "An e-commerce platform that replicates Shopify's key features.",
     linkPreview: "/",
     linkSource: "https://github.com/immois/astro-zen",
-    image: "/shopify-clon.png",
+    image: "/assets/logo.svg",
   },
   {
     name: "ClonTagram",
     summary: "A social network that replicates the features of Instagram",
     linkPreview: "/",
     linkSource: "https://github.com/immois/astro-zen",
-    image: "/clone-ig.png",
+    image: "/assets/logo.svg",
   },
 ];
 
