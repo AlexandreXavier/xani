@@ -28,6 +28,7 @@ const episodeSchema = z.object({
   audioUrl: z.string(),
   pubDate: z.coerce.date().optional(),
   cover: z.string().optional(),
+  draft: z.boolean().optional(),
   explicit: z.boolean().optional(),
   episode: z.number().optional(),
   season: z.number().optional(),
@@ -38,6 +39,6 @@ const episodeSchema = z.object({
 
 export type episodeSchema = z.infer<typeof episodeSchema>;
 
-const episodeCollection = defineCollection({ schema: episodeSchema });
+export const episodeCollection = defineCollection({ schema: episodeSchema });
 
 export const collections = { blog,'episode': episodeCollection, };

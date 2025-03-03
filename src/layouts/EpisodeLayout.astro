@@ -1,0 +1,22 @@
+---
+import Main from "@layouts/Main.astro";
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import { SITE } from "@config";
+import HeaderCard from "../components/headerCard/HeaderCard.astro";
+import astropodConfig from "../../.astropod/astropod.config.json";
+
+const { title, explicit, pubDatetime, cover, description } = Astro.props;
+---
+
+<Layout title={`Episode | ${SITE.title}`}>
+  <Header activeNav="episode" />
+  <Main pageTitle="..." pageDesc="">
+
+  <main class="md:flex md:justify-center">
+    <article class="card prose min-w-full prose-img:mx-auto bg-base-100 shadow-md p-8 mt-12">
+      <slot />
+    </article>
+  </main>
+</BaseLayout>

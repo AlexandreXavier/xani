@@ -1,0 +1,41 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Episode from "@layouts/Episode.astro";
+import EpisodeDetails from "@layouts/EpisodeDetails.astro";
+import getSortedEpisode from "@utils/getSortedEpisode";
+import getPageNumbers from "@utils/getPageNumbers";
+import getPagination from "@utils/getPagination";
+
+export interface Props {
+  post: CollectionEntry<"episode">;
+}
+
+export async function getStaticPaths() {
+  const episode = await getCollection("episode", ({ data }) => !data.draft);
+
+  const episodeResult = episode.map(episode => ({
+    params: { slug: episode.slug },
+    props: { episode},
+  }));
+
+  const pagePaths = getPageNumbers(episode.length).map(pageNum => ({
+    params: { slug: String(pageNum) },
+  }));
+
+  return [...episodeResult, ...pagePaths];
+}
+
+const { slug } = Astro.params;
+const { episode } = Astro.props;
+
+const episode = await getCollection("episode");
+
+const sortedEpisode = getSortedEpisode(episode);
+
+const pagination = getPagination({
+  posts: sortedEpisode,
+  page: slug,
+});
+---
+
+{episode ? <EpisodeDetails episode={episode} /> : <Episode {...pagination} />}

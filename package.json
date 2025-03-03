@@ -25,7 +25,9 @@
     "remark-toc": "^9.0.0",
     "satori": "^0.10.11",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.3",
+    "marked": "^7.0.2",
+    "marked-plaintext": "^0.0.2"
   },
   "devDependencies": {
     "@astrojs/react": "^3.0.9",

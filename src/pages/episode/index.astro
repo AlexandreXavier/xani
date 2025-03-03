@@ -1,0 +1,18 @@
+---
+import { getCollection } from "astro:content";
+import Episode from "@layouts/Episode.astro";
+import getSortedEpisode from "@utils/getSortedEpisode";
+import getPagination from "@utils/getPagination";
+
+const episode = await getCollection("episode");
+
+const sortEpisode = getSortedEpisode(episode);
+
+const pagination = getPagination({
+  posts: sortEpisode,
+  page: 1,
+  isIndex: true,
+});
+---
+
+<Episode {...pagination} />
