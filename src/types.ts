@@ -11,6 +11,14 @@ export type Site = {
   scheduledPostMargin: number;
 };
 
+export interface ProjectProps {
+  name: string;
+  summary: string;
+  image: string;
+  linkPreview?: string;
+  linkSource?: string;
+}
+
 export type SocialObjects = {
   name: keyof typeof socialIcons;
   href: string;
