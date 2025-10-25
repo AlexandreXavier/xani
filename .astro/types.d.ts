@@ -180,91 +180,91 @@ declare module 'astro:content' {
   slug: "all-in-error";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "autopropriedade-como-soberania-pessoal.md": {
 	id: "autopropriedade-como-soberania-pessoal.md";
   slug: "Propriedade";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "bitcoin the new path.md": {
 	id: "bitcoin the new path.md";
   slug: "Bitcoin";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "blockchain-world.md": {
 	id: "blockchain-world.md";
   slug: "Blockchain";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "caminho.md": {
 	id: "caminho.md";
   slug: "Decentralization";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "centralize-descentralize.md": {
 	id: "centralize-descentralize.md";
   slug: "Networks";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "composability.md": {
 	id: "composability.md";
   slug: "Composability";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "determinista.md": {
 	id: "determinista.md";
   slug: "Deterministic";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "moledos-de-razao.md": {
 	id: "moledos-de-razao.md";
   slug: "modelos-de-razao";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "natural-language-processing-models.md": {
 	id: "natural-language-processing-models.md";
   slug: "NlP-models";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "new-view.md": {
 	id: "new-view.md";
   slug: "Geoespacial";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "philosophy of self-sovereignty.md": {
 	id: "philosophy of self-sovereignty.md";
   slug: "Self-Sovereignty";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "protocolo-gordo.md": {
 	id: "protocolo-gordo.md";
   slug: "Web3";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 };
 
@@ -276,5 +276,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	type ContentConfig = never;
+	type ContentConfig = typeof import("../src/content/config");
 }
