@@ -19,7 +19,7 @@ const colourspace = {
 };
 
 /**
- * Tint the image using the provided chroma while preserving the image luminance.
+ * Tint the image using the provided colour.
  * An alpha channel may be present and will be unchanged by the operation.
  *
  * @example
@@ -27,14 +27,12 @@ const colourspace = {
  *   .tint({ r: 255, g: 240, b: 16 })
  *   .toBuffer();
  *
- * @param {string|Object} rgb - parsed by the [color](https://www.npmjs.org/package/color) module to extract chroma values.
+ * @param {string|Object} tint - Parsed by the [color](https://www.npmjs.org/package/color) module.
  * @returns {Sharp}
  * @throws {Error} Invalid parameter
  */
-function tint (rgb) {
-  const colour = color(rgb);
-  this.options.tintA = colour.a();
-  this.options.tintB = colour.b();
+function tint (tint) {
+  this._setBackgroundColourOption('tint', tint);
   return this;
 }
 
@@ -73,8 +71,6 @@ function grayscale (grayscale) {
  * All operations will use this colourspace before converting to the output colourspace,
  * as defined by {@link #tocolourspace|toColourspace}.
  *
- * This feature is experimental and has not yet been fully-tested with all operations.
- *
  * @since 0.29.0
  *
  * @example
@@ -92,7 +88,7 @@ function pipelineColourspace (colourspace) {
   if (!is.string(colourspace)) {
     throw is.invalidParameterError('colourspace', 'string', colourspace);
   }
-  this.options.colourspaceInput = colourspace;
+  this.options.colourspacePipeline = colourspace;
   return this;
 }
 

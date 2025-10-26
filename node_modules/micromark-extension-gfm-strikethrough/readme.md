@@ -12,24 +12,24 @@
 
 ## Contents
 
-*   [What is this?](#what-is-this)
-*   [When to use this](#when-to-use-this)
-*   [Install](#install)
-*   [Use](#use)
-*   [API](#api)
-    *   [`gfmStrikethrough(options?)`](#gfmstrikethroughoptions)
-    *   [`gfmStrikethroughHtml()`](#gfmstrikethroughhtml)
-    *   [`Options`](#options)
-*   [Authoring](#authoring)
-*   [HTML](#html)
-*   [CSS](#css)
-*   [Syntax](#syntax)
-*   [Types](#types)
-*   [Compatibility](#compatibility)
-*   [Security](#security)
-*   [Related](#related)
-*   [Contribute](#contribute)
-*   [License](#license)
+* [What is this?](#what-is-this)
+* [When to use this](#when-to-use-this)
+* [Install](#install)
+* [Use](#use)
+* [API](#api)
+  * [`gfmStrikethrough(options?)`](#gfmstrikethroughoptions)
+  * [`gfmStrikethroughHtml()`](#gfmstrikethroughhtml)
+  * [`Options`](#options)
+* [Authoring](#authoring)
+* [HTML](#html)
+* [CSS](#css)
+* [Syntax](#syntax)
+* [Types](#types)
+* [Compatibility](#compatibility)
+* [Security](#security)
+* [Related](#related)
+* [Contribute](#contribute)
+* [License](#license)
 
 ## What is this?
 
@@ -113,8 +113,8 @@ Create an extension for `micromark` to enable GFM strikethrough syntax.
 
 ###### Parameters
 
-*   `options` ([`Options`][api-options], optional)
-    — configuration
+* `options` ([`Options`][api-options], optional)
+  — configuration
 
 ###### Returns
 
@@ -138,10 +138,10 @@ Configuration (TypeScript type).
 
 ###### Fields
 
-*   `singleTilde` (`boolean`, default: `true`)
-    — whether to support strikethrough with a single tilde.
-    Single tildes work on github.com, but are technically prohibited by the GFM
-    spec
+* `singleTilde` (`boolean`, default: `true`)
+  — whether to support strikethrough with a single tilde.
+  Single tildes work on github.com, but are technically prohibited by the GFM
+  spec
 
 ## Authoring
 
@@ -206,14 +206,14 @@ This package is safe.
 
 ## Related
 
-*   [`micromark-extension-gfm`][micromark-extension-gfm]
-    — support all of GFM
-*   [`mdast-util-gfm-strikethrough`][mdast-util-gfm-strikethrough]
-    — support all of GFM in mdast
-*   [`mdast-util-gfm`][mdast-util-gfm]
-    — support all of GFM in mdast
-*   [`remark-gfm`][remark-gfm]
-    — support all of GFM in remark
+* [`micromark-extension-gfm`][micromark-extension-gfm]
+  — support all of GFM
+* [`mdast-util-gfm-strikethrough`][mdast-util-gfm-strikethrough]
+  — support all of GFM in mdast
+* [`mdast-util-gfm`][mdast-util-gfm]
+  — support all of GFM in mdast
+* [`remark-gfm`][remark-gfm]
+  — support all of GFM in remark
 
 ## Contribute
 

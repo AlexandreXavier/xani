@@ -1,8 +1,6 @@
 /**
- * @typedef {import('mdast').Parents} Parents
- * @typedef {import('mdast').Root} Root
- * @typedef {import('../types.js').Info} Info
- * @typedef {import('../types.js').State} State
+ * @import {Info, State} from 'mdast-util-to-markdown'
+ * @import {Parents, Root} from 'mdast'
  */
 
 import {phrasing} from 'mdast-util-phrasing'
@@ -19,6 +17,7 @@ export function root(node, _, state, info) {
   const hasPhrasing = node.children.some(function (d) {
     return phrasing(d)
   })
-  const fn = hasPhrasing ? state.containerPhrasing : state.containerFlow
-  return fn.call(state, node, info)
+
+  const container = hasPhrasing ? state.containerPhrasing : state.containerFlow
+  return container.call(state, node, info)
 }

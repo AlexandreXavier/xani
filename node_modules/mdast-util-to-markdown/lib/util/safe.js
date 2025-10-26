@@ -1,8 +1,8 @@
 /**
- * @typedef {import('../types.js').SafeConfig} SafeConfig
- * @typedef {import('../types.js').State} State
+ * @import {SafeConfig, State} from 'mdast-util-to-markdown'
  */
 
+import {encodeCharacterReference} from './encode-character-reference.js'
 import {patternInScope} from './pattern-in-scope.js'
 
 /**
@@ -119,9 +119,7 @@ export function safe(state, input, config) {
       result.push('\\')
     } else {
       // Character reference.
-      result.push(
-        '&#x' + value.charCodeAt(position).toString(16).toUpperCase() + ';'
-      )
+      result.push(encodeCharacterReference(value.charCodeAt(position)))
       start++
     }
   }

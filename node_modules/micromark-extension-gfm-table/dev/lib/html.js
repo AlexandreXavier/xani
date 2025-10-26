@@ -1,9 +1,5 @@
 /**
- * @typedef {import('micromark-util-types').HtmlExtension} HtmlExtension
- */
-
-/**
- * @typedef {import('./infer.js').Align} Align
+ * @import {HtmlExtension} from 'micromark-util-types'
  */
 
 import {ok as assert} from 'devlop'

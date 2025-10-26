@@ -1,5 +1,6 @@
 import {characterEntities} from 'character-entities'
 
+// To do: next major: use `Object.hasOwn`.
 const own = {}.hasOwnProperty
 
 /**

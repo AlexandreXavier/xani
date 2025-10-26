@@ -12,23 +12,23 @@
 
 ## Contents
 
-*   [What is this?](#what-is-this)
-*   [When to use this](#when-to-use-this)
-*   [Install](#install)
-*   [Use](#use)
-*   [API](#api)
-    *   [`gfmTaskListItem()`](#gfmtasklistitem)
-    *   [`gfmTaskListItemHtml()`](#gfmtasklistitemhtml)
-*   [Authoring](#authoring)
-*   [HTML](#html)
-*   [CSS](#css)
-*   [Syntax](#syntax)
-*   [Types](#types)
-*   [Compatibility](#compatibility)
-*   [Security](#security)
-*   [Related](#related)
-*   [Contribute](#contribute)
-*   [License](#license)
+* [What is this?](#what-is-this)
+* [When to use this](#when-to-use-this)
+* [Install](#install)
+* [Use](#use)
+* [API](#api)
+  * [`gfmTaskListItem()`](#gfmtasklistitem)
+  * [`gfmTaskListItemHtml()`](#gfmtasklistitemhtml)
+* [Authoring](#authoring)
+* [HTML](#html)
+* [CSS](#css)
+* [Syntax](#syntax)
+* [Types](#types)
+* [Compatibility](#compatibility)
+* [Security](#security)
+* [Related](#related)
+* [Contribute](#contribute)
+* [License](#license)
 
 ## What is this?
 
@@ -209,14 +209,14 @@ This package is safe.
 
 ## Related
 
-*   [`micromark-extension-gfm`][micromark-extension-gfm]
-    — support all of GFM
-*   [`mdast-util-gfm-task-list-item`][mdast-util-gfm-task-list-item]
-    — support all of GFM in mdast
-*   [`mdast-util-gfm`][mdast-util-gfm]
-    — support all of GFM in mdast
-*   [`remark-gfm`][remark-gfm]
-    — support all of GFM in remark
+* [`micromark-extension-gfm`][micromark-extension-gfm]
+  — support all of GFM
+* [`mdast-util-gfm-task-list-item`][mdast-util-gfm-task-list-item]
+  — support all of GFM in mdast
+* [`mdast-util-gfm`][mdast-util-gfm]
+  — support all of GFM in mdast
+* [`remark-gfm`][remark-gfm]
+  — support all of GFM in remark
 
 ## Contribute
 

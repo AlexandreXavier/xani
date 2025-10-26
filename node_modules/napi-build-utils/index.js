@@ -47,7 +47,7 @@ exports.isSupportedVersion = function (napiVersion) {
 
 /**
  * Determines whether the specified N-API version is supported by the package.
- * The N-API version must be preseent in the `package.json`
+ * The N-API version must be present in the `package.json`
  * `binary.napi_versions` array.
  *
  * @param {number} napiVersion The N-API version to check.
@@ -56,7 +56,7 @@ exports.isSupportedVersion = function (napiVersion) {
  */
 exports.packageSupportsVersion = function (napiVersion) {
   if (pkg.binary && pkg.binary.napi_versions &&
-      pkg.binary.napi_versions instanceof Array) {
+      pkg.binary.napi_versions instanceof Array) { // integer array
     for (var i = 0; i < pkg.binary.napi_versions.length; i++) {
       if (pkg.binary.napi_versions[i] === napiVersion) return true
     };
@@ -134,7 +134,7 @@ exports.logMissingNapiVersions = function (target, prebuild, log) {
  * Determines whether the specified N-API version exists in the prebuild
  * configuration object.
  *
- * Note that this function is speicifc to the `prebuild` and `prebuild-install`
+ * Note that this function is specific to the `prebuild` and `prebuild-install`
  * packages.
  *
  * @param {Object} prebuild A config object created by the `prebuild` package.
@@ -165,10 +165,11 @@ var prebuildExists = function (prebuild, napiVersion) {
  */
 exports.getBestNapiBuildVersion = function () {
   var bestNapiBuildVersion = 0
-  var napiBuildVersions = exports.getNapiBuildVersions(pkg)
+  var napiBuildVersions = exports.getNapiBuildVersions(pkg) // array of integer strings
   if (napiBuildVersions) {
     var ourNapiVersion = exports.getNapiVersion()
-    napiBuildVersions.forEach(function (napiBuildVersion) {
+    napiBuildVersions.forEach(function (napiBuildVersionStr) {
+      var napiBuildVersion = parseInt(napiBuildVersionStr, 10)
       if (napiBuildVersion > bestNapiBuildVersion &&
         napiBuildVersion <= ourNapiVersion) {
         bestNapiBuildVersion = napiBuildVersion
@@ -181,7 +182,7 @@ exports.getBestNapiBuildVersion = function () {
 /**
  * Returns an array of N-API versions supported by the package.
  *
- * @returns {Array<string>}
+ * @returns {Array<string>|undefined}
  */
 exports.getNapiBuildVersions = function () {
   var napiBuildVersions = []
@@ -204,7 +205,7 @@ exports.getNapiBuildVersions = function () {
  * @returns {string|undefined}
  */
 exports.getNapiVersion = function () {
-  var version = process.versions.napi // string, can be undefined
+  var version = process.versions.napi // integer string, can be undefined
   if (!version) { // this code should never need to be updated
     if (versionArray[0] === 9 && versionArray[1] >= 3) version = '2' // 9.3.0+
     else if (versionArray[0] === 8) version = '1' // 8.0.0+

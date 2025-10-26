@@ -1,8 +1,13 @@
 export {gfmTaskListItemHtml} from './lib/html.js'
 export {gfmTaskListItem} from './lib/syntax.js'
 
+/**
+ * Augment types.
+ */
 declare module 'micromark-util-types' {
-  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+  /**
+   * Token types.
+   */
   interface TokenTypeMap {
     taskListCheck: 'taskListCheck'
     taskListCheckMarker: 'taskListCheckMarker'

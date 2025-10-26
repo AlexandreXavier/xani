@@ -1,5 +1,2 @@
-/**
- * @typedef {import('./lib/index.js').Options} Options
- */
-
+// Note: types exposed from `index.d.ts`.
 export {gfmFromMarkdown, gfmToMarkdown} from './lib/index.js'
