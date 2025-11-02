@@ -190,6 +190,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"desbloquiar-productividade.md": {
+	id: "desbloquiar-productividade.md";
+  slug: "desbloquear-productividade";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "determinista.md": {
 	id: "determinista.md";
   slug: "Deterministic";
@@ -244,7 +251,12 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		
+		"episode": Record<string, {
+  id: string;
+  collection: "episode";
+  data: any;
+}>;
+
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;

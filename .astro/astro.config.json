@@ -1,0 +1,23 @@
+{
+    "copyright": "xani",
+    "theme": "light",
+    "fundingText": "",
+    "author": "Xani",
+    "name": "Podcast Unenumerated",
+    "banner": "/banner.webp",
+    "pageSize": 15,
+    "fundingUrl": "",
+    "owner": "",
+    "favicon": "/favicon.svg",
+    "explicit": false,
+    "cover": "/cover.webp",
+    "language": "en",
+    "link": "https://xani.pt",
+    "email": "your.email@gmail.com",
+    "description": "A short description of your podcast. We suggest creating a podcast description between 600-900 characters or 120-170 words in length.",
+    "category": [
+      "Technology",
+      "Business"
+    ],
+    "feedSize": ""
+  }
