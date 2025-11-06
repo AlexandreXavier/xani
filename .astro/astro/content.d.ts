@@ -190,23 +190,9 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"desbloquiar-productividade.md": {
-	id: "desbloquiar-productividade.md";
-  slug: "desbloquear-productividade";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
 "determinista.md": {
 	id: "determinista.md";
   slug: "Deterministic";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"exemplo-de-aplicacao.md": {
-	id: "exemplo-de-aplicacao.md";
-  slug: "Aplicacao";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -221,13 +207,6 @@ declare module 'astro:content' {
 "natural-language-processing-models.md": {
 	id: "natural-language-processing-models.md";
   slug: "NlP-models";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"new-view.md": {
-	id: "new-view.md";
-  slug: "Geoespacial";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -247,16 +226,41 @@ declare module 'astro:content' {
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 };
+"episode": {
+"demo 2.md": {
+	id: "demo 2.md";
+  slug: "demo-2";
+  body: string;
+  collection: "episode";
+  data: InferEntrySchema<"episode">
+} & { render(): Render[".md"] };
+"demo.md": {
+	id: "demo.md";
+  slug: "demo";
+  body: string;
+  collection: "episode";
+  data: InferEntrySchema<"episode">
+} & { render(): Render[".md"] };
+"test.md": {
+	id: "test.md";
+  slug: "test";
+  body: string;
+  collection: "episode";
+  data: InferEntrySchema<"episode">
+} & { render(): Render[".md"] };
+"vamos.md": {
+	id: "vamos.md";
+  slug: "vamos";
+  body: string;
+  collection: "episode";
+  data: InferEntrySchema<"episode">
+} & { render(): Render[".md"] };
+};
 
 	};
 
 	type DataEntryMap = {
-		"episode": Record<string, {
-  id: string;
-  collection: "episode";
-  data: any;
-}>;
-
+		
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;

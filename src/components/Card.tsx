@@ -1,5 +1,7 @@
 import { slugifyStr } from "@utils/slugify";
 import Datetime from "./Datetime";
+import LanguageToggle from "./LanguageToggle";
+import { useLanguage } from "@contexts/LanguageContext";
 import type { CollectionEntry } from "astro:content";
 
 export interface Props {
@@ -9,7 +11,12 @@ export interface Props {
 }
 
 export default function Card({ href, frontmatter, secHeading = true }: Props) {
-  const { title, pubDatetime, modDatetime, description } = frontmatter;
+  const { title, pubDatetime, modDatetime, description, language = "en" } = frontmatter;
+  const { language: currentLanguage } = useLanguage();
+
+  if (language !== currentLanguage) {
+    return null;
+  }
 
   const headerProps = {
     style: { viewTransitionName: slugifyStr(title) },
@@ -17,7 +24,10 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
   };
 
   return (
-    <li className="my-6">
+    <li className="my-6 relative">
+      <div className="absolute top-0 right-0 z-10">
+        <LanguageToggle showLabel={false} className="text-xs" />
+      </div>
       <a
         href={href}
         className="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"

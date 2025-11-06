@@ -35,6 +35,19 @@ export default defineConfig({
     optimizeDeps: {
       exclude: ["@resvg/resvg-js"],
     },
+    resolve: {
+      alias: {
+        "@assets": "/src/assets",
+        "@components": "/src/components",
+        "@config": "/src/config",
+        "@contexts": "/src/contexts",
+        "@content": "/src/content",
+        "@layouts": "/src/layouts",
+        "@pages": "/src/pages",
+        "@styles": "/src/styles",
+        "@utils": "/src/utils",
+      },
+    },
   },
   scopedStyleStrategy: "where",
 });

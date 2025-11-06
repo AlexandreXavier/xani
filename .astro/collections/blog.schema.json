@@ -72,6 +72,14 @@
             "others"
           ]
         },
+        "language": {
+          "type": "string",
+          "enum": [
+            "pt",
+            "en"
+          ],
+          "default": "en"
+        },
         "ogImage": {
           "anyOf": [
             {

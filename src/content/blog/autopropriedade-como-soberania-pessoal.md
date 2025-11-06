@@ -8,6 +8,7 @@ featured: true
 draft: false
 tags:
   - identity
+language: pt
 description:
   Conceito moral e político da propriedade privada.
 ---

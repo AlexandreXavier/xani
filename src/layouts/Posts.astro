@@ -6,6 +6,7 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Pagination from "@components/Pagination.astro";
 import Card from "@components/Card";
+import LanguageWrapper from "@components/LanguageWrapper";
 import { SITE } from "@config";
 
 export interface Props {
@@ -20,13 +21,15 @@ const { currentPage, totalPages, paginatedPosts } = Astro.props;
 <Layout title={`Posts | ${SITE.title}`}>
   <Header activeNav="posts" />
   <Main pageTitle="..." pageDesc="">
-    <ul>
-      {
-        paginatedPosts.map(({ data, slug }) => (
-          <Card href={`/posts/${slug}/`} frontmatter={data} />
-        ))
-      }
-    </ul>
+    <LanguageWrapper client:load>
+      <ul>
+        {
+          paginatedPosts.map(({ data, slug }) => (
+            <Card href={`/posts/${slug}/`} frontmatter={data} />
+          ))
+        }
+      </ul>
+    </LanguageWrapper>
   </Main>
 
   <Pagination

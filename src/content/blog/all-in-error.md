@@ -8,6 +8,7 @@ featured: true
 draft: false
 tags:
   - politics
+language: en
 description:
  Western politicians with their blinkers.
 ---
