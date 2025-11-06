@@ -1,49 +1,48 @@
 ---
 author: Alexandre Xavier
-pubDatetime: 2025-01-15T19:22:00Z
-modDatetime: 2025-01-15T20:23:47.400Z
-title: Deterministic Software
-slug: Deterministic
+pubDatetime: 2025-01-15T20:22:00+01:00
+modDatetime: 2025-01-15T21:23:47.400+01:00
+title: Software Determinista
+slug: software-determinista
 featured: true
 draft: false
 tags:
   - web3
 description:
-  How to Create Deterministic Software
+  Como Criar Software Determinista
 ---
 
 ![esquema](https://xanipublic.s3.eu-north-1.amazonaws.com/determinista_300px.jpg)
 
-## The Shift Towards Deterministic Systems  
-The reality is that many people, in my opinion, are unaware of the true guarantees provided by existing centralized systems—be it financial systems, IT infrastructures, or social media platforms. These systems may seem to offer guarantees, but what they actually do is grant *conditional* access. For instance, they grant access to your data, your money, or your ability to communicate with others. However, these guarantees are not absolute. They can be revoked, altered, or even turned off by individuals or organizations.  
+## A Mudança para Sistemas Deterministas  
+A realidade é que muitas pessoas, na minha opinião, desconhecem as verdadeiras garantias oferecidas pelos sistemas centralizados existentes — sejam eles sistemas financeiros, infraestruturas de TI ou plataformas de redes sociais. Estes sistemas podem parecer oferecer garantias, mas o que realmente fazem é conceder acesso *condicional*. Por exemplo, concedem acesso aos seus dados, ao seu dinheiro ou à sua capacidade de comunicar com outros. No entanto, estas garantias não são absolutas. Podem ser revogadas, alteradas ou mesmo desativadas por indivíduos ou organizações.
 
+## A Fragilidade dos Sistemas Tradicionais  
 
-## The Fragility of Traditional Systems  
+Tomemos como exemplo algo aparentemente seguro como uma conta bancária. Quando faz login com uma palavra-passe, o seu acesso não é garantido de forma determinista. Em vez disso, é probabilístico, dependendo de um grupo de pessoas que decide em última instância se a sua palavra-passe concede acesso à sua conta. A história mostrou como esta confiança pode ser frágil, com casos como a queda do Silicon Valley Bank ou a crise financeira de 2008. As pessoas acreditam em garantias porque uma instituição com uma marca lhes garante isso, mas essas garantias muitas vezes carecem de verdadeira segurança.
 
-Take, for example, something as seemingly secure as a bank account. When you log in with a password, your access is not guaranteed in a deterministic way. Instead, it’s probabilistic, reliant on a group of people who ultimately decide whether your password grants access to your account. History has shown how fragile this trust can be, with cases like the Silicon Valley Bank collapse or the 2008 financial crisis. People believe in guarantees because an institution with a brand assures them of it, but those guarantees often lack true security.  
+## A Ascensão das Garantias Deterministas  
 
-## The Rise of Deterministic Guarantees  
+Este é o problema fundamental que a nossa indústria está a resolver. Em contraste com os sistemas centralizados, as tecnologias descentralizadas oferecem **garantias deterministas**. Estas garantias são aplicadas matematicamente e criptograficamente.
 
-This is the fundamental issue that our industry is addressing. In contrast to centralized systems, decentralized technologies offer **deterministic guarantees**. These guarantees are mathematically and cryptographically enforced.  
+Por exemplo, quando possui uma chave privada, não importa se está associada a Bitcoin, uma stablecoin ou outro ativo digital. O poder reside na relação determinista entre a chave privada e o ativo. Quando assina uma transação, nenhum indivíduo ou organização a pode parar ou interferir com ela. Este nível de controlo e garantia matemática é fundamentalmente diferente dos sistemas tradicionais, onde a funcionalidade depende das decisões de outras pessoas.
 
-For example, when you own a private key, it doesn’t matter whether it’s tied to Bitcoin, a stablecoin, or another digital asset. The power lies in the deterministic relationship between the private key and the asset. When you sign a transaction, no individual or organization can stop or interfere with it. This level of mathematical control and assurance is fundamentally different from traditional systems, where functionality depends on the decisions of other people.
+## Encriptação e a Recuperação da Confiança  
 
-## Encryption and Restoring Trust  
+A mudança para sistemas deterministas é evidente em várias áreas. Veja-se, por exemplo, a encriptação de ponta a ponta do WhatsApp. Esta tornou-se um padrão devido a uma perda generalizada de confiança. As pessoas perceberam que as suas mensagens poderiam ser intercetadas, as empresas de telecomunicações foram alvo de ciberataques e os dados privados foram mal utilizados pelas plataformas de redes sociais. A solução foi a criptografia — a encriptação de ponta a ponta aplicada aos sistemas de mensagens.
 
-The shift toward deterministic systems is evident in various areas. Take WhatsApp’s end-to-end encryption, for instance. This became a standard because of a widespread loss of trust. People realized their messages could be intercepted, telecom companies were hacked, and private data was misused by social media platforms. The solution was cryptography—end-to-end encryption applied to messaging systems.  
+Hoje em dia, muitas pessoas preferem plataformas de mensagens com encriptação garantida, sendo o Signal Messenger considerado o padrão de excelência.
 
-Today, many people prefer messaging platforms with guaranteed encryption, with Signal Messenger standing out as the gold standard.  
+## O Futuro da Web3  
 
-## The Future of Web3  
+Esta tendência está a reformular o mundo digital. As aplicações que conseguirem oferecer as mesmas funcionalidades, custo e velocidade das aplicações Web2 tradicionais, mas com resultados deterministas e matematicamente garantidos, serão inevitavelmente superiores.
 
-This trend is reshaping the digital world. Applications that can deliver the same features, cost, and speed as traditional Web2 applications but with deterministic, mathematically guaranteed results will inevitably be superior.  
+Essa é a essência da Web3: aplicações descentralizadas (DApps), contratos inteligentes e sistemas construídos sobre confiança determinista. Esta indústria vai muito além da tokenização. Reduzi-la à tokenização seria como dizer que a internet se resume apenas ao correio eletrónico.
 
-That’s the essence of Web3: decentralized applications (DApps), smart contracts, and systems built on deterministic trust. This industry is about far more than tokenization. Reducing it to tokenization would be like saying the internet is only about email.  
+## Para Além da Tokenização  
 
-## Beyond Tokenization  
+No início, a internet resumia-se ao correio eletrónico, e muitos pensaram que apenas iria perturbar o serviço postal. Mas a internet evoluiu para uma plataforma de tecnologia de informação que transformou inúmeras indústrias. Da mesma forma, o cerne da Web3 é a tecnologia de confiança e valor. Vai além da tokenização para abranger todas as formas de relacionamentos digitais que podem ser altamente confiáveis e deterministas.
 
-Early on, the internet was just email, and many thought it would only disrupt the postal service. But the internet evolved into a platform for information technology that transformed countless industries. Similarly, the core of Web3 is trust and value technology. It extends beyond tokenization to encompass all forms of digital relationships that can be made highly reliable and deterministic.  
+## Rumo a uma Sociedade Determinista  
 
-## Towards a Deterministic Society  
-
-A deterministic society is one where trust doesn’t depend on individuals or groups. It’s a world where your ability to access your money, interact with others, or manage your data is guaranteed by cryptography and mathematics, not by promises.  
+Uma sociedade determinista é aquela em que a confiança não depende de indivíduos ou grupos. É um mundo onde a sua capacidade de aceder ao seu dinheiro, interagir com os outros ou gerir os seus dados é garantida por criptografia e matemática, não por promessas.

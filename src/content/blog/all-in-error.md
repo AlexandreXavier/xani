@@ -1,45 +1,45 @@
 ---
 author: Alexandre Xavier
-pubDatetime: 2025-01-24T07:23:00Z
-modDatetime: 2025-01-24T07:23:47.400Z
-title: All in Error
-slug: all-in-error
+pubDatetime: 2025-01-24T08:23:00+01:00
+modDatetime: 2025-01-24T08:23:47.400+01:00
+title: Todos no Erro
+slug: todos-no-erro
 featured: true
 draft: false
 tags:
-  - politics
-language: en
+  - política
+language: pt
 description:
- Western politicians with their blinkers.
+  Políticos ocidentais com as suas palas.
 ---
 
-# Western politicians with their blinkers.
+# Políticos ocidentais com as suas palas
 
-![Politicians with blinkers](https://xanipublic.s3.eu-north-1.amazonaws.com/burro_com_palas.webp)
-<p align="center"><small>Our politicians are like donkeys with blinkers!</small></p>
+![Políticos com palas](https://xanipublic.s3.eu-north-1.amazonaws.com/burro_com_palas.webp)
+<p align="center"><small>Os nossos políticos são como burros com palas!</small></p>
 
-## The Artificial Intelligence Revolution in Society
+## A Revolução da Inteligência Artificial na Sociedade
 
-**AI** has the power to remake an entire **society** from scratch, the likes of which have not been seen since the [**renaissance**](https://en.wikipedia.org/wiki/Renaissance). The Government, the Economy and National Security itself will be completely reformulated, reinvented and reformed.
+A **IA** tem o poder de reformular por completo uma **sociedade** desde a sua base, algo que não se via desde o [**Renascimento**](https://pt.wikipedia.org/wiki/Renascimento). O Governo, a Economia e a própria Segurança Nacional serão completamente reformulados, reinventados e transformados.
 
-It must be the United States, with its closest allies leading the way. The British Prime Minister (Stahmer) thinks he needs more AI startups in his country. Europe's leader (Von der Leyen) wants European companies to adopt AI faster as if it were a pill. And the American President himself (Joe Biden) thinks America is leading the way in AI. Everyone is losing focus. However, none of them seem to understand the essence of the issue.
+Parece que têm de ser os Estados Unidos, com os seus aliados mais próximos, a liderar o caminho. O primeiro-ministro britânico (Stahmer) acha que precisa de mais startups de IA no seu país. A líder europeia (Von der Leyen) quer que as empresas europeias adotem a IA mais rapidamente, como se fosse um comprimido. E o próprio presidente americano (Joe Biden) acredita que a América está na vanguarda da IA. Todos estão a perder o foco. No entanto, nenhum deles parece compreender a essência da questão.
 
-## AI Leadership Lies in the Hands of Companies, Not Nations
+## A Liderança da IA Está nas Mãos das Empresas, Não das Nações
 
-It is not America and its allies who are leading! This is clear to me. In other words, it is not the United States of America as a democratic nation with individual rights and guarantees that protect its citizens. But yes, some companies registered in America that have the largest AI models (LLM) currently, the so-called cutting-edge models, such as OpenAI's ChatGPT, Musk's GROK or Meta's Lama and others… . But these models are not the property of America. They are owned by very rich people (Billionaires), people who are developing systems in centralized networks, which within a few years (expected to reach AIG in 2029) will be smarter than everything and everyone on this planet called Earth.
+Não é a América e os seus aliados que estão a liderar! Isto é claro para mim. Por outras palavras, não são os Estados Unidos da América como nação democrática com direitos e garantias individuais que protegem os seus cidadãos. Mas sim, algumas empresas registadas na América que possuem atualmente os maiores modelos de IA (LLM), os chamados modelos de ponta, como o ChatGPT da OpenAI, o GROK de Musk ou o Lama da Meta, entre outros. Mas estes modelos não são propriedade da América. Pertencem a pessoas muito ricas (bilionários), que estão a desenvolver sistemas em redes centralizadas que, dentro de alguns anos (espera-se atingir IAG em 2029), serão mais inteligentes do que tudo e todos neste planeta chamado Terra.
 
-The gross mistake these politicians make is to think of AI as a race for pure and simple profit, or for the prosperity of an unprepared society (ignorant in IT). That's too little. It's a race, yes! Who, by the way, left a long time ago, but not just for money but for pure and simple power. How are you doing in the 2025 election for the American presidency? Note the role of a Trump campaign financier. The almighty Mr. Musk. At the very least, it should raise some alarm in society. As would be expected.
+O erro grosseiro que estes políticos cometem é pensar na IA como uma corrida por lucro puro e simples, ou pela prosperidade de uma sociedade despreparada (ignorante em TI). Isso é muito pouco. É uma corrida, sim! Que, aliás, já começou há muito tempo, mas não apenas por dinheiro, mas por poder puro e simples. Como está a correr a eleição presidencial americana de 2025? Note-se o papel de um financiador da campanha de Trump. O todo-poderoso Sr. Musk. No mínimo, devia despertar algum alarme na sociedade. Como seria de esperar.
 
-## The Future: AGI and Transhuman Man
+## O Futuro: IAG e o Homem Transumano
 
-If Western society itself understood this new World. Where whoever gets to [**AGI**](https://en.wikipedia.org/wiki/Artificial_general_intelligence)(Artificial General Intelligence) first will rule over biological (Human) intelligence. Our children will be the last biological humans to walk the Earth. Let's watch the appearance of the [**Transhuman Man**](https://pt.wikipedia.org/wiki/Transhumanism). And on this point, we agree, the entire information internet was designed (centralized), no matter where the company is registered, because they will have backups in other geographic locations to avoid forced nationalization. When governments realize that they no longer have control , will try(basic). But by then, it will be too late.
+Se a própria sociedade ocidental compreendesse este novo Mundo. Onde quem chegar primeiro à [**IAG**](https://pt.wikipedia.org/wiki/Intelig%C3%AAncia_artificial_geral) (Inteligência Artificial Geral) governará sobre a inteligência biológica (Humana). Os nossos filhos serão os últimos humanos biológicos a caminhar na Terra. Vamos assistir ao aparecimento do [**Homem Transumano**](https://pt.wikipedia.org/wiki/Transumanismo). E neste ponto, estamos de acordo, toda a internet da informação foi concebida (centralizada), independentemente de onde a empresa está registada, porque terão cópias de segurança noutras localizações geográficas para evitar a nacionalização forçada. Quando os governos perceberem que já não têm controlo, tentarão (básico). Mas nessa altura, já será tarde de mais.
 
-## The Mistake of Startups and the Power of Big Companies
+## O Erro das Startups e o Poder das Grandes Empresas
 
-All the small startups that the EU and UK are pouring millions of our dutifully collected taxes into have no chance of keeping up with the cutting-edge (LLM) models. We are already seeing this now as most small applications (SaaS) are being developed using these cutting-edge models. So all the money that Von der Leyen and Starmer and others… are handing out! This will only reinforce the power of cutting-edge LLM models. I don't mean to be dramatic! OK. There may be a company here or there with a different global strategy, but they will always be niche applications.
+Todas as pequenas startups em que a UE e o Reino Unido estão a injetar milhões dos nossos impostos diligentemente cobrados não têm qualquer hipótese de acompanhar os modelos de ponta (LLM). Já estamos a ver isso agora, pois a maioria das pequenas aplicações (SaaS) está a ser desenvolvida com base nestes modelos de ponta. Portanto, todo o dinheiro que a Von der Leyen, o Starmer e outros estão a distribuir! Isto só vai reforçar o poder dos modelos LLM de ponta. Não quero ser dramático! OK. Pode haver uma ou outra empresa com uma estratégia global diferente, mas serão sempre aplicações de nicho.
 
-Why? Because it's **easier** (the great power of convenience), that means it's cheaper and easier to use in the long run. A good way to think of cutting-edge models (LLM) is to think of them as a new operating system ([**OS**](https://en.wikipedia.org/wiki/Operating_system)). Technically that's not what they are. But in practice this is how we will use them. To use the best (LLM) we will have to register with a [**KYC**](https://pt.wikipedia.org/wiki/Know_Your_Customer)(Know Your Customer) so we can use them without restrictions. **tokens**](https://neptune.ai/blog/tokenization-in-nlp)(processes words into numbers through vectors/matrixes) to do everything on your devices which in turn are part of another centralized system like Apple's iOS and others…. We will use this AI to write emails, pay bills, organize our schedules and even deal with personal matters when we don't want to waste time responding. But since we don't want to be seen as insensitive arrogant people, we're going to put a custom [**Bot**](https://en.wikipedia.org/wiki/Bot) to filter and resolve. Let's procrastinate better than ever.
+Porquê? Porque é **mais fácil** (o grande poder da conveniência), o que significa que é mais barato e mais simples de usar a longo prazo. Uma boa forma de pensar nos modelos de ponta (LLM) é vê-los como um novo sistema operativo ([**SO**](https://pt.wikipedia.org/wiki/Sistema_operativo)). Tecnicamente, não é bem isso que são. Mas na prática é assim que os vamos utilizar. Para usar os melhores (LLM), teremos de nos registar com um [**KYC**](https://pt.wikipedia.org/wiki/Know_Your_Customer) (Conheça o Seu Cliente) para os podermos usar sem restrições. **tokens**](https://neptune.ai/blog/tokenization-in-nlp) (processam palavras em números através de vetores/matrizes) para fazer tudo nos nossos dispositivos que, por sua vez, fazem parte de outro sistema centralizado como o iOS da Apple e outros…. Vamos usar esta IA para escrever e-mails, pagar contas, organizar as nossas agendas e até lidar com assuntos pessoais quando não quisermos perder tempo a responder. Mas como não queremos ser vistos como pessoas arrogantes e insensíveis, vamos colocar um [**Bot**](https://pt.wikipedia.org/wiki/Bot) personalizado para filtrar e resolver. Vamos procrastinar melhor do que nunca.
 
-## AI: An Immediate Need
+## IA: Uma Necessidade Imediata
 
-For governments and businesses, it will quickly become indispensable. If you do not register, you will not be able to compete. You will need to access financial management
+Para governos e empresas, rapidamente se tornará indispensável. Se não se registarem, não conseguirão competir. Precisarão de aceder à gestão financeira

@@ -1,57 +1,49 @@
 ---
 author: Alexandre Xavier
-pubDatetime: 2023-08-24T15:22:00Z
-modDatetime: 2023-08-26T09:12:47.400Z
-title: Philosophy of Self-Sovereignty
-slug: Self-Sovereignty
+pubDatetime: 2023-08-24T16:22:00+01:00
+modDatetime: 2023-08-26T10:12:47.400+01:00
+title: Filosofia da Autossuficiência Digital
+slug: autossuficiencia-digital
 featured: true
 draft: false
 tags:
-  - privacy 
+  - privacidade
 description:
-  Self-Sovereignty
+  Autossuficiência Digital
 ---
 
-The whitepaper released by [**Satoshi Nakamoto**](https://pt.wikipedia.org/wiki/Satoshi_Nakamoto) on this Halloween night in the middle of the subprime mortgage crisis describes an idea that will inevitably take the world by storm. While most people still think of A Peer-to-Peer Electronic Cash System as nothing more than a (get-rich-quick scheme) — completely missing the profound change it will continue to have on society. — it becomes more obvious every day that it won’t go away. And allows “owned our identity,” meaning you have some kind of digital passport (or wallet) that proves you are you, not some imposter, and that this passport is secure, easy to use, and widely accepted in all corners of the internet, and also at banks and gyms and schools and shops, etc...?
+O whitepaper lançado por [**Satoshi Nakamoto**](https://pt.wikipedia.org/wiki/Satoshi_Nakamoto) naquela noite de Halloween, no meio da crise das hipotecas subprime, descreve uma ideia que inevitavelmente irá abalar o mundo. Enquanto a maioria das pessoas ainda vê o Sistema de Dinheiro Eletrónico Ponto a Ponto como pouco mais que um (esquema de enriquecimento rápido) — ignorando completamente a profunda mudança que continuará a ter na sociedade —, torna-se mais óbvio a cada dia que não irá desaparecer. E permite "possuir a nossa identidade", significando que temos uma espécie de passaporte digital (ou carteira) que prova que somos nós mesmos, e não um impostor, e que este passaporte é seguro, fácil de usar e amplamente aceite em todos os cantos da internet, e também em bancos, ginásios, escolas e lojas, etc...?
 
 ![centralised-vs-decentralised-vs-distributed-node-down](https://drakemall-files-new.s3.eu-central-1.amazonaws.com/Bitcoin%20-ckmwfw80b00se01ow1fs9gofm.png)
 
+Passámos de um mundo onde o dinheiro digital era apenas uma ideia para um mundo onde existe um Sistema de Dinheiro Eletrónico Ponto a Ponto. Como veremos, esta nova realidade é mais poderosa do que se poderia pensar à primeira vista. É poderosa porque inaugurará um novo paradigma económico. É poderosa porque não pode ser parada.
 
-We went from a world where digital cash was just an idea to a world where A Peer-to-Peer Electronic Cash System exists.As we shall see, this new reality is more powerful than one might think at first.It is powerful because it will usher in a new economic paradigm. It is powerful because it can’t be stopped.
+Ao contrário da crença popular, o Sistema de Dinheiro Eletrónico Ponto a Ponto não surgiu do nada. A ideia de dinheiro digital tem uma história longa e rica. Mais notavelmente, um grupo informal conhecido como cypherpunks escreveu extensivamente sobre dinheiro digital anónimo, como tais sistemas poderiam ser realizados e as implicações sociais da criptografia forte em geral. Daí o nome: cypherpunks.
 
-Contrary to popular belief, Peer-to-Peer Electronic Cash System did not come out of nowhere. The idea of digital cash has a long and rich history. Most notably, a loose collective known as the cypherpunks wrote at length about digital anonymous cash, how such systems might be realized, and the societal implications of strong cryptography in general. Hence the name: cypherpunks. 1
+Após formarem o grupo em 1992, [**Eric Hughes**](https://pt.wikipedia.org/wiki/Eric_Hughes), [**Timothy C. May**](https://pt.wikipedia.org/wiki/Timothy_C._May) e [**John Gilmore**](https://pt.wikipedia.org/wiki/John_Gilmore) criaram a lista de discussão [**cypherpunk**](https://pt.wikipedia.org/wiki/Cypherpunk) para debater e partilhar as suas ideias sobre criptografia, reencaminhadores de email, anonimato, dinheiro digital e "outras coisas interessantes" com um grupo mais amplo de pessoas. Muitos anos depois, um cypherpunk chamado Satoshi Nakamoto escolheu publicar o whitepaper do Bitcoin numa lista de discussão semelhante: a lista de criptografia.
 
-After forming the group in 1992, [**Eric Hughes**](https://en.wikipedia.org/wiki/Eric_Hughes_(cypherpunk)), [**Timothy C. May**](https://en.wikipedia.org/wiki/Timothy_C._May), and [**John Gilmore**](https://en.wikipedia.org/wiki/John_Gilmore_(activist)) created the [**cypherpunk**](https://en.wikipedia.org/wiki/Cypherpunk) mailing list to discuss and share their ideas around cryptography, remailers, anonymity, digital cash, and “other interesting things” with a wider group of people. Many years later, a cypherpunk by the name of Satoshi Nakamoto chose to publish the Bitcoin whitepaper on a similar mailing list: the cryptography mailing list.
+Como é evidente ao estudar os seus escritos, os cypherpunks preocupavam-se profundamente com a ideia de dinheiro digital. Em 1993, Eric Hughes discutiu a ideia de dinheiro digital, a sua relação com a privacidade e a sua importância para uma sociedade livre no [**Manifesto Cypherpunk**](https://www.activism.net/cypherpunk/manifesto.html): "Já que desejamos privacidade, devemos assegurar que cada parte numa transação tenha conhecimento apenas daquilo que é estritamente necessário para essa transação. Como qualquer informação pode ser divulgada, devemos garantir que revelamos o mínimo possível. Na maioria dos casos, a identidade pessoal não é relevante. Quando compro uma revista numa loja e entrego dinheiro ao funcionário, não há necessidade de saber quem eu sou."
 
-As is apparent by studying their writings, the cypherpunks cared a great deal about the idea of digital cash. In 1993, Eric Hughes discussed the idea of digital cash, its relation to privacy, and its importance for a free society in A [**Cypherpunk’s Manifesto**](https://www.activism.net/cypherpunk/manifesto.html): “Since we desire privacy, we must ensure that each party to a transaction have knowledge only of that which is directly necessary for that transaction. Since any information can be spoken of, we must ensure that we reveal as little as possible. In most cases personal identity is not salient. When I purchase a magazine at a store and hand cash to the clerk, there is no need to know who I am.”
+Foram identificados vários problemas com o nosso sistema monetário atual e as moedas convencionais que o compõem:
 
+- Confiança em terceiros
+- Desvalorização da moeda pelos bancos centrais
+- Bolhas de crédito
+- Reserva fracionária bancária
+- Privacidade
+- Falta de micropagamentos devido a custos operacionais
+- Intermediários
 
-They identifies multiple problems with our current monetary system and the conventional currencies that are native to it:
+Conhecendo o seu público, prossegue-se destacando como questões semelhantes relacionadas com confiança foram resolvidas no mundo dos sistemas informáticos em geral, ou seja, como a criptografia forte eliminou a necessidade de confiar nos administradores de sistemas com os seus dados. Assim que os seus ficheiros estão encriptados, não precisa de confiar em quem tem acesso a esses ficheiros, pois seria necessária a sua palavra-passe para os desencriptar. Por outras palavras: passámos de confiar em humanos para confiar na matemática. Isto é especialmente relevante num ambiente ponto a ponto, porque graças à criptografia forte **(chave assimétrica)**, pode trocar dados confidenciais com outros — incluindo consigo mesmo no futuro — sem ter de depender de intermediários.
 
- - trust in third parties
- - currency debasement by central banks
- - credit bubbles
- - fractional reserve banking
- - privacy
- - lack of micropayments due to overhead costs
- - middlemen
+> ### Embora o Bitcoin seja um avanço em muitos aspetos, todas as partes técnicas que o fazem funcionar já existiam:
 
-Knowing his audience, they goes on to point out how similar trust-related issues were solved in the world of computer systems in general, i.e. how strong cryptography did away with having to trust system administrators with your data. Once your files are encrypted, you do not need to trust whoever has access to these files, since they would need your password to decrypt them. In other words: we moved from trusting humans to trusting mathematics. This is especially relevant in a peer-to-peer setting, because thanks to strong cryptography **(asymmetric key)**, you can exchange confidential data with others—including your future self—without having to rely on any middlemen.
-
-
-> ### While Bitcoin is a breakthrough in many ways, all the technical parts that make it work did exist already: 
-
-<ul>
-    <li>Public-key cryptography</li>
-    <li>Peer-to-peer networks</li>
-    <li>Digital signatures</li>
-    <li>Cryptographic hash functions</li>
-    <li>Cryptographic time stamps</li>
-    <li>Hash chains</li>
-    <li>Proof-of-work</li>
-</ul>
+- Criptografia de chave pública
+- Redes ponto a ponto
+- Assinaturas digitais
+- Funções de hash criptográficas
+- Carimbos de data/hora criptográficos
+- Cadeias de hash
+- Prova de trabalho (Proof-of-work)
 
 ---
-
-
-

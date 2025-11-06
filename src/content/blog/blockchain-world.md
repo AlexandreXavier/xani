@@ -1,17 +1,17 @@
 ---
 author: Alexandre Xavier
-pubDatetime: 2022-03-14T15:22:00Z
-modDatetime: 2022-03-16T19:12:47.400Z
-title: Blockchain 
-slug: Blockchain
+pubDatetime: 2022-03-14T16:22:00+01:00
+modDatetime: 2022-03-16T20:12:47.400+01:00
+title: Blockchain
+slug: blockchain
 featured: true
 draft: false
 tags:
   - blockchain
 description:
-  Explain of what is a blockchain.
+  Explicação do que é uma blockchain.
 ---
 
 
 
-A blockchain is a database  that is shared across a network of computers. Once a record has been added to the chain it is very difficult to change. To ensure all the copies of the database are the same, the network  makes constant checks. Blockchains have been used to underpin cyber-currencies like bitcoin, but many other possible uses are emerging.
+Uma blockchain é uma base de dados que é partilhada numa rede de computadores. Depois de um registo ser adicionado à cadeia, torna-se muito difícil de alterar. Para garantir que todas as cópias da base de dados são iguais, a rede realiza verificações constantes. As blockchains têm sido utilizadas como base para cibermoedas como o bitcoin, mas estão a emergir muitas outras utilizações possíveis.
