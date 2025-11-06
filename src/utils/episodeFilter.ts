@@ -1,10 +1,10 @@
 import { SITE } from "@config";
 import type { CollectionEntry } from "astro:content";
 
-const episodeFilter = ({ data }: CollectionEntry<"episode">) => {
-  if (!data.pubDate) return false;
+const episodeFilter = ({ data }: CollectionEntry<"blog">) => {
+  if (!data.pubDatetime) return false;
   
-  const publishTime = new Date(data.pubDate).getTime();
+  const publishTime = new Date(data.pubDatetime).getTime();
   const isPublishTimePassed = 
     Date.now() > publishTime - SITE.scheduledPostMargin;
     
