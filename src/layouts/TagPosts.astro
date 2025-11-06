@@ -6,7 +6,6 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Card from "@components/Card";
 import Pagination from "@components/Pagination.astro";
-import LanguageWrapper from "@components/LanguageWrapper";
 import { SITE } from "@config";
 
 export interface Props {
@@ -28,7 +27,6 @@ const { currentPage, totalPages, paginatedPosts, tag, tagName } = Astro.props;
     pageDesc={`All the articles with the tag "${tagName}".`}
   >
     <h1 slot="title" transition:name={tag}>{`Tag:${tag}`}</h1>
-    <LanguageWrapper client:load>
       <ul>
         {
           paginatedPosts.map(({ data, slug }) => (
@@ -36,7 +34,6 @@ const { currentPage, totalPages, paginatedPosts, tag, tagName } = Astro.props;
           ))
         }
       </ul>
-    </LanguageWrapper>
   </Main>
 
   <Pagination
