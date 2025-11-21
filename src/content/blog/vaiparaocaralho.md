@@ -9,7 +9,7 @@ draft: false
 tags:
   - vela
 description:
-  A Fascinante Origem de "Caralho"!!! Mais do que um Calão
+  A Fascinante origem de "Caralho"!!! Mais do que um Calão
 ---
 
 ### A Fascinante Origem de "Caralho": Mais do que um Calão!

@@ -8,7 +8,7 @@ slug: como-enviar-um-email
 featured: true
 draft: false
 tags:
-  - AI
+  - IA
 ---
 
 # Agora e só isso: Enviar um email

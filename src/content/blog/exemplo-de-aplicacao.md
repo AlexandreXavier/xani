@@ -7,14 +7,13 @@ slug: Aplicacao
 featured: true
 draft: false
 tags:
-  - aplicacao
+  - app
 description:
   Uma aplicação como exemplo para enteder o papel dos agentes de IA na geração de conteúdo.
 ---
 [![Linha do Tempo](https://dtsc7359gj.ufs.sh/f/TbfYGcuq8Y7WgUlKHsnaSQJLKyRwnhHD0Pf5cEpvYO1CukWo)](https://linhadotempo.pt)
 
 ## Uma aplicação para enteder o papel dos agentes de IA na geração de conteúdo.
-
 
 
 ### Visão geral
