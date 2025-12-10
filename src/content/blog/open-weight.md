@@ -7,7 +7,7 @@ slug: Os Modelos 'Open Weight'
 featured: true
 draft: false
 tags:
-  - ai
+  - ia
 description:
    Da Revolução do Código Aberto à Era dos Pesos Abertos.
 ---
