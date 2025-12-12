@@ -1,14 +1,14 @@
 ---
 author: Alexandre Xavier
-pubDatetime: 2025-12-12T15:05:00Z
-modDatetime: 2025-12-12T15:05:00Z
+pubDatetime: 2025-12-12T05:05:00Z
+modDatetime: 2025-12-12T05:05:00Z
 title: Dos “Imigrantes Digitais Alienígenas” à política Portuguesa
 slug: imigrantes-digitais-alienigenas
 featured: true
 draft: false
 tags:
   - politica
-  - IA	
+
 description:
   Uma nova visão do mundo "terreno" já está aqui.
 ---
@@ -16,6 +16,7 @@ description:
 
 
 ## Dos “Imigrantes Digitais Alienígenas” à política Portuguesa
+
 No debate público português, a imigração tornou‑se tema central, frequentemente ligada a pressões sobre serviços públicos, habitação e integração cultural. No entanto, a metáfora dos “Imigrantes Digitais Alienígenas” oferece um espelho incómodo: enquanto discutimos fluxos migratórios e costumes, ignoramos uma chegada massiva e silenciosa — a Inteligência Artificial (IA) — com impacto muito mais profundo no trabalho cognitivo, na classe média e na estabilidade democrática.
 
 ## A metáfora dos Imigrantes Digitais Alienígenas

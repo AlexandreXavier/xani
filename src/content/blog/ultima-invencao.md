@@ -1,7 +1,7 @@
 ---
 author: Alexandre Xavier
-pubDatetime: 2025-12-13T15:05:00Z
-modDatetime: 2025-12-13T15:05:00Z
+pubDatetime: 2025-12-13T05:05:00Z
+modDatetime: 2025-12-13T05:05:00Z
 title: Dos “Imigrantes Digitais Alienígenas” à política Portuguesa
 slug: imigrantes-digitais-alienigenas
 featured: true
@@ -12,6 +12,6 @@ description:
   Uma nova visão do mundo "terreno" já está aqui.
 ---
 
-![Escala da IA](https://6bhbi182cm.ufs.sh/f/eaJqTiDzJSPW4C0zyNgTAzn2NbeKvHo1lRVIDF36wrQ5LWUg "Escala da IA")
+![RAG](https://6bhbi182cm.ufs.sh/f/eaJqTiDzJSPWdRdVna09CEGMQAiL78haBo2VfI6y0JTuWPSZ "RAG")
 
 ## Do que se trata?

@@ -7,7 +7,7 @@ slug: todos-no-erro
 featured: true
 draft: false
 tags:
-  - política
+  - politica
 language: pt
 description:
   Políticos ocidentais com as suas palas.
