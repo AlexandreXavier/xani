@@ -12,6 +12,8 @@ tags:
 description:
   Uma nova visão do mundo "terreno" já está aqui.
 ---
+![Escala da IA](https://6bhbi182cm.ufs.sh/f/eaJqTiDzJSPW4C0zyNgTAzn2NbeKvHo1lRVIDF36wrQ5LWUg "Escala da IA")
+
 
 ## Dos “Imigrantes Digitais Alienígenas” à política Portuguesa
 No debate público português, a imigração tornou‑se tema central, frequentemente ligada a pressões sobre serviços públicos, habitação e integração cultural. No entanto, a metáfora dos “Imigrantes Digitais Alienígenas” oferece um espelho incómodo: enquanto discutimos fluxos migratórios e costumes, ignoramos uma chegada massiva e silenciosa — a Inteligência Artificial (IA) — com impacto muito mais profundo no trabalho cognitivo, na classe média e na estabilidade democrática.
