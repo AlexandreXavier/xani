@@ -24,6 +24,7 @@
     "buffer": "^6.0.3",
     "fuse.js": "^7.1.0",
     "github-slugger": "^2.0.0",
+    "lucide-react": "^0.525.0",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
     "satori": "^0.10.14",

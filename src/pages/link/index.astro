@@ -1,0 +1,22 @@
+---
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import LinkManager from "@components/LinkManager";
+import { LINKS, getCategoriesWithCount } from "@constants/links";
+
+const categories = getCategoriesWithCount();
+---
+
+<Layout title={`Link | ${SITE.title}`}>
+  <Header activeNav="link" />
+  <Main
+    pageTitle="Link"
+    pageDesc="Curated collection of useful links and resources."
+  >
+    <LinkManager links={LINKS} categories={categories} client:load />
+  </Main>
+  <Footer />
+</Layout>

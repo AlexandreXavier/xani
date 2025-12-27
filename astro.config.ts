@@ -46,6 +46,8 @@ export default defineConfig({
         "@pages": "/src/pages",
         "@styles": "/src/styles",
         "@utils": "/src/utils",
+        "@constants": "/src/constants",
+        "@/types": "/src/types",
       },
     },
   },
