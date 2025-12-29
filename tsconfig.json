@@ -13,6 +13,8 @@
       "@pages/*": ["pages/*"],
       "@styles/*": ["styles/*"],
       "@utils/*": ["utils/*"],
+      "@constants/*": ["constants/*"],
+      "@/types": ["types.ts"],
     },
   },
 }

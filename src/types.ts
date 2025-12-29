@@ -17,3 +17,20 @@ export type SocialObjects = {
   active: boolean;
   linkTitle: string;
 }[];
+
+export enum LinkCategory {
+  DESIGN = 'design',
+  TOOL = 'tool',
+  CLOUD = 'cloud',
+  UI = 'ui',
+  PORTFOLIO = 'portfolio'
+}
+
+export interface LinkItem {
+  id: string;
+  name: string;
+  url: string;
+  description?: string;
+  category: LinkCategory;
+}
+
