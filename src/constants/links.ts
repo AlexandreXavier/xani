@@ -280,6 +280,18 @@ export const LINKS: LinkItem[] = [
     url: 'https://videotranscriber.ai',
     category: LinkCategory.TOOL,
   },
+  {
+    id: 'jina-ai',
+    name: 'Jina AI',
+    url: 'https://jina.ai/',
+    category: LinkCategory.TOOL,
+  },
+  {
+    id: 'firecrawl',
+    name: 'firecrawl',
+    url: 'https://www.firecrawl.dev/',
+    category: LinkCategory.TOOL,
+  },
 
   // Cloud
   {
