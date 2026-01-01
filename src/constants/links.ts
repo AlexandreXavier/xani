@@ -292,6 +292,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.firecrawl.dev/',
     category: LinkCategory.TOOL,
   },
+  {
+    id: 'dub',
+    name: 'Dub',
+    url: 'https://app.dub.co/login?next=%2Fcasadocanto%2Flinks',
+    category: LinkCategory.TOOL,
+  },
 
   // Cloud
   {
