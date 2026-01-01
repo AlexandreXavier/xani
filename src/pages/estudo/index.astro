@@ -1,0 +1,90 @@
+---
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import { getCollection } from "astro:content";
+
+const estudoEntries = await getCollection("estudo");
+---
+
+<Layout title={`Estudo | ${SITE.title}`}>
+  <Header activeNav="estudo" />
+  <Main
+    pageTitle="Estudo"
+    pageDesc="Conteúdo de estudos sobre Direito e materiais jurídicos."
+  >
+    <div class="estudo-container">
+      <div class="estudo-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {estudoEntries.map(entry => (
+          <article class="estudo-card">
+            <a href={`/estudo/${entry.slug}/`} class="estudo-link">
+              <h2 class="estudo-title">{entry.data.title}</h2>
+              {entry.data.description && (
+                <p class="estudo-description">{entry.data.description}</p>
+              )}
+              {entry.data.category && (
+                <span class="estudo-category">{entry.data.category}</span>
+              )}
+              <div class="estudo-tags">
+                {entry.data.tags.map(tag => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+      {estudoEntries.length === 0 && (
+        <div class="empty-state">
+          <p>Nenhum conteúdo de estudo encontrado.</p>
+        </div>
+      )}
+    </div>
+  </Main>
+  <Footer />
+</Layout>
+
+<style>
+  .estudo-container {
+    @apply space-y-8;
+  }
+  
+  .estudo-grid {
+    @apply grid gap-6;
+  }
+  
+  .estudo-card {
+    @apply rounded-lg border p-6 transition-all hover:shadow-lg;
+    @apply border-skin-line bg-skin-card;
+  }
+  
+  .estudo-link {
+    @apply block space-y-3;
+  }
+  
+  .estudo-title {
+    @apply text-xl font-semibold text-skin-base hover:text-skin-accent;
+  }
+  
+  .estudo-description {
+    @apply text-sm text-skin-base opacity-70 line-clamp-3;
+  }
+  
+  .estudo-category {
+    @apply inline-block rounded-full bg-skin-accent px-3 py-1 text-xs font-medium text-skin-inverted;
+  }
+  
+  .estudo-tags {
+    @apply flex flex-wrap gap-2;
+  }
+  
+  .tag {
+    @apply rounded bg-skin-fill px-2 py-1 text-xs text-skin-base opacity-70;
+  }
+  
+  .empty-state {
+    @apply text-center py-12 text-skin-base opacity-70;
+  }
+</style>
