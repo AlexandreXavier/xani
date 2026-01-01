@@ -1,0 +1,47 @@
+{
+  "$ref": "#/definitions/estudo",
+  "definitions": {
+    "estudo": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "direito"
+          ]
+        },
+        "language": {
+          "type": "string",
+          "enum": [
+            "pt",
+            "en"
+          ],
+          "default": "pt"
+        },
+        "draft": {
+          "type": "boolean"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

@@ -1,0 +1,98 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+
+export async function getStaticPaths() {
+  const estudoEntries = await getCollection("estudo");
+  return estudoEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={`${entry.data.title} | Estudo`}>
+  <Header activeNav="estudo" />
+  <Main
+    pageTitle={entry.data.title}
+    pageDesc={entry.data.description || "Conteúdo de estudo"}
+  >
+    <article class="estudo-content">
+      <div class="estudo-meta">
+        {entry.data.category && (
+          <span class="category">{entry.data.category}</span>
+        )}
+        <div class="tags">
+          {entry.data.tags.map(tag => (
+            <span class="tag">{tag}</span>
+          ))}
+        </div>
+      </div>
+      <div class="content prose">
+        <Content />
+      </div>
+    </article>
+  </Main>
+  <Footer />
+</Layout>
+
+<style>
+  .estudo-content {
+    @apply space-y-6;
+  }
+  
+  .estudo-meta {
+    @apply flex flex-wrap items-center gap-4 pb-4 mb-6 border-b;
+    @apply border-skin-line;
+  }
+  
+  .category {
+    @apply rounded-full bg-skin-accent px-3 py-1 text-sm font-medium text-skin-inverted;
+  }
+  
+  .tags {
+    @apply flex flex-wrap gap-2;
+  }
+  
+  .tag {
+    @apply rounded bg-skin-fill px-3 py-1 text-sm text-skin-base opacity-70;
+  }
+  
+  .content.prose {
+    @apply max-w-none;
+  }
+  
+  .content.prose h1 {
+    @apply text-3xl font-bold text-skin-base mb-6;
+  }
+  
+  .content.prose h2 {
+    @apply text-2xl font-semibold text-skin-base mb-4 mt-8;
+  }
+  
+  .content.prose h3 {
+    @apply text-xl font-semibold text-skin-base mb-3 mt-6;
+  }
+  
+  .content.prose p {
+    @apply mb-4 text-skin-base leading-relaxed;
+  }
+  
+  .content.prose ul, .content.prose ol {
+    @apply mb-4 pl-6;
+  }
+  
+  .content.prose li {
+    @apply mb-2 text-skin-base;
+  }
+  
+  .content.prose blockquote {
+    @apply border-l-4 border-skin-accent pl-4 italic text-skin-base opacity-70;
+  }
+</style>
