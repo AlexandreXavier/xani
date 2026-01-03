@@ -1,5 +1,4 @@
 import { SITE } from "@config";
-import type { CollectionEntry } from "astro:content";
 
 // Define the type for the blog post data
 interface BlogPostData {
