@@ -22,8 +22,7 @@ export enum LinkCategory {
   DESIGN = 'design',
   TOOL = 'tool',
   CLOUD = 'cloud',
-  UI = 'ui',
-  PORTFOLIO = 'portfolio'
+  UI = 'ui'
 }
 
 export interface LinkItem {

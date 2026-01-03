@@ -7,7 +7,7 @@ export interface Link {
   url: string;
 }
 
-export type CategoryIconName = 'Palette' | 'Wrench' | 'Cloud' | 'Frame' | 'BookUser';
+export type CategoryIconName = 'Palette' | 'Wrench' | 'Cloud' | 'Frame';
 
 export interface CategoryInfo {
   id: LinkCategory;
@@ -36,11 +36,6 @@ export const CATEGORY_CONFIG: Record<LinkCategory, Omit<CategoryInfo, 'id'>> = {
     name: 'UI',
     iconName: 'Frame',
     iconColorClassname: 'text-violet-300',
-  },
-  [LinkCategory.PORTFOLIO]: {
-    name: 'Portfolio',
-    iconName: 'BookUser',
-    iconColorClassname: 'text-emerald-300',
   },
 };
 
@@ -421,13 +416,6 @@ export const LINKS: LinkItem[] = [
     name: 'PatternCraft',
     url: 'https://patterncraft.fun',
     category: LinkCategory.UI,
-  },
-  // Portfolio
-  {
-    id: 'brian-ruiz',
-    name: 'Brian Ruiz',
-    url: 'https://www.b-r.io',
-    category: LinkCategory.PORTFOLIO,
   },
 ];
 
