@@ -7,7 +7,7 @@ export interface Link {
   url: string;
 }
 
-export type CategoryIconName = 'Palette' | 'Wrench' | 'Cloud' | 'Frame';
+export type CategoryIconName = 'Palette' | 'Wrench' | 'Cloud' | 'Frame' | 'Globe';
 
 export interface CategoryInfo {
   id: LinkCategory;
@@ -36,6 +36,11 @@ export const CATEGORY_CONFIG: Record<LinkCategory, Omit<CategoryInfo, 'id'>> = {
     name: 'UI',
     iconName: 'Frame',
     iconColorClassname: 'text-violet-300',
+  },
+  [LinkCategory.WEB]: {
+    name: 'Web',
+    iconName: 'Globe',
+    iconColorClassname: 'text-emerald-300',
   },
 };
 
@@ -416,6 +421,158 @@ export const LINKS: LinkItem[] = [
     name: 'PatternCraft',
     url: 'https://patterncraft.fun',
     category: LinkCategory.UI,
+  },
+
+  // Web
+  {
+    id: 'web-check',
+    name: 'Web Check',
+    url: 'https://web-check.xyz',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'hudson-rock',
+    name: 'Hudson Rock',
+    url: 'https://hudsonrock.com',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'ssl-labs-test',
+    name: 'SSL Labs Test',
+    url: 'https://ssllabs.com',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'virus-total',
+    name: 'Virus Total',
+    url: 'https://virustotal.com',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'shodan',
+    name: 'Shodan',
+    url: 'https://shodan.io',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'archive',
+    name: 'Archive',
+    url: 'https://archive.org',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'urlscan',
+    name: 'URLScan',
+    url: 'https://urlscan.io',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'sucuri-sitecheck',
+    name: 'Sucuri SiteCheck',
+    url: 'https://sitecheck.sucuri.net',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'domain-tools',
+    name: 'Domain Tools',
+    url: 'https://whois.domaintools.com',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'ns-lookup',
+    name: 'NS Lookup',
+    url: 'https://nslookup.io',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'dns-checker',
+    name: 'DNS Checker',
+    url: 'https://dnschecker.org',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'censys',
+    name: 'Censys',
+    url: 'https://search.censys.io',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'page-speed-insights-web',
+    name: 'Page Speed Insights',
+    url: 'https://developers.google.com/speed/pagespeed/insights',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'built-with',
+    name: 'Built With',
+    url: 'https://builtwith.com',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'dns-dumpster',
+    name: 'DNS Dumpster',
+    url: 'https://dnsdumpster.com',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'bgp-tools',
+    name: 'BGP Tools',
+    url: 'https://bgp.tools',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'similar-web',
+    name: 'Similar Web',
+    url: 'https://similarweb.com',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'blacklist-checker',
+    name: 'Blacklist Checker',
+    url: 'https://blacklistchecker.com',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'cloudflare-radar',
+    name: 'Cloudflare Radar',
+    url: 'https://radar.cloudflare.com',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'mozilla-http-observatory',
+    name: 'Mozilla HTTP Observatory',
+    url: 'https://developer.mozilla.org/en-US/observatory',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'abuseipdb',
+    name: 'AbuseIPDB',
+    url: 'https://abuseipdb.com',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'ibm-x-force-exchange',
+    name: 'IBM X-Force Exchange',
+    url: 'https://exchange.xforce.ibmcloud.com',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'urlvoid',
+    name: 'URLVoid',
+    url: 'https://urlvoid.com',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'urlhaus',
+    name: 'URLhaus',
+    url: 'https://urlhaus.abuse.ch',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'any-run',
+    name: 'ANY.RUN',
+    url: 'https://any.run',
+    category: LinkCategory.WEB,
   },
 ];
 
