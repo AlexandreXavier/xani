@@ -164,6 +164,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://ezgif.com/',
     category: LinkCategory.DESIGN,
   },
+  {
+    id: 'reve',
+    name: 'Reve',
+    url: 'https://app.reve.com/',
+    category: LinkCategory.DESIGN,
+  },
 
   // Tool
   {
