@@ -158,6 +158,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.makingsoftware.com',
     category: LinkCategory.DESIGN,
   },
+  {
+    id: 'ezgif',
+    name: 'EZGIF',
+    url: 'https://ezgif.com/',
+    category: LinkCategory.DESIGN,
+  },
 
   // Tool
   {
