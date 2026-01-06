@@ -387,6 +387,12 @@ export const LINKS: LinkItem[] = [
     category: LinkCategory.UI,
   },
   {
+    id: 'tweakcn',
+    name: 'TweakCN',
+    url: 'https://tweakcn.com/',
+    category: LinkCategory.UI,
+  },
+  {
     id: 'daisy-ui',
     name: 'daisyUI',
     url: 'https://daisyui.com',
