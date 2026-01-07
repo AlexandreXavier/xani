@@ -7,7 +7,7 @@ export interface Link {
   url: string;
 }
 
-export type CategoryIconName = 'Palette' | 'Wrench' | 'Cloud' | 'Frame' | 'Globe';
+export type CategoryIconName = 'Palette' | 'Wrench' | 'Cloud' | 'Frame' | 'Globe' | 'Code';
 
 export interface CategoryInfo {
   id: LinkCategory;
@@ -41,6 +41,11 @@ export const CATEGORY_CONFIG: Record<LinkCategory, Omit<CategoryInfo, 'id'>> = {
     name: 'Web',
     iconName: 'Globe',
     iconColorClassname: 'text-emerald-300',
+  },
+  [LinkCategory.CODE]: {
+    name: 'Code',
+    iconName: 'Code',
+    iconColorClassname: 'text-indigo-300',
   },
 };
 
@@ -603,6 +608,14 @@ export const LINKS: LinkItem[] = [
     name: 'ANY.RUN',
     url: 'https://any.run',
     category: LinkCategory.WEB,
+  },
+
+   // Code
+  {
+    id: 'better-t-stack',
+    name: 'Better T Stack',
+    url: 'https://www.better-t-stack.dev/new',
+    category: LinkCategory.CODE,
   },
 ];
 

@@ -24,6 +24,7 @@ export enum LinkCategory {
   CLOUD = 'cloud',
   UI = 'ui',
   WEB = 'web',
+  CODE = 'code',
 }
 
 export interface LinkItem {
