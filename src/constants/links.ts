@@ -7,7 +7,7 @@ export interface Link {
   url: string;
 }
 
-export type CategoryIconName = 'Palette' | 'Wrench' | 'Cloud' | 'Frame' | 'Globe' | 'Code' | 'Music';
+export type CategoryIconName = 'Palette' | 'Wrench' | 'Cloud' | 'Frame' | 'Globe' | 'Code' | 'Music' | 'Bug';
 
 export interface CategoryInfo {
   id: LinkCategory;
@@ -51,6 +51,11 @@ export const CATEGORY_CONFIG: Record<LinkCategory, Omit<CategoryInfo, 'id'>> = {
     name: 'Sound',
     iconName: 'Music',
     iconColorClassname: 'text-cyan-300',
+  },
+  [LinkCategory.SCRAPY]: {
+    name: 'Scrapy',
+    iconName: 'Bug',
+    iconColorClassname: 'text-lime-300',
   },
 };
 
@@ -302,18 +307,7 @@ export const LINKS: LinkItem[] = [
     url: 'https://videotranscriber.ai',
     category: LinkCategory.TOOL,
   },
-  {
-    id: 'jina-ai',
-    name: 'Jina AI',
-    url: 'https://jina.ai/',
-    category: LinkCategory.TOOL,
-  },
-  {
-    id: 'firecrawl',
-    name: 'firecrawl',
-    url: 'https://www.firecrawl.dev/',
-    category: LinkCategory.TOOL,
-  },
+  
   {
     id: 'dub',
     name: 'Dub',
@@ -642,6 +636,46 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.aiva.ai/',
     category: LinkCategory.SOUND,
   },
+
+  // Scrapy
+  {
+    id: 'scrapy-docs',
+    name: 'Scrapy Docs',
+    url: 'https://docs.scrapy.org/en/latest/',
+    category: LinkCategory.SCRAPY,
+  },
+  {
+    id: 'zyte',
+    name: 'Zyte',
+    url: 'https://www.zyte.com/',
+    category: LinkCategory.SCRAPY,
+  },
+  {
+    id: 'scrapfly',
+    name: 'Scrapfly',
+    url: 'https://www.scrapfly.io/',
+    category: LinkCategory.SCRAPY,
+  },
+  {
+    id: 'firecrawl',
+    name: 'firecrawl',
+    url: 'https://www.firecrawl.dev/',
+    category: LinkCategory.SCRAPY,
+  },
+  {
+    id: 'jina-ai',
+    name: 'Jina AI',
+    url: 'https://jina.ai/',
+    category: LinkCategory.SCRAPY,
+  },
+  {
+    id: 'brightdata',
+    name: 'BrightData',
+    url: 'https://brightdata.com/cp/start',
+    category: LinkCategory.SCRAPY,
+  },
+
+  // Sound
   {
     id: 'segment-anything',
     name: 'Segment Anything',
