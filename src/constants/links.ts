@@ -7,7 +7,16 @@ export interface Link {
   url: string;
 }
 
-export type CategoryIconName = 'Palette' | 'Wrench' | 'Cloud' | 'Frame' | 'Globe' | 'Code' | 'Music' | 'Bug';
+export type CategoryIconName =
+  | 'Palette'
+  | 'Wrench'
+  | 'Cloud'
+  | 'Frame'
+  | 'Globe'
+  | 'Code'
+  | 'Music'
+  | 'Bug'
+  | 'Coins';
 
 export interface CategoryInfo {
   id: LinkCategory;
@@ -53,9 +62,14 @@ export const CATEGORY_CONFIG: Record<LinkCategory, Omit<CategoryInfo, 'id'>> = {
     iconColorClassname: 'text-cyan-300',
   },
   [LinkCategory.SCRAPY]: {
-    name: 'Scrapy',
+    name: 'Scraping',
     iconName: 'Bug',
     iconColorClassname: 'text-lime-300',
+  },
+  [LinkCategory.FINTECH]: {
+    name: 'Fintech',
+    iconName: 'Coins',
+    iconColorClassname: 'text-amber-500',
   },
 };
 
@@ -681,6 +695,32 @@ export const LINKS: LinkItem[] = [
     name: 'Segment Anything',
     url: 'https://aidemos.meta.com/segment-anything/editor/segment-audio',
     category: LinkCategory.SOUND,
+  },
+
+  // FinTech
+  {
+    id: 'fin-tech',
+    name: 'FinTech',
+    url: 'https://fin-tech.com',
+    category: LinkCategory.FINTECH,
+  },
+  {
+    id: 'ai-startup-data',
+    name: 'AI Startup Data',
+    url: 'https://aistartupdata.com/',
+    category: LinkCategory.FINTECH,
+  },
+  {
+    id: 'financial-datasets',
+    name: 'Financial Datasets',
+    url: 'https://www.financialdatasets.ai/',
+    category: LinkCategory.FINTECH,
+  },
+  {
+    id: 'dexter',
+    name: 'Dexter',
+    url: 'https://github.com/virattt/dexter',
+    category: LinkCategory.FINTECH,
   },
 ];
 

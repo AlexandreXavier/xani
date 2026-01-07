@@ -27,6 +27,7 @@ export enum LinkCategory {
   CODE = 'code',
   SOUND = 'sound',
   SCRAPY = 'scrapy',
+  FINTECH = 'fintech',
 }
 
 export interface LinkItem {
