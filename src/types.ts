@@ -25,6 +25,7 @@ export enum LinkCategory {
   UI = 'ui',
   WEB = 'web',
   CODE = 'code',
+  SOUND = 'sound',
 }
 
 export interface LinkItem {

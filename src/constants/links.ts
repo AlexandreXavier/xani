@@ -7,7 +7,7 @@ export interface Link {
   url: string;
 }
 
-export type CategoryIconName = 'Palette' | 'Wrench' | 'Cloud' | 'Frame' | 'Globe' | 'Code';
+export type CategoryIconName = 'Palette' | 'Wrench' | 'Cloud' | 'Frame' | 'Globe' | 'Code' | 'Music';
 
 export interface CategoryInfo {
   id: LinkCategory;
@@ -46,6 +46,11 @@ export const CATEGORY_CONFIG: Record<LinkCategory, Omit<CategoryInfo, 'id'>> = {
     name: 'Code',
     iconName: 'Code',
     iconColorClassname: 'text-indigo-300',
+  },
+  [LinkCategory.SOUND]: {
+    name: 'Sound',
+    iconName: 'Music',
+    iconColorClassname: 'text-cyan-300',
   },
 };
 
@@ -616,6 +621,32 @@ export const LINKS: LinkItem[] = [
     name: 'Better T Stack',
     url: 'https://www.better-t-stack.dev/new',
     category: LinkCategory.CODE,
+  },
+
+  // Sound
+  {
+    id: 'loudly',
+    name: 'Loudly',
+    url: 'https://www.loudly.com/',
+    category: LinkCategory.SOUND,
+  },
+  {
+    id: 'splice',
+    name: 'Splice',
+    url: 'https://splice.com/',
+    category: LinkCategory.SOUND,
+  },
+  {
+    id: 'aiva',
+    name: 'AIVA',
+    url: 'https://www.aiva.ai/',
+    category: LinkCategory.SOUND,
+  },
+  {
+    id: 'segment-anything',
+    name: 'Segment Anything',
+    url: 'https://aidemos.meta.com/segment-anything/editor/segment-audio',
+    category: LinkCategory.SOUND,
   },
 ];
 
