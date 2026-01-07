@@ -440,6 +440,18 @@ export const LINKS: LinkItem[] = [
     url: 'https://patterncraft.fun',
     category: LinkCategory.UI,
   },
+  {
+    id: 'gsap',
+    name: 'GSAP',
+    url: 'https://gsap.com/',
+    category: LinkCategory.UI,
+  },
+  {
+    id: 'framer-motion',
+    name: 'Framer Motion',
+    url: 'https://www.framer.com/motion',
+    category: LinkCategory.UI,
+  },
 
   // Web
   {
