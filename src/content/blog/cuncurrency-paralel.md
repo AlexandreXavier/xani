@@ -1,13 +1,13 @@
 ---
 author: Alexandre Xavier
-pubDatetime: 2026-01-10T15:22:00Z
-modDatetime: 2026-01-10T15:22:00Z
+pubDatetime: 2026-01-11T05:05:00Z
+modDatetime: 2026-01-11T05:05:00Z
 title: Concorrência vs. Paralelismo: A Distinção Arquitetural Que Define a Escalabilidade do Seu Software
-slug: Concorrência vs. Paralelismo: A Distinção Arquitetural Que Define a Escalabilidade do Seu Software
+slug: cuncurrency-paralel
 featured: true
 draft: false
 tags:
-  - identity
+  - code
 description:
   Concorrência vs. Paralelismo: A Distinção Arquitetural Que Define a Escalabilidade do Seu Software
 ---
