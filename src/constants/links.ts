@@ -635,7 +635,7 @@ export const LINKS: LinkItem[] = [
     name: 'SkillsMP',
     url: 'https://skillsmp.com/',
     category: LinkCategory.CODE,
-  }
+  },
 
   // Sound
   {
