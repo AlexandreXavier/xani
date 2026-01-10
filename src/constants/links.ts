@@ -630,6 +630,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.better-t-stack.dev/new',
     category: LinkCategory.CODE,
   },
+  {
+    id: 'skillsmp',
+    name: 'SkillsMP',
+    url: 'https://skillsmp.com/',
+    category: LinkCategory.CODE,
+  }
 
   // Sound
   {
