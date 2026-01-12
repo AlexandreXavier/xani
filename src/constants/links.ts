@@ -328,6 +328,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://app.dub.co/login?next=%2Fcasadocanto%2Flinks',
     category: LinkCategory.TOOL,
   },
+  {
+    id: 'ramp',
+    name: 'Ramp',
+    url: 'https://labs.ramp.com/sheets',
+    category: LinkCategory.TOOL,
+  },
 
   // Cloud
   {
