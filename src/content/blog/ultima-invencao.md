@@ -7,7 +7,8 @@ slug: rag
 featured: true
 draft: false
 tags:
-  - ia
+  - ai
+language: pt
 description:
   Cérebro de IA com Super-Memória? 5 Segredos sobre a Tecnologia RAG que Te Vão Surpreender
 ---

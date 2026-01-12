@@ -7,7 +7,8 @@ slug: Mecanismo-Atenção-LLM
 featured: true
 draft: false
 tags:
-  - lesson
+  - ai
+language: pt
 description: Processo de Geração de Texto em LLMs
 ---
 

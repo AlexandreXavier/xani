@@ -8,6 +8,7 @@ featured: true
 draft: false
 tags:
   - economia
+language: pt
 description:
   Um processo judicial, que se tornou uma "Guerra Territorial" pelo Cliente.
 ---

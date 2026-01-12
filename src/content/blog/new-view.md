@@ -8,11 +8,10 @@ featured: true
 draft: false
 tags:
   - geoespacial
+language: pt
 description:
   Uma nova visão do mundo "terreno" já está aqui.
 ---
-
-
 
 # O Fim dos Mapas Como os Conhecemos
 

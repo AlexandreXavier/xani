@@ -8,6 +8,7 @@ featured: true
 draft: false
 tags:
   - produtividade
+language: pt
 description:
   Por Que Fazer Meno  s Pode Ser a Estratégia Mais Poderosa no Trabalho
 ---

@@ -7,7 +7,8 @@ slug: Composability
 featured: true
 draft: false
 tags:
-  - identity
+  - identidade
+language: pt
 description:
   The Composability of Identity across the web.
 ---

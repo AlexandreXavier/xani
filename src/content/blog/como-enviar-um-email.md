@@ -3,12 +3,13 @@ author: Alexandre Xavier
 pubDatetime: 2025-11-21T16:22:00+01:00
 modDatetime: 2025-11-21T19:23:47.400+01:00
 title: Como enviar um email
-description: Como enviar um email
 slug: como-enviar-um-email
 featured: true
 draft: false
 tags:
-  - IA
+  - ai
+language: pt
+description: Como enviar um email
 ---
 
 # Agora e só isso: Enviar um email

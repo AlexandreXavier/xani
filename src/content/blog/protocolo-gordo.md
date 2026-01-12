@@ -8,6 +8,7 @@ featured: true
 draft: false
 tags:
   - web3
+language: pt
 description:
   Diference from Web 2.0 to Web 3.0.
 ---

@@ -8,6 +8,7 @@ featured: true
 draft: false
 tags:
   - redes
+language: pt
 description:
   Caracterização de redes.
 ---

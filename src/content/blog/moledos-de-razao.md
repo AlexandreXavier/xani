@@ -8,6 +8,7 @@ featured: true
 draft: true
 tags:
   - ai
+language: pt
 description:
   Como os politicos ocidentais estão com uma percepçao errada da IA.
 ---

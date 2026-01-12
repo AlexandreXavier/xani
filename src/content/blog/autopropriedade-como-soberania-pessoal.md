@@ -7,7 +7,7 @@ slug: Propriedade
 featured: true
 draft: false
 tags:
-  - identity
+  - identidade
 language: pt
 description:
   Conceito moral e político da propriedade privada.

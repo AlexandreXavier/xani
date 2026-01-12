@@ -3,12 +3,13 @@ author: Alexandre Xavier
 pubDatetime: 2024-06-24T16:22:00+01:00
 modDatetime: 2024-06-26T10:12:47.400+01:00
 title: Explicação Simples de NLP e Modelos
-description: Explicação dos diferentes modelos de PLN utilizados atualmente em IA
 slug: modelos-pln
 featured: true
 draft: false
 tags:
-  - ia
+  - ai
+language: pt
+description: Explicação dos diferentes modelos de PLN utilizados atualmente em IA 
 ---
 
 Os modelos de Processamento de Linguagem Natural (PLN) são algoritmos ou arquiteturas concebidos para compreender, interpretar e gerar linguagem humana. Estes modelos são um subconjunto das técnicas de inteligência artificial (IA) e aprendizagem automática. Os modelos de PLN visam colmatar o fosso entre a comunicação humana e a compreensão computacional, permitindo que as máquinas processem, analisem e gerem dados de linguagem natural.

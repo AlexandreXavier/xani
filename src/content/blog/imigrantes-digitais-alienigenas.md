@@ -8,10 +8,11 @@ featured: true
 draft: false
 tags:
   - politica
-
+language: pt
 description:
   Uma nova visão do mundo "terreno" já está aqui.
 ---
+
 ![Escala da IA](https://6bhbi182cm.ufs.sh/f/eaJqTiDzJSPW4C0zyNgTAzn2NbeKvHo1lRVIDF36wrQ5LWUg "Escala da IA")
 
 

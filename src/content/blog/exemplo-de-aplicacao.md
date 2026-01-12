@@ -8,9 +8,11 @@ featured: true
 draft: false
 tags:
   - app
+language: pt
 description:
   Uma aplicação como exemplo para enteder o papel dos agentes de IA na geração de conteúdo.
 ---
+
 [![Linha do Tempo](https://dtsc7359gj.ufs.sh/f/TbfYGcuq8Y7WgUlKHsnaSQJLKyRwnhHD0Pf5cEpvYO1CukWo)](https://linhadotempo.pt)
 
 ## Uma aplicação para enteder o papel dos agentes de IA na geração de conteúdo.

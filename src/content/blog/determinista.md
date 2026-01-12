@@ -8,6 +8,7 @@ featured: true
 draft: false
 tags:
   - web3
+language: pt
 description:
   Como Criar Software Determinista
 ---

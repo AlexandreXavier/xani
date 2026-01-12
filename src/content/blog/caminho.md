@@ -3,12 +3,13 @@ author: Alexandre Xavier
 pubDatetime: 2025-01-09T16:22:00+01:00
 modDatetime: 2025-01-09T19:23:47.400+01:00
 title: O Caminho
-description: O perigo da centralização e a importância da descentralização
 slug: descentralizacao
 featured: true
 draft: false
 tags:
   - web3
+language: pt
+description: O perigo da centralização e a importância da descentralização
 ---
 
 # O Perigo da Centralização e a Importância da Descentralização

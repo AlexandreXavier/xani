@@ -8,6 +8,7 @@ featured: true
 draft: false
 tags:
   - vela
+language: pt
 description:
   A Fascinante origem de "Caralho"!!! Mais do que um Calão
 ---

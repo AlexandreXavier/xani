@@ -8,6 +8,7 @@ featured: true
 draft: false
 tags:
   - code
+language: pt
 description: "Concorrência vs. Paralelismo: A Distinção Arquitetural Que Define a Escalabilidade do Seu Software"
 ---
 

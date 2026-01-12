@@ -8,6 +8,7 @@ featured: true
 draft: false
 tags:
   - blockchain
+language: pt
 description:
   Explicação do que é uma blockchain.
 ---

@@ -8,6 +8,7 @@ featured: true
 draft: false
 tags:
   - bitcoin
+language: pt
 description:
   Bitcoin é um novo caminho.
 ---

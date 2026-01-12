@@ -7,7 +7,8 @@ slug: A "Era da Escala" da IA
 featured: true
 draft: false
 tags:
-  - ia
+  - ai
+language: pt
 description:
    A revolução da Inteligência Artificial está a acontecer de uma forma estranhamente subtil.
 ---

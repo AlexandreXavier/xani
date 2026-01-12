@@ -8,6 +8,7 @@ featured: true
 draft: false
 tags:
   - economia
+language: pt
 description:
   Porque a Competição é Para Perdedores
 ---

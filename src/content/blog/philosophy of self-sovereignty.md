@@ -8,6 +8,7 @@ featured: true
 draft: false
 tags:
   - privacidade
+language: pt
 description:
   Autossuficiência Digital
 ---
