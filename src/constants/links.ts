@@ -334,6 +334,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://labs.ramp.com/sheets',
     category: LinkCategory.TOOL,
   },
+  {
+    id: 'clarity',
+    name: 'Clarity',
+    url: 'https://clarity.rahul.gs/',
+    category: LinkCategory.TOOL,
+  },
 
   // Cloud
   {
@@ -414,6 +420,12 @@ export const LINKS: LinkItem[] = [
     id: 'tweakcn',
     name: 'TweakCN',
     url: 'https://tweakcn.com/',
+    category: LinkCategory.UI,
+  },
+  {
+    id: 'tailark',
+    name: 'Tailark',
+    url: 'https://tailark.com/',
     category: LinkCategory.UI,
   },
   {
