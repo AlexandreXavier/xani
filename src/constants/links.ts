@@ -654,6 +654,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://skillsmp.com/',
     category: LinkCategory.CODE,
   },
+  {
+    id: 'tinyprd',
+    name: 'TinyPRD',
+    url: 'https://www.tinyprd.app/',
+    category: LinkCategory.CODE,
+  },
 
   // Sound
   {
