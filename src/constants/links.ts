@@ -660,6 +660,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.tinyprd.app/',
     category: LinkCategory.CODE,
   },
+  {
+    id: 'aimpl',
+    name: 'AIMPL',
+    url: 'https://www.aitmpl.com/trending.html',
+    category: LinkCategory.CODE,
+  },
 
   // Sound
   {
