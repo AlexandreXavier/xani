@@ -16,7 +16,8 @@ export type CategoryIconName =
   | 'Code'
   | 'Music'
   | 'Bug'
-  | 'Coins';
+  | 'Coins'
+  | 'Lock';
 
 export interface CategoryInfo {
   id: LinkCategory;
@@ -70,6 +71,11 @@ export const CATEGORY_CONFIG: Record<LinkCategory, Omit<CategoryInfo, 'id'>> = {
     name: 'Fintech',
     iconName: 'Coins',
     iconColorClassname: 'text-amber-500',
+  },
+  [LinkCategory.CRYPT]: {
+    name: 'Crypt',
+    iconName: 'Lock',
+    iconColorClassname: 'text-purple-400',
   },
 };
 
@@ -666,6 +672,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.aitmpl.com/trending.html',
     category: LinkCategory.CODE,
   },
+  {
+    id: 'skills-sh',
+    name: 'Skills.sh',
+    url: 'https://skills.sh/',
+    category: LinkCategory.CODE,
+  },
 
   // Sound
   {
@@ -758,6 +770,21 @@ export const LINKS: LinkItem[] = [
     url: 'https://github.com/virattt/dexter',
     category: LinkCategory.FINTECH,
   },
+
+  //crypt
+  {
+    id: 'bitcoinheiros',
+    name: 'Bitcoin Heiros',
+    url: 'https://bitcoinheiros.com/',
+    category: LinkCategory.CRYPT,
+  },
+  {
+    id: 'nostr',
+    name: 'Nostr',
+    url: 'https://nostr.co.uk/',
+    category: LinkCategory.CRYPT,
+  }
+
 ];
 
 // Helper function to get categories with link counts

@@ -1,6 +1,6 @@
 import type { LinkCategoryWithCount, CategoryIconName } from "@constants/links";
 import type { LucideIcon } from "lucide-react";
-import { Bug, Cloud, Code, Coins, Frame, Globe, Music, Palette, Wrench } from "lucide-react";
+import { Bug, Cloud, Code, Coins, Frame, Globe, Lock, Music, Palette, Wrench } from "lucide-react";
 
 const ICON_COMPONENTS: Record<CategoryIconName, LucideIcon> = {
   Bug,
@@ -9,6 +9,7 @@ const ICON_COMPONENTS: Record<CategoryIconName, LucideIcon> = {
   Coins,
   Frame,
   Globe,
+  Lock,
   Music,
   Palette,
   Wrench,
