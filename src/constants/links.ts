@@ -17,7 +17,8 @@ export type CategoryIconName =
   | 'Music'
   | 'Bug'
   | 'Coins'
-  | 'Lock';
+  | 'Lock'
+  | 'Sparkles';
 
 export interface CategoryInfo {
   id: LinkCategory;
@@ -76,6 +77,11 @@ export const CATEGORY_CONFIG: Record<LinkCategory, Omit<CategoryInfo, 'id'>> = {
     name: 'Crypt',
     iconName: 'Lock',
     iconColorClassname: 'text-purple-400',
+  },
+  [LinkCategory.INSPIRE]: {
+    name: 'Inspire',
+    iconName: 'Sparkles',
+    iconColorClassname: 'text-pink-300',
   },
 };
 
@@ -646,6 +652,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://any.run',
     category: LinkCategory.WEB,
   },
+  {
+    id: 'web-check',
+    name: 'Web Check',
+    url: 'https://web-check.xyz',
+    category: LinkCategory.WEB,
+  },
 
    // Code
   {
@@ -783,6 +795,20 @@ export const LINKS: LinkItem[] = [
     name: 'Nostr',
     url: 'https://nostr.co.uk/',
     category: LinkCategory.CRYPT,
+  },
+
+  //Inspire
+  {
+    id: 'radio-botareu',
+    name: 'Radio Botareu',
+    url: 'https://radio.garden/listen/radio-botareu/nZ6s23-G',
+    category: LinkCategory.INSPIRE,
+  },
+  {
+    id: 'microsculpture',
+    name: 'Microsculpture',
+    url: 'https://microsculpture.net/',
+    category: LinkCategory.INSPIRE,
   }
 
 ];

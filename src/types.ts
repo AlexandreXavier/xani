@@ -29,6 +29,7 @@ export enum LinkCategory {
   SCRAPY = 'scrapy',
   FINTECH = 'fintech',
   CRYPT = 'crypt',
+  INSPIRE = 'inspire',
 }
 
 export interface LinkItem {
