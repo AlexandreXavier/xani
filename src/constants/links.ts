@@ -357,6 +357,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://excalidraw.com/',
     category: LinkCategory.TOOL,
   },
+  {
+    id: 't3-chat',
+    name: 'T3 Chat',
+    url: 'https://t3.chat/',
+    category: LinkCategory.TOOL,
+  },
 
   // Cloud
   {
@@ -713,6 +719,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://skills.sh/',
     category: LinkCategory.CODE,
   },
+  {
+    id: 'huggingface',
+    name: 'Hugging Face',
+    url: 'https://huggingface.co/',
+    category: LinkCategory.CODE,
+  },
 
   // Sound
   {
@@ -731,6 +743,12 @@ export const LINKS: LinkItem[] = [
     id: 'aiva',
     name: 'AIVA',
     url: 'https://www.aiva.ai/',
+    category: LinkCategory.SOUND,
+  },
+  {
+    id: 'cloudconvert',
+    name: 'CloudConvert',
+    url: 'https://cloudconvert.com/',
     category: LinkCategory.SOUND,
   },
 
