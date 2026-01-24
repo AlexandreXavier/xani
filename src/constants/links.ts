@@ -214,6 +214,12 @@ export const LINKS: LinkItem[] = [
 
   // Tool
   {
+    id: 'clawd',
+    name: 'Clawd',
+    url: 'https://clawd.bot/',
+    category: LinkCategory.TOOL,
+  },
+  {
     id: 'v0',
     name: 'v0',
     url: 'https://v0.dev',

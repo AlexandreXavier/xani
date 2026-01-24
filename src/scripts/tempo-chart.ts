@@ -1123,9 +1123,17 @@ class TempoChartElement extends HTMLElement {
   }
 }
 
-// Register the custom element
-if (!customElements.get('tempo-chart')) {
-  customElements.define('tempo-chart', TempoChartElement);
+// Wait for THREE to be available before registering
+function registerWhenReady() {
+  if (typeof THREE !== 'undefined' && THREE.OrbitControls) {
+    if (!customElements.get('tempo-chart')) {
+      customElements.define('tempo-chart', TempoChartElement);
+    }
+  } else {
+    setTimeout(registerWhenReady, 50);
+  }
 }
+
+registerWhenReady();
 
 export { TempoChartElement };
