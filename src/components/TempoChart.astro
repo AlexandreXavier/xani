@@ -1,0 +1,383 @@
+---
+/**
+ * Porto Climate Dashboard - Astro Component
+ * 3D interactive weather visualization using Three.js
+ *
+ * @example
+ * <TempoChart />
+ * <TempoChart height="500px" />
+ * <TempoChart city={{ latitude: 38.7223, longitude: -9.1393, name: 'Lisboa' }} />
+ */
+
+interface Props {
+  city?: { latitude: number; longitude: number; name: string };
+  height?: string;
+}
+
+const {
+  city = { latitude: 41.1496, longitude: -8.611, name: 'Porto' },
+  height = '600px'
+} = Astro.props;
+---
+
+<tempo-chart data-city={JSON.stringify(city)} style={`height: ${height}`}>
+  <div class="chart-container">
+    <div class="chart-card">
+      <div class="chart-wrapper">
+        <div class="chart-loading">
+          <div class="spinner"></div>
+          <span>A carregar dados climáticos...</span>
+        </div>
+        <div class="chart-error">
+          <div class="error-icon">⚠️</div>
+          <div class="error-message">Falha ao carregar dados climáticos. Verifique a sua ligação e tente novamente.</div>
+          <button class="retry-btn" id="retryBtn">Tentar novamente</button>
+        </div>
+      </div>
+    </div>
+    <div class="legend-container">
+      <div class="legend-item" data-type="temperature">
+        <div class="legend-color" style="background: #DC2626;"></div>
+        <span class="legend-text">temperatura</span>
+      </div>
+      <div class="legend-item" data-type="wind">
+        <div class="legend-color" style="background: #6B7280;"></div>
+        <span class="legend-text">vento</span>
+      </div>
+      <div class="legend-toggle" id="viewModeToggle">
+        <span class="legend-text" id="viewModeText">simples</span>
+      </div>
+    </div>
+    <p class="instructions">Arraste para rodar</p>
+    <div class="action-buttons">
+      <button class="share-btn" id="shareBtn">
+        <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+        <span id="shareBtnText">Partilhar</span>
+      </button>
+    </div>
+  </div>
+</tempo-chart>
+
+<style>
+  /* Fallback CSS variables if blog doesn't define them */
+  tempo-chart {
+    --bg-primary: var(--bg-primary, #FBFEFB);
+    --bg-secondary: var(--bg-secondary, #FFFFFF);
+    --bg-chart: var(--bg-chart, #F5F7F5);
+    --text-primary: var(--text-primary, #282728);
+    --text-secondary: var(--text-secondary, #9CA3AF);
+    --text-muted: var(--text-muted, #9CA3AF);
+    --accent: var(--accent, #006CAC);
+    --border-color: var(--border-color, #E5E7EB);
+    --border-light: var(--border-light, #F3F4F6);
+    --shadow: var(--shadow, rgba(0, 0, 0, 0.04));
+    --shadow-strong: var(--shadow-strong, rgba(0, 0, 0, 0.08));
+    --legend-bg: var(--legend-bg, rgba(251, 254, 251, 0.95));
+    --legend-border: var(--legend-border, rgba(0, 0, 0, 0.08));
+  }
+
+  :global([data-theme="dark"]) tempo-chart {
+    --bg-primary: var(--bg-primary, #1a1a1a);
+    --bg-secondary: var(--bg-secondary, #242424);
+    --bg-chart: var(--bg-chart, #1a1a1a);
+    --text-primary: var(--text-primary, #FBFEFB);
+    --text-secondary: var(--text-secondary, #9CA3AF);
+    --text-muted: var(--text-muted, #6B7280);
+    --accent: var(--accent, #38BDF8);
+    --border-color: var(--border-color, #374151);
+    --border-light: var(--border-light, #4B5563);
+    --shadow: var(--shadow, rgba(0, 0, 0, 0.3));
+    --shadow-strong: var(--shadow-strong, rgba(0, 0, 0, 0.4));
+    --legend-bg: var(--legend-bg, rgba(36, 36, 36, 0.95));
+    --legend-border: var(--legend-border, rgba(255, 255, 255, 0.1));
+  }
+
+  tempo-chart {
+    display: block;
+    width: 100%;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .chart-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+  }
+
+  .chart-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 12px;
+    box-shadow: 0 1px 3px var(--shadow);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .chart-wrapper {
+    position: relative;
+    flex: 1;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--bg-chart);
+    min-height: 450px;
+  }
+
+  .chart-wrapper :global(canvas) {
+    display: block;
+  }
+
+  /* Loading spinner */
+  .chart-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-muted);
+    z-index: 20;
+  }
+
+  .chart-loading .spinner {
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--border-color);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Error state */
+  .chart-error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    color: var(--text-muted);
+    z-index: 20;
+  }
+
+  .chart-error.show {
+    display: flex;
+  }
+
+  .chart-error .error-icon {
+    font-size: 2rem;
+  }
+
+  .chart-error .error-message {
+    font-size: 0.875rem;
+    max-width: 280px;
+    line-height: 1.5;
+  }
+
+  .retry-btn {
+    font-family: 'IBM Plex Mono', monospace;
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  .retry-btn:hover {
+    opacity: 0.8;
+  }
+
+  /* Legend */
+  .legend-container {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 10;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--legend-bg);
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .legend-item:hover {
+    border-color: var(--text-secondary);
+  }
+
+  .legend-item.focused {
+    border-color: currentColor;
+    background: var(--bg-secondary);
+  }
+
+  .legend-item.dimmed {
+    opacity: 0.35;
+  }
+
+  .legend-item[data-type="temperature"] {
+    color: #DC2626;
+  }
+
+  .legend-item[data-type="wind"] {
+    color: #6B7280;
+  }
+
+  .legend-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--legend-bg);
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    user-select: none;
+  }
+
+  .legend-toggle:hover {
+    border-color: var(--text-secondary);
+  }
+
+  .legend-toggle.detailed {
+    border-color: var(--accent);
+    background: var(--bg-secondary);
+  }
+
+  .legend-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+  }
+
+  .legend-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    text-transform: lowercase;
+  }
+
+  .instructions {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    margin-top: 8px;
+    font-weight: 400;
+  }
+
+  /* Action buttons container */
+  .action-buttons {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+  }
+
+  /* Share button */
+  .share-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: lowercase;
+    letter-spacing: 0;
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+
+  .share-btn:hover {
+    border-color: var(--text-secondary);
+    color: var(--text-primary);
+  }
+
+  .share-btn.copied {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .share-btn svg {
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .legend-container {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .legend-item,
+    .legend-toggle {
+      padding: 5px 8px;
+    }
+
+    .legend-text {
+      font-size: 0.7rem;
+    }
+
+    .chart-wrapper {
+      min-height: 320px;
+    }
+
+    .action-buttons {
+      bottom: 8px;
+      right: 8px;
+      gap: 6px;
+    }
+
+    .share-btn {
+      padding: 4px 8px;
+      font-size: 0.7rem;
+    }
+  }
+</style>
+
+<!-- Three.js CDN scripts - must be loaded before component script -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+<!-- Component initialization script -->
+<script>
+  import '../scripts/tempo-chart';
+</script>
