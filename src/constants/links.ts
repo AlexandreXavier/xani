@@ -333,7 +333,6 @@ export const LINKS: LinkItem[] = [
     url: 'https://videotranscriber.ai',
     category: LinkCategory.TOOL,
   },
-  
   {
     id: 'dub',
     name: 'Dub',
@@ -350,6 +349,12 @@ export const LINKS: LinkItem[] = [
     id: 'clarity',
     name: 'Clarity',
     url: 'https://clarity.rahul.gs/',
+    category: LinkCategory.TOOL,
+  },
+  {
+    id: 'excalidraw',
+    name: 'Excalidraw',
+    url: 'https://excalidraw.com/',
     category: LinkCategory.TOOL,
   },
 
@@ -420,8 +425,20 @@ export const LINKS: LinkItem[] = [
     url: 'https://cloud.laravel.com',
     category: LinkCategory.CLOUD,
   },
+  {
+    id: 'hostinger-auth',
+    name: 'Hostinger Auth',
+    url: 'https://auth.hostinger.com/login',
+    category: LinkCategory.CLOUD,
+  },
 
   // UI
+  {
+    id: 'remotion',
+    name: 'Remotion',
+    url: 'https://www.remotion.dev/',
+    category: LinkCategory.UI,
+  },
   {
     id: 'shadcn-ui',
     name: 'shadcn/ui',
@@ -503,9 +520,9 @@ export const LINKS: LinkItem[] = [
 
   // Web
   {
-    id: 'web-check',
-    name: 'Web Check',
-    url: 'https://web-check.xyz',
+    id: 'higgsfield',
+    name: 'Higgsfield',
+    url: 'https://higgsfield.ai',
     category: LinkCategory.WEB,
   },
   {
@@ -653,9 +670,15 @@ export const LINKS: LinkItem[] = [
     category: LinkCategory.WEB,
   },
   {
+    id: 'product-hunt',
+    name: 'Product Hunt',
+    url: 'https://www.producthunt.com/',
+    category: LinkCategory.WEB,
+  },
+  {
     id: 'web-check',
     name: 'Web Check',
-    url: 'https://web-check.xyz',
+    url: 'https://web-check.xyz/',
     category: LinkCategory.WEB,
   },
 
