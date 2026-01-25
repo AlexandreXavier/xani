@@ -693,6 +693,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://web-check.xyz/',
     category: LinkCategory.WEB,
   },
+  {
+    id: 'nullschool',
+    name: 'Nullschool',
+    url: 'https://earth.nullschool.net/pt/#current/wind/surface/level/grid=on/orthographic=-6.92,39.53,4063',
+    category: LinkCategory.WEB,
+  },
 
    // Code
   {

@@ -373,11 +373,41 @@ const {
   }
 </style>
 
-<!-- Three.js CDN scripts - must be loaded before component script -->
-<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script is:inline src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-
-<!-- Component initialization script -->
+<!-- Three.js loaded dynamically to ensure proper order -->
 <script>
-  import '../scripts/tempo-chart';
+  // Dynamically load Three.js and OrbitControls in correct order
+  function loadScript(src: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      // Check if already loaded
+      if (src.includes('three.min.js') && typeof (window as any).THREE !== 'undefined') {
+        resolve();
+        return;
+      }
+      if (src.includes('OrbitControls') && typeof (window as any).THREE !== 'undefined' && (window as any).THREE.OrbitControls) {
+        resolve();
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = src;
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error(`Failed to load ${src}`));
+      document.head.appendChild(script);
+    });
+  }
+
+  async function initThreeJS() {
+    try {
+      // Load Three.js first
+      await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js');
+      // Then load OrbitControls (requires THREE to exist)
+      await loadScript('https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js');
+      // Finally import the component
+      await import('../scripts/tempo-chart');
+    } catch (error) {
+      console.error('Failed to initialize Three.js:', error);
+    }
+  }
+
+  initThreeJS();
 </script>
