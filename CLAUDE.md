@@ -22,20 +22,19 @@ npm run sync         # Regenerate Astro TypeScript types
 
 ### Content Collections (src/content/)
 Type-safe markdown content with Zod schemas defined in `src/content/config.ts`:
-- **blog/** - Blog posts with title, pubDate, tags, language, draft status, featured flag
-- **estudo/** - Study materials (Portuguese learning articles)
-- **episode/** - Podcast episodes
+- **blog/** - Blog posts with title, pubDatetime, tags, language (pt/en), draft status, featured flag
+- **estudo/** - Study materials with category and tags (defaults to Portuguese)
 
 ### Key Directories
 - **src/components/** - Astro (static) and React (interactive) components
 - **src/layouts/** - Page templates (Layout.astro is the main HTML wrapper)
 - **src/pages/** - File-based routing (Astro pages and API endpoints)
 - **src/utils/** - Post filtering, sorting, pagination, OG image generation
-- **src/config.ts** - Site metadata, social links, pagination settings
+- **src/config.ts** - Site metadata, social links, pagination settings (postPerPage, scheduledPostMargin)
 - **src/styles/base.css** - Tailwind directives and CSS custom properties for theming
 
 ### Path Aliases
-Configured in tsconfig.json: `@components`, `@utils`, `@layouts`, `@content`, `@config`, `@assets`, `@styles`, `@types`, `@helpers`
+Configured in tsconfig.json: `@components/*`, `@utils/*`, `@layouts/*`, `@content/*`, `@config`, `@assets/*`, `@styles/*`, `@/types`, `@contexts/*`, `@constants/*`, `@pages/*`
 
 ### Component Patterns
 - Astro components (.astro) for static content - preferred when no interactivity needed
@@ -43,16 +42,22 @@ Configured in tsconfig.json: `@components`, `@utils`, `@layouts`, `@content`, `@
 - Props defined with TypeScript interfaces
 
 ### Content Processing
-- `postFilter.ts` - Excludes drafts and future posts (15-min margin)
+- `postFilter.ts` - Excludes drafts and future posts (15-min margin configured in SITE.scheduledPostMargin)
 - `getSortedPosts.ts` - Filters and sorts posts by date
-- Dynamic OG images generated via Satori + Resvg at `/posts/[slug].png`
+- Dynamic OG images generated via Satori + Resvg at `/posts/[slug]/index.png`
 
 ## Theming
 
 CSS custom properties in `src/styles/base.css` control colors:
 - Light mode: blue accent (#006CAC)
 - Dark mode: orange accent (#FF6B01)
-- 30 additional DaisyUI themes available in `src/helpers/themes.json`
+- Additional DaisyUI themes available in `src/helpers/themes.json`
+
+## Environment Variables
+
+```bash
+PUBLIC_GOOGLE_SITE_VERIFICATION=your-google-site-verification-value
+```
 
 ## Git Workflow
 
