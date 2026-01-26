@@ -38,20 +38,20 @@ Configured in tsconfig.json: `@components/*`, `@utils/*`, `@layouts/*`, `@conten
 
 ### Component Patterns
 - Astro components (.astro) for static content - preferred when no interactivity needed
-- React components (.tsx) only for interactive features (Search, LinkManager)
+- React components (.tsx) for interactive features (Search, LinkManager, Card, etc.)
 - Props defined with TypeScript interfaces
 
 ### Content Processing
-- `postFilter.ts` - Excludes drafts and future posts (15-min margin configured in SITE.scheduledPostMargin)
-- `getSortedPosts.ts` - Filters and sorts posts by date
-- Dynamic OG images generated via Satori + Resvg at `/posts/[slug]/index.png`
+- `postFilter.ts` / `episodeFilter.ts` - Excludes drafts and future posts (15-min margin configured in SITE.scheduledPostMargin)
+- `getSortedPosts.ts` / `getSortedEpisode.ts` - Filters and sorts content by date
+- Dynamic OG images generated via Satori + Resvg in `src/utils/generateOgImages.tsx`, served at `/og.png` (site) and `/posts/[slug]/index.png` (per-post)
 
 ## Theming
 
-CSS custom properties in `src/styles/base.css` control colors:
-- Light mode: blue accent (#006CAC)
-- Dark mode: orange accent (#FF6B01)
-- Additional DaisyUI themes available in `src/helpers/themes.json`
+CSS custom properties in `src/styles/base.css` control colors via RGB values:
+- Light mode: blue accent (0, 108, 172)
+- Dark mode: orange accent (255, 107, 1)
+- Theme data available in `src/helpers/themes.json`
 
 ## Environment Variables
 

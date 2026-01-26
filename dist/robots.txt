@@ -1,4 +1,7 @@
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
 User-agent: *
 Allow: /
 
-Sitemap: https://xani/sitemap-index.xml
+Sitemap: https://xani.me/sitemap-index.xml
