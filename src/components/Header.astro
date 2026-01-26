@@ -4,7 +4,7 @@ import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
 
 export interface Props {
-  activeNav?: "posts" | "tags" | "link" | "about" | "search" | "estudo" | "tempo";
+  activeNav?: "posts" | "tags" | "about" | "search" | "lab";
 }
 
 const { activeNav } = Astro.props;
@@ -65,20 +65,33 @@ const { activeNav } = Astro.props;
               Tags
             </a>
           </li>
-          <li>
-            <a href="/link/" class={activeNav === "link" ? "active" : ""}>
-              Link
-            </a>
-          </li>
-          <li>
-            <a href="/estudo/" class={activeNav === "estudo" ? "active" : ""}>
-              Estudo
-            </a>
-          </li>
-          <li>
-            <a href="/tempo/" class={activeNav === "tempo" ? "active" : ""}>
-              Tempo
-            </a>
+          <li class="dropdown">
+            <button
+              class={`dropdown-trigger ${activeNav === "lab" ? "active" : ""}`}
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              Lab
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="chevron"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="/link/">Link</a></li>
+              <li><a href="/estudo/">Estudo</a></li>
+              <li><a href="/tempo/">Tempo</a></li>
+            </ul>
           </li>
           <li>
             <a href="/about/" class={activeNav === "about" ? "active" : ""}>
@@ -170,11 +183,50 @@ const { activeNav } = Astro.props;
   nav ul li:nth-last-child(2) {
     @apply col-span-1;
   }
-  nav a.active {
+  nav a.active,
+  nav button.active {
     @apply underline decoration-wavy decoration-2 underline-offset-4;
   }
   nav a.active svg {
     @apply fill-skin-accent;
+  }
+
+  /* Dropdown styles */
+  .dropdown {
+    @apply relative;
+  }
+  .dropdown-trigger {
+    @apply flex items-center gap-1 w-full px-4 py-3 text-center font-medium hover:text-skin-accent sm:my-0 sm:px-2 sm:py-1;
+  }
+  .dropdown-trigger .chevron {
+    @apply transition-transform duration-200;
+  }
+  .dropdown-menu {
+    @apply hidden absolute left-1/2 -translate-x-1/2 top-full mt-1 min-w-[120px] bg-skin-fill border border-skin-line rounded-md shadow-lg z-50;
+  }
+  .dropdown-menu li {
+    @apply col-span-1;
+  }
+  .dropdown-menu li a {
+    @apply block w-full px-4 py-2 text-sm hover:bg-skin-card hover:text-skin-accent;
+  }
+  /* Desktop: show on hover */
+  @media (min-width: 640px) {
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu {
+      @apply block;
+    }
+    .dropdown:hover .chevron,
+    .dropdown:focus-within .chevron {
+      @apply rotate-180;
+    }
+  }
+  /* Mobile: show when open */
+  .dropdown.is-open .dropdown-menu {
+    @apply block static translate-x-0 mt-2 border-0 shadow-none bg-transparent;
+  }
+  .dropdown.is-open .chevron {
+    @apply rotate-180;
   }
 
   nav button {
@@ -220,6 +272,20 @@ const { activeNav } = Astro.props;
         menuExpanded ? "Open Menu" : "Close Menu"
       );
       menuItems?.classList.toggle("display-none");
+    });
+
+    // Dropdown toggle for mobile
+    const dropdownTrigger = document.querySelector(".dropdown-trigger");
+    const dropdown = document.querySelector(".dropdown");
+
+    dropdownTrigger?.addEventListener("click", (e) => {
+      // Only toggle on mobile (when hamburger menu is visible)
+      if (window.innerWidth < 640) {
+        e.preventDefault();
+        dropdown?.classList.toggle("is-open");
+        const isOpen = dropdown?.classList.contains("is-open");
+        dropdownTrigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      }
     });
   }
 
