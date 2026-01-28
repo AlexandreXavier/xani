@@ -699,6 +699,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://web-check.xyz/',
     category: LinkCategory.WEB,
   },
+  {
+    id: 'exploit-db',
+    name: 'Exploit DB',
+    url: 'https://www.exploit-db.com/',
+    category: LinkCategory.WEB,
+  },
 
   // Code
   {
