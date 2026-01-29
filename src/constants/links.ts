@@ -529,6 +529,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://tweakcn.com/',
     category: LinkCategory.UI,
   },
+  {
+    id: 'supacolors',
+    name: 'SupaColors',
+    url: 'https://supacolors.studio/',
+    category: LinkCategory.UI,
+  },
 
   // Web
   {
@@ -737,12 +743,7 @@ export const LINKS: LinkItem[] = [
     url: 'https://skillsmp.com/',
     category: LinkCategory.CODE,
   },
-  {
-    id: 'tinyprd',
-    name: 'TinyPRD',
-    url: 'https://www.tinyprd.app/',
-    category: LinkCategory.CODE,
-  },
+  
 
   // Sound
   {
