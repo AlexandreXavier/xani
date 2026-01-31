@@ -868,6 +868,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://radio.garden/listen/radio-botareu/nZ6s23-G',
     category: LinkCategory.INSPIRE,
   },
+  {
+    id: 'moltbook',
+    name: 'Moltbook',
+    url: 'https://www.moltbook.com/',
+    category: LinkCategory.INSPIRE,
+  },
 ];
 
 // Helper function to get categories with link counts
