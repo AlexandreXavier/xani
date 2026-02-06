@@ -211,6 +211,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://webgradients.com',
     category: LinkCategory.DESIGN,
   },
+  {
+    id: 'godly',
+    name: 'Godly',
+    url: 'https://godly.website',
+    category: LinkCategory.DESIGN,
+  },
 
   // Tool
   {
@@ -445,6 +451,12 @@ export const LINKS: LinkItem[] = [
   },
 
   // UI
+  {
+    id: '21st',
+    name: '21st',
+    url: 'https://21st.dev/community/components',
+    category: LinkCategory.UI,
+  },
   {
     id: 'aceternity-ui',
     name: 'Aceternity UI',
