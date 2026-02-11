@@ -9,6 +9,7 @@ import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SOCIALS } from "@config";
+import PersonWebsiteSchema from "@components/schema/PersonWebsiteSchema.astro";
 
 const posts = await getCollection("blog");
 
@@ -20,10 +21,11 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 ---
 
 <Layout>
+  <PersonWebsiteSchema />
   <Header />
   <main id="main-content">
     <section id="hero">
-     <!--  <h1>Alexandre Xavier</h1> -->
+      <h1>Alexandre Xavier</h1>
       <a
         target="_blank"
         href="/rss.xml"

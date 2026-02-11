@@ -1,0 +1,34 @@
+---
+/**
+ * BreadcrumbList Schema for navigation
+ * Provides structured breadcrumb data for search results
+ */
+
+import { SITE } from "@config";
+
+interface BreadcrumbItem {
+  name: string;
+  url?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+const siteUrl = SITE.website.replace(/\/$/, '');
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    ...(item.url && { "item": item.url.startsWith('http') ? item.url : `${siteUrl}${item.url}` })
+  }))
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

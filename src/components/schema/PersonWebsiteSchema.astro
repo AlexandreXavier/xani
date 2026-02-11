@@ -1,0 +1,71 @@
+---
+/**
+ * Person + WebSite Schema for homepage
+ * Establishes author entity and site-level structured data
+ */
+
+import { SITE, SOCIALS } from "@config";
+
+const siteUrl = SITE.website.replace(/\/$/, '');
+
+// Build sameAs array from active social links
+const sameAsLinks = SOCIALS
+  .filter(social => social.active && social.name !== 'Mail' && social.name !== 'WhatsApp')
+  .map(social => social.href);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": `${siteUrl}/`,
+      "name": SITE.title,
+      "description": SITE.desc,
+      "publisher": {
+        "@id": `${siteUrl}/#person`
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": `${siteUrl}/search/?q={search_term_string}`
+        },
+        "query-input": "required name=search_term_string"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      "name": SITE.author,
+      "url": `${siteUrl}/`,
+      "image": {
+        "@type": "ImageObject",
+        "url": `${siteUrl}/xani.jpg`,
+        "width": 400,
+        "height": 400
+      },
+      "description": "IT Analyst & AI Developer with 25+ years experience. Expertise in cloud-based SaaS deployments, AI context pipelines, Python, Go, and TypeScript.",
+      "email": "mailto:jalexandre.xavier@gmail.com",
+      "telephone": "+351965458663",
+      "jobTitle": "IT Analyst & AI Developer",
+      "knowsAbout": [
+        "Go",
+        "Python",
+        "TypeScript",
+        "Lisp",
+        "Haxe",
+        "AI Context Pipelines",
+        "Cloud SaaS",
+        "Software Architecture",
+        "RAG",
+        "CAD Systems"
+      ],
+      "sameAs": sameAsLinks
+    }
+  ]
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

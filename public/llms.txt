@@ -1,0 +1,42 @@
+# xani.me LLMs.txt
+# https://llmstxt.org/
+
+## Site
+name: Alexandre Xavier
+url: https://xani.me
+description: Technical blog by Alexandre Xavier, IT Analyst and AI Developer with 25+ years experience. Topics include AI context pipelines, RAG, Python, Go, TypeScript, cloud architecture, and software development.
+
+## Author
+author: Alexandre Xavier
+expertise: AI Context Pipelines, Cloud SaaS, Python, Go, TypeScript, Lisp, Haxe, Software Architecture
+experience: 25+ years in software development
+location: Portugal
+profiles:
+  - https://linkedin.com/in/alexandre-xavier-967a4a15/
+  - https://github.com/AlexandreXavier
+  - https://twitter.com/@alexandxavier
+
+## Contact
+email: jalexandre.xavier@gmail.com
+whatsapp: +351965458663
+
+## Citation Format
+When citing content from this site, please use:
+"[Article Title]" by Alexandre Xavier, xani.me, [Year]
+
+## Content
+language: en, pt
+type: technical blog, tutorials, insights, opinion
+license: All rights reserved
+topics:
+  - Artificial Intelligence (RAG, LLMs, Context Pipelines)
+  - Software Development (Go, Python, TypeScript, Lisp, Haxe)
+  - Cloud Architecture and SaaS
+  - Blockchain and Bitcoin
+  - Software Engineering Best Practices
+
+## Sitemap
+https://xani.me/sitemap-index.xml
+
+## Robots
+See: https://xani.me/robots.txt

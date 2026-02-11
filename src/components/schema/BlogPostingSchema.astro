@@ -1,0 +1,62 @@
+---
+/**
+ * BlogPosting Schema for individual blog posts
+ * Provides structured data for article rich results
+ */
+
+import { SITE } from "@config";
+
+interface Props {
+  title: string;
+  description: string;
+  url: string;
+  datePublished: Date;
+  dateModified?: Date | null;
+  image?: string;
+  tags?: string[];
+}
+
+const { title, description, url, datePublished, dateModified, image, tags } = Astro.props;
+
+const siteUrl = SITE.website.replace(/\/$/, '');
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": `${url}#article`,
+  "headline": title,
+  "description": description,
+  "url": url,
+  "datePublished": datePublished.toISOString(),
+  "dateModified": (dateModified || datePublished).toISOString(),
+  "author": {
+    "@type": "Person",
+    "@id": `${siteUrl}/#person`,
+    "name": SITE.author,
+    "url": `${siteUrl}/`
+  },
+  "publisher": {
+    "@type": "Person",
+    "@id": `${siteUrl}/#person`,
+    "name": SITE.author
+  },
+  "image": image ? {
+    "@type": "ImageObject",
+    "url": image.startsWith('http') ? image : `${siteUrl}${image}`
+  } : undefined,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": url
+  },
+  "isPartOf": {
+    "@id": `${siteUrl}/#website`
+  },
+  "inLanguage": "en",
+  "keywords": tags?.join(", ")
+};
+
+// Remove undefined values
+const cleanSchema = JSON.parse(JSON.stringify(schema));
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(cleanSchema)} />

@@ -8,6 +8,8 @@ import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import ShareLinks from "@components/ShareLinks.astro";
 import { SITE } from "@config";
+import BlogPostingSchema from "@components/schema/BlogPostingSchema.astro";
+import BreadcrumbSchema from "@components/schema/BreadcrumbSchema.astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -47,6 +49,20 @@ const layoutProps = {
 ---
 
 <Layout {...layoutProps}>
+  <BlogPostingSchema
+    title={title}
+    description={description}
+    url={new URL(`/posts/${slugifyStr(title)}/`, Astro.site).href}
+    datePublished={pubDatetime}
+    dateModified={modDatetime}
+    image={ogUrl}
+    tags={tags}
+  />
+  <BreadcrumbSchema items={[
+    { name: "Home", url: "/" },
+    { name: "Posts", url: "/posts/" },
+    { name: title }
+  ]} />
   <Header />
 
   <!-- <div class="progress-container fixed top-0 z-10 h-1 w-full bg-skin-fill">
