@@ -30,6 +30,7 @@ export enum LinkCategory {
   FINTECH = 'fintech',
   CRYPT = 'crypt',
   INSPIRE = 'inspire',
+  AGENT = 'agent',
 }
 
 export interface LinkItem {

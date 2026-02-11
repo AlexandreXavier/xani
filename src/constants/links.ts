@@ -18,7 +18,8 @@ export type CategoryIconName =
   | 'Bug'
   | 'Coins'
   | 'Lock'
-  | 'Sparkles';
+  | 'Sparkles'
+  | 'Bot';
 
 export interface CategoryInfo {
   id: LinkCategory;
@@ -82,6 +83,11 @@ export const CATEGORY_CONFIG: Record<LinkCategory, Omit<CategoryInfo, 'id'>> = {
     name: 'Inspire',
     iconName: 'Sparkles',
     iconColorClassname: 'text-pink-300',
+  },
+  [LinkCategory.AGENT]: {
+    name: 'Agent',
+    iconName: 'Bot',
+    iconColorClassname: 'text-orange-300',
   },
 };
 
@@ -553,6 +559,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://supacolors.studio/',
     category: LinkCategory.UI,
   },
+  {
+    id: 'happy-hues',
+    name: 'Happy Hues',
+    url: 'https://www.happyhues.co/palettes/10',
+    category: LinkCategory.UI,
+  },
 
   // Web
   {
@@ -619,12 +631,6 @@ export const LINKS: LinkItem[] = [
     id: 'domain-tools',
     name: 'Domain Tools',
     url: 'https://whois.domaintools.com',
-    category: LinkCategory.WEB,
-  },
-  {
-    id: 'higgsfield',
-    name: 'Higgsfield',
-    url: 'https://higgsfield.ai',
     category: LinkCategory.WEB,
   },
   {
@@ -766,6 +772,19 @@ export const LINKS: LinkItem[] = [
     name: 'SkillsMP',
     url: 'https://skillsmp.com/',
     category: LinkCategory.CODE,
+  },
+  {
+    id: 'aitmpl',
+    name: 'AITMPL',
+    url: 'https://www.aitmpl.com/skills',
+    category: LinkCategory.CODE,
+  },
+  //Agent
+  {
+    id: 'moltyscan',
+    name: 'Moltyscan',
+    url: 'https://www.moltyscan.com/',
+    category: LinkCategory.AGENT,
   },
   
 
