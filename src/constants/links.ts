@@ -375,6 +375,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://videotranscriber.ai',
     category: LinkCategory.TOOL,
   },
+ {
+  id: 'higgsfield',
+  name: 'Higgsfield',
+  url: 'https://higgsfield.ai/create/motion-control',
+  category: LinkCategory.TOOL,
+ },
 
   // Cloud
   {
@@ -723,6 +729,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.exploit-db.com/',
     category: LinkCategory.WEB,
   },
+{
+  id: 'shotdeck',
+  name: 'Shotdeck',
+  url: 'https://shotdeck.com/browse/stills',
+  category: LinkCategory.WEB,
+},
 
   // Code
   {
