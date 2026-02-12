@@ -114,6 +114,7 @@ export type LinkCategoryWithCount = LinkCategoryOption & { count: number };
 
 
 export const LINKS: LinkItem[] = [
+
   // Design
   {
     id: 'animations-on-the-web',
@@ -385,6 +386,12 @@ export const LINKS: LinkItem[] = [
   id: 'higgsfield',
   name: 'Higgsfield',
   url: 'https://higgsfield.ai/create/motion-control',
+  category: LinkCategory.TOOL,
+ },
+ {
+  id: '3e8blueprint',
+  name: '3E8 Blueprint',
+  url: 'https://www.3e8blueprint.com/',
   category: LinkCategory.TOOL,
  },
 
@@ -779,6 +786,7 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.aitmpl.com/skills',
     category: LinkCategory.CODE,
   },
+
   //Agent
   {
     id: 'moltyscan',
@@ -786,7 +794,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.moltyscan.com/',
     category: LinkCategory.AGENT,
   },
-  
+  {
+    id: 'openclaw',
+    name: 'OpenCLAW',
+    url: 'https://trustmrr.com/special-category/openclaw',
+    category: LinkCategory.AGENT,
+  },
 
   // Sound
   {
