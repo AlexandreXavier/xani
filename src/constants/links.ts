@@ -19,7 +19,8 @@ export type CategoryIconName =
   | 'Coins'
   | 'Lock'
   | 'Sparkles'
-  | 'Bot';
+  | 'Bot'
+  | 'Smartphone';
 
 export interface CategoryInfo {
   id: LinkCategory;
@@ -88,6 +89,11 @@ export const CATEGORY_CONFIG: Record<LinkCategory, Omit<CategoryInfo, 'id'>> = {
     name: 'Agent',
     iconName: 'Bot',
     iconColorClassname: 'text-orange-300',
+  },
+  [LinkCategory.NATIVE]: {
+    name: 'Native',
+    iconName: 'Smartphone',
+    iconColorClassname: 'text-teal-300',
   },
 };
 
@@ -785,6 +791,14 @@ export const LINKS: LinkItem[] = [
     name: 'AITMPL',
     url: 'https://www.aitmpl.com/skills',
     category: LinkCategory.CODE,
+  },
+
+  //Native
+  {
+    id: 'reactive-x',
+    name: 'Reactive X',
+    url: 'https://www.reacticx.com/',
+    category: LinkCategory.NATIVE,
   },
 
   //Agent

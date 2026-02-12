@@ -31,6 +31,7 @@ export enum LinkCategory {
   CRYPT = 'crypt',
   INSPIRE = 'inspire',
   AGENT = 'agent',
+  NATIVE = 'native',
 }
 
 export interface LinkItem {
