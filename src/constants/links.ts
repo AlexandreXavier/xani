@@ -400,6 +400,18 @@ export const LINKS: LinkItem[] = [
   url: 'https://www.3e8blueprint.com/',
   category: LinkCategory.TOOL,
  },
+ {
+  id: 'favicon',
+  name: 'Favicon',
+  url: 'https://favicon.io/',
+  category: LinkCategory.TOOL,
+ },
+{
+  id: 'png2svg',
+  name: 'PNG to SVG',
+  url: 'https://png2svg.com/',
+  category: LinkCategory.TOOL,
+}
 
   // Cloud
   {
