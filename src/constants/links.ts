@@ -411,7 +411,7 @@ export const LINKS: LinkItem[] = [
   name: 'PNG to SVG',
   url: 'https://png2svg.com/',
   category: LinkCategory.TOOL,
-}
+},
 
   // Cloud
   {
