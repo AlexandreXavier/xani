@@ -798,12 +798,6 @@ export const LINKS: LinkItem[] = [
     url: 'https://skillsmp.com/',
     category: LinkCategory.CODE,
   },
-  {
-    id: 'aitmpl',
-    name: 'AITMPL',
-    url: 'https://www.aitmpl.com/skills',
-    category: LinkCategory.CODE,
-  },
 
   //Native
   {
@@ -856,6 +850,12 @@ export const LINKS: LinkItem[] = [
     id: 'splice',
     name: 'Splice',
     url: 'https://splice.com/',
+    category: LinkCategory.SOUND,
+  },
+  {
+    id: 'elevenlabs',
+    name: 'ElevenLabs',
+    url: 'https://elevenlabs.io/app/home',
     category: LinkCategory.SOUND,
   },
 
@@ -954,6 +954,18 @@ export const LINKS: LinkItem[] = [
     id: 'moltbook',
     name: 'Moltbook',
     url: 'https://www.moltbook.com/',
+    category: LinkCategory.INSPIRE,
+  },
+  {
+    id: 'hackaday',
+    name: 'Hackaday',
+    url: 'https://hackaday.com/',
+    category: LinkCategory.INSPIRE,
+  },
+  {
+    id: 'visualcapitalist',
+    name: 'Visual Capitalist',
+    url: 'https://www.visualcapitalist.com/',
     category: LinkCategory.INSPIRE,
   },
 ];
