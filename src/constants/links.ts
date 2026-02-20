@@ -896,6 +896,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.zyte.com/',
     category: LinkCategory.SCRAPY,
   },
+  {
+    id: 'mullvad',
+    name: 'Mullvad',
+    url: 'https://mullvad.net/en/check',
+    category: LinkCategory.SCRAPY,
+  },
 
   // Fintech
   {
