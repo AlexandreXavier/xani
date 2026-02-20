@@ -936,6 +936,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://nostr.co.uk/',
     category: LinkCategory.CRYPT,
   },
+  {
+    id: 'cryptotaxmap',
+    name: 'CryptoTaxMap',
+    url: 'https://www.cryptotaxmap.io/',
+    category: LinkCategory.CRYPT,
+  },
 
   // Inspire
   {
@@ -966,6 +972,12 @@ export const LINKS: LinkItem[] = [
     id: 'visualcapitalist',
     name: 'Visual Capitalist',
     url: 'https://www.visualcapitalist.com/',
+    category: LinkCategory.INSPIRE,
+  },
+  {
+    id: 'marble',
+    name: 'Marble',
+    url: 'https://marble.worldlabs.ai/',
     category: LinkCategory.INSPIRE,
   },
 ];
