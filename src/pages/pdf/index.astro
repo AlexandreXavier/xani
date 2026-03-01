@@ -1,0 +1,19 @@
+---
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import PDFConverterIsland from "@components/pdf/PDFConverterIsland";
+---
+
+<Layout title={`PDF to PNG | ${SITE.title}`}>
+  <Header activeNav="lab" />
+  <Main
+    pageTitle="PDF to PNG"
+    pageDesc="Convert PDF pages to PNG images or extract embedded images. All processing happens in your browser - no uploads to any server."
+  >
+    <PDFConverterIsland client:only="react" />
+  </Main>
+  <Footer />
+</Layout>
