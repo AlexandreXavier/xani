@@ -35,14 +35,6 @@ export class AnnotationStorage {
      * @returns {boolean}
      */
     has(key: string): boolean;
-    /**
-     * @returns {Object | null}
-     */
-    getAll(): Object | null;
-    /**
-     * @param {Object} obj
-     */
-    setAll(obj: Object): void;
     get size(): number;
     resetModified(): void;
     /**
@@ -63,6 +55,17 @@ export class AnnotationStorage {
         transfer: any[];
     };
     get editorStats(): any;
+    resetModifiedIds(): void;
+    updateEditor(annotationId: any, data: any): boolean;
+    getEditor(annotationId: any): any;
+    /**
+     * @returns {{ids: Set<string>, hash: string}}
+     */
+    get modifiedIds(): {
+        ids: Set<string>;
+        hash: string;
+    };
+    [Symbol.iterator](): MapIterator<[any, any]>;
     #private;
 }
 /**
@@ -81,6 +84,7 @@ export class PrintAnnotationStorage extends AnnotationStorage {
         hash: any;
         transfer: any;
     };
+    get modifiedIds(): any;
     #private;
 }
 export const SerializableEmpty: Readonly<{

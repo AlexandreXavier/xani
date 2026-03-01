@@ -48,7 +48,6 @@ export namespace LinkTarget {
  * @implements {IPDFLinkService}
  */
 export class PDFLinkService implements IPDFLinkService {
-    static "__#57@#isValidExplicitDest"(dest: any): boolean;
     /**
      * @param {PDFLinkServiceOptions} options
      */
@@ -102,12 +101,20 @@ export class PDFLinkService implements IPDFLinkService {
      */
     goToPage(val: number | string): void;
     /**
+     * Scrolls to a specific location in the PDF document.
+     * @param {number} pageNumber - The page number to scroll to.
+     * @param {number} x - The x-coordinate to scroll to in page coordinates.
+     * @param {number} y - The y-coordinate to scroll to in page coordinates.
+     * @param {Object} [options]
+     */
+    goToXY(pageNumber: number, x: number, y: number, options?: Object): void;
+    /**
      * Adds various attributes (href, title, target, rel) to hyperlinks.
      * @param {HTMLAnchorElement} link
      * @param {string} url
      * @param {boolean} [newWindow]
      */
-    addLinkAttributes(link: HTMLAnchorElement, url: string, newWindow?: boolean | undefined): void;
+    addLinkAttributes(link: HTMLAnchorElement, url: string, newWindow?: boolean): void;
     /**
      * @param {string|Array} dest - The PDF destination object.
      * @returns {string} The hyperlink to the PDF object.

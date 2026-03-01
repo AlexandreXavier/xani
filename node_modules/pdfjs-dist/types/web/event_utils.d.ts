@@ -24,13 +24,13 @@ export class EventBus {
      * @param {function} listener
      * @param {Object} [options]
      */
-    on(eventName: string, listener: Function, options?: Object | undefined): void;
+    on(eventName: string, listener: Function, options?: Object): void;
     /**
      * @param {string} eventName
      * @param {function} listener
      * @param {Object} [options]
      */
-    off(eventName: string, listener: Function, options?: Object | undefined): void;
+    off(eventName: string, listener: Function, options?: Object): void;
     /**
      * @param {string} eventName
      * @param {Object} data
@@ -47,7 +47,7 @@ export class EventBus {
     #private;
 }
 /**
- * NOTE: Only used in the Firefox build-in pdf viewer.
+ * NOTE: Only used in the Firefox built-in pdf viewer.
  */
 export class FirefoxEventBus extends EventBus {
     constructor(globalEventNames: any, externalServices: any, isInAutomation: any);

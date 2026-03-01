@@ -1,89 +1,42 @@
+export class InkDrawingOptions extends DrawingOptions {
+    constructor(viewerParameters: any);
+    _viewParameters: any;
+    clone(): InkDrawingOptions;
+}
 /**
  * Basic draw editor in order to generate an Ink annotation.
  */
-export class InkEditor extends AnnotationEditor {
-    static _defaultColor: null;
-    static _defaultOpacity: number;
-    static _defaultThickness: number;
+export class InkEditor extends DrawingEditor {
     static _type: string;
     static _editorType: number;
+    static _defaultDrawingOptions: null;
     /** @inheritdoc */
     static initialize(l10n: any, uiManager: any): void;
     /** @inheritdoc */
-    static updateDefaultParams(type: any, value: any): void;
+    static getDefaultDrawingOptions(options: any): any;
     /** @inheritdoc */
-    static get defaultPropertiesToUpdate(): any[][];
-    /**
-     * Convert into a Path2D.
-     * @param {Array<Array<number>>} bezier
-     * @returns {Path2D}
-     */
-    static "__#25@#buildPath2D"(bezier: Array<Array<number>>): Path2D;
-    static "__#25@#toPDFCoordinates"(points: any, rect: any, rotation: any): any;
-    static "__#25@#fromPDFCoordinates"(points: any, rect: any, rotation: any): any;
+    static get typesMap(): any;
     /** @inheritdoc */
-    static deserialize(data: any, parent: any, uiManager: any): AnnotationEditor | null;
-    constructor(params: any);
-    color: any;
-    thickness: any;
-    opacity: any;
-    paths: any[];
-    bezierPath2D: any[];
-    allRawPaths: any[];
-    currentPath: any[];
-    scaleFactor: number;
-    translationX: number;
-    translationY: number;
+    static createDrawerInstance(x: any, y: any, parentWidth: any, parentHeight: any, rotation: any): InkDrawOutliner;
     /** @inheritdoc */
-    updateParams(type: any, value: any): void;
+    static deserializeDraw(pageX: any, pageY: any, pageWidth: any, pageHeight: any, innerMargin: any, data: any): any;
+    defaultL10nId: string;
     /** @inheritdoc */
-    get propertiesToUpdate(): any[][];
-    canvas: HTMLCanvasElement | null | undefined;
-    onScaleChanging(): void;
-    /**
-     * onpointerdown callback for the canvas we're drawing on.
-     * @param {PointerEvent} event
-     */
-    canvasPointerdown(event: PointerEvent): void;
-    /**
-     * onpointermove callback for the canvas we're drawing on.
-     * @param {PointerEvent} event
-     */
-    canvasPointermove(event: PointerEvent): void;
-    /**
-     * onpointerup callback for the canvas we're drawing on.
-     * @param {PointerEvent} event
-     */
-    canvasPointerup(event: PointerEvent): void;
-    /**
-     * onpointerleave callback for the canvas we're drawing on.
-     * @param {PointerEvent} event
-     */
-    canvasPointerleave(event: PointerEvent): void;
-    ctx: CanvasRenderingContext2D | null | undefined;
-    /**
-     * When the dimensions of the div change the inner canvas must
-     * renew its dimensions, hence it must redraw its own contents.
-     * @param {number} width - the new width of the div
-     * @param {number} height - the new height of the div
-     * @returns
-     */
-    setDimensions(width: number, height: number): void;
+    get toolbarButtons(): (string | null)[][];
+    get colorType(): number;
+    get color(): any;
+    get opacity(): any;
     /** @inheritdoc */
-    serialize(): {
-        annotationType: number;
-        color: number[];
+    createDrawingOptions({ color, thickness, opacity }: {
+        color: any;
         thickness: any;
         opacity: any;
-        paths: {
-            bezier: any;
-            points: any;
-        }[];
-        pageIndex: number;
-        rect: any[];
-        rotation: number;
-        structTreeParentId: any;
-    } | null;
+    }): void;
+    _drawingOptions: any;
+    /** @inheritdoc */
+    serialize(isForCopying?: boolean): Object | null;
     #private;
 }
-import { AnnotationEditor } from "./editor.js";
+import { DrawingOptions } from "./draw.js";
+import { DrawingEditor } from "./draw.js";
+import { InkDrawOutliner } from "./drawers/inkdraw.js";

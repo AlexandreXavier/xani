@@ -3,8 +3,10 @@ export type PageViewport = import("../src/display/display_utils").PageViewport;
 export type AnnotationStorage = import("../src/display/annotation_storage").AnnotationStorage;
 export type IDownloadManager = import("./interfaces").IDownloadManager;
 export type IPDFLinkService = import("./interfaces").IPDFLinkService;
+export type StructTreeLayerBuilder = import("./struct_tree_layer_builder.js").StructTreeLayerBuilder;
 export type TextAccessibilityManager = import("./text_accessibility.js").TextAccessibilityManager;
 export type AnnotationEditorUIManager = import("../src/display/editor/tools.js").AnnotationEditorUIManager;
+export type CommentManager = import("./comment_manager.js").CommentManager;
 export type AnnotationLayerBuilderOptions = {
     pdfPage: PDFPageProxy;
     annotationStorage?: import("../src/display/annotation_storage").AnnotationStorage | undefined;
@@ -16,6 +18,7 @@ export type AnnotationLayerBuilderOptions = {
     renderForms: boolean;
     linkService: IPDFLinkService;
     downloadManager?: import("./interfaces").IDownloadManager | undefined;
+    enableComment?: boolean | undefined;
     enableScripting?: boolean | undefined;
     hasJSActionsPromise?: Promise<boolean> | undefined;
     fieldObjectsPromise?: Promise<{
@@ -25,6 +28,15 @@ export type AnnotationLayerBuilderOptions = {
     accessibilityManager?: import("./text_accessibility.js").TextAccessibilityManager | undefined;
     annotationEditorUIManager?: import("../src/pdf").AnnotationEditorUIManager | undefined;
     onAppend?: Function | undefined;
+    commentManager?: import("./comment_manager.js").CommentManager | undefined;
+};
+export type AnnotationLayerBuilderRenderOptions = {
+    viewport: PageViewport;
+    /**
+     * - The default value is "display".
+     */
+    intent?: string | undefined;
+    structTreeLayer?: import("./struct_tree_layer_builder.js").StructTreeLayerBuilder | undefined;
 };
 /**
  * @typedef {Object} AnnotationLayerBuilderOptions
@@ -35,6 +47,7 @@ export type AnnotationLayerBuilderOptions = {
  * @property {boolean} renderForms
  * @property {IPDFLinkService} linkService
  * @property {IDownloadManager} [downloadManager]
+ * @property {boolean} [enableComment]
  * @property {boolean} [enableScripting]
  * @property {Promise<boolean>} [hasJSActionsPromise]
  * @property {Promise<Object<string, Array<Object>> | null>}
@@ -43,18 +56,26 @@ export type AnnotationLayerBuilderOptions = {
  * @property {TextAccessibilityManager} [accessibilityManager]
  * @property {AnnotationEditorUIManager} [annotationEditorUIManager]
  * @property {function} [onAppend]
+ * @property {CommentManager} [commentManager]
+ */
+/**
+ * @typedef {Object} AnnotationLayerBuilderRenderOptions
+ * @property {PageViewport} viewport
+ * @property {string} [intent] - The default value is "display".
+ * @property {StructTreeLayerBuilder} [structTreeLayer]
  */
 export class AnnotationLayerBuilder {
     /**
      * @param {AnnotationLayerBuilderOptions} options
      */
-    constructor({ pdfPage, linkService, downloadManager, annotationStorage, imageResourcesPath, renderForms, enableScripting, hasJSActionsPromise, fieldObjectsPromise, annotationCanvasMap, accessibilityManager, annotationEditorUIManager, onAppend, }: AnnotationLayerBuilderOptions);
+    constructor({ pdfPage, linkService, downloadManager, annotationStorage, imageResourcesPath, renderForms, enableComment, commentManager, enableScripting, hasJSActionsPromise, fieldObjectsPromise, annotationCanvasMap, accessibilityManager, annotationEditorUIManager, onAppend, }: AnnotationLayerBuilderOptions);
     pdfPage: import("../src/display/api").PDFPageProxy;
     linkService: import("./interfaces").IPDFLinkService;
     downloadManager: import("./interfaces").IDownloadManager | undefined;
     imageResourcesPath: string;
     renderForms: boolean;
     annotationStorage: import("../src/display/annotation_storage").AnnotationStorage;
+    enableComment: boolean;
     enableScripting: boolean;
     _hasJSActionsPromise: Promise<boolean>;
     _fieldObjectsPromise: Promise<{
@@ -68,14 +89,20 @@ export class AnnotationLayerBuilder {
     _cancelled: boolean;
     _eventBus: any;
     /**
-     * @param {PageViewport} viewport
-     * @param {string} intent (default value is 'display')
+     * @param {AnnotationLayerBuilderRenderOptions} options
      * @returns {Promise<void>} A promise that is resolved when rendering of the
      *   annotations is complete.
      */
-    render(viewport: PageViewport, intent?: string): Promise<void>;
+    render({ viewport, intent, structTreeLayer }: AnnotationLayerBuilderRenderOptions): Promise<void>;
     cancel(): void;
-    hide(): void;
+    hide(internal?: boolean): void;
+    hasEditableAnnotations(): boolean;
+    /**
+     * @param {Array<Object>} inferredLinks
+     * @returns {Promise<void>} A promise that is resolved when the inferred links
+     *   are added to the annotation layer.
+     */
+    injectLinkAnnotations(inferredLinks: Array<Object>): Promise<void>;
     #private;
 }
 import { AnnotationLayer } from "../src/pdf";

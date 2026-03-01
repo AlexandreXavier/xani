@@ -6,27 +6,44 @@ export class StampEditor extends AnnotationEditor {
     static _editorType: number;
     /** @inheritdoc */
     static initialize(l10n: any, uiManager: any): void;
-    static get supportedTypes(): any;
-    static get supportedTypesStr(): any;
     /** @inheritdoc */
-    static isHandlingMimeForPasting(mime: any): any;
+    static isHandlingMimeForPasting(mime: any): boolean;
     /** @inheritdoc */
     static paste(item: any, parent: any): void;
+    static computeTelemetryFinalData(data: any): {
+        hasAltText: any;
+        hasNoAltText: any;
+    };
     /** @inheritdoc */
-    static deserialize(data: any, parent: any, uiManager: any): AnnotationEditor | null;
+    static deserialize(data: any, parent: any, uiManager: any): Promise<AnnotationEditor | null>;
     constructor(params: any);
+    defaultL10nId: string;
     /** @inheritdoc */
-    getImageForAltText(): null;
+    get telemetryFinalData(): {
+        type: string;
+        hasAltText: boolean;
+    };
+    mlGuessAltText(imageData?: null, updateAltTextData?: boolean): Promise<any>;
     /** @inheritdoc */
-    serialize(isForCopying?: boolean, context?: null): {
-        annotationType: number;
-        bitmapId: null;
-        pageIndex: number;
-        rect: any[];
-        rotation: number;
-        isSvg: boolean;
-        structTreeParentId: any;
-    } | null;
+    onceAdded(focus: any): void;
+    /** @inheritdoc */
+    get toolbarButtons(): (string | object)[][];
+    setCanvas(annotationElementId: any, canvas: any): void;
+    onScaleChanging(): void;
+    copyCanvas(maxDataDimension: any, maxPreviewDimension: any, createImageData?: boolean): {
+        canvas: HTMLCanvasElement | null;
+        width: any;
+        height: any;
+        imageData: {
+            width: any;
+            height: any;
+            data: ImageDataArray;
+        } | null;
+    };
+    /** @inheritdoc */
+    serialize(isForCopying?: boolean, context?: null): Object | null;
+    /** @inheritdoc */
+    renderAnnotationElement(annotation: any): null;
     #private;
 }
 import { AnnotationEditor } from "./editor.js";
