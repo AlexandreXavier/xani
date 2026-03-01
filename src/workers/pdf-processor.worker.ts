@@ -228,7 +228,6 @@ async function renderPagesToZip(
       // Render page
       await page.render({
         canvasContext: ctx as unknown as CanvasRenderingContext2D,
-        canvas: canvas as unknown as HTMLCanvasElement,
         viewport: viewport,
         background: "rgba(0,0,0,0)",
       }).promise;
