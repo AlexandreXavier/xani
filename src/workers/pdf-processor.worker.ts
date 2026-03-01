@@ -157,7 +157,7 @@ async function loadPDF(
     isEvalSupported: false,
     disableFontFace: false,
     disableWorker: true,
-  });
+  } as Parameters<typeof pdfjsLib.getDocument>[0]);
 
   return loadingTask.promise;
 }
@@ -228,9 +228,9 @@ async function renderPagesToZip(
       // Render page
       await page.render({
         canvasContext: ctx as unknown as CanvasRenderingContext2D,
+        canvas: canvas as unknown as HTMLCanvasElement,
         viewport: viewport,
         background: "rgba(0,0,0,0)",
-        canvas: canvas as unknown as HTMLCanvasElement,
       }).promise;
 
       // Convert to PNG blob

@@ -35,6 +35,9 @@ export default defineConfig({
     optimizeDeps: {
       exclude: ["@resvg/resvg-js"],
     },
+    worker: {
+      format: "es",
+    },
     resolve: {
       alias: {
         "@assets": "/src/assets",

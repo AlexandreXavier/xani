@@ -177,7 +177,7 @@ async function loadPDFDocumentForValidation(
          password,
          isEvalSupported: false,
          disableWorker: true,
-       })
+       } as Parameters<typeof pdfjsLib.getDocument>[0])
        .promise;
    }
  }
