@@ -430,8 +430,8 @@ async function handleStartRender(
         jobId,
         err.code === 1 ? "PASSWORD_REQUIRED" : "PASSWORD_INCORRECT",
         err.code === 1
-          ? "This PDF is password-protected."
-          : "Incorrect password. Please try again.",
+          ? "Este PDF está protegido por palavra-passe."
+          : "Palavra-passe incorreta. Por favor tenta novamente.",
         true
       );
       return;
@@ -440,7 +440,7 @@ async function handleStartRender(
     sendError(
       jobId,
       "RENDER_ERROR",
-      `Failed to render PDF: ${err.message}`,
+      `Falha ao renderizar PDF: ${err.message}`,
       true,
       "rendering"
     );
@@ -477,7 +477,7 @@ async function handleStartExtract(
       sendError(
         jobId,
         "NO_IMAGES_FOUND",
-        `No images found matching criteria (minimum ${minImagePx}×${minImagePx} pixels). This PDF may contain only vector graphics.`,
+        `Nenhuma imagem encontrada com os critérios (mínimo ${minImagePx}×${minImagePx} pixels). Este PDF pode conter apenas gráficos vetoriais.`,
         false
       );
       return;
@@ -508,8 +508,8 @@ async function handleStartExtract(
         jobId,
         err.code === 1 ? "PASSWORD_REQUIRED" : "PASSWORD_INCORRECT",
         err.code === 1
-          ? "This PDF is password-protected."
-          : "Incorrect password. Please try again.",
+          ? "Este PDF está protegido por palavra-passe."
+          : "Palavra-passe incorreta. Por favor tenta novamente.",
         true
       );
       return;
@@ -518,7 +518,7 @@ async function handleStartExtract(
     sendError(
       jobId,
       "RENDER_ERROR",
-      `Failed to extract images: ${err.message}`,
+      `Falha ao extrair imagens: ${err.message}`,
       true,
       "extracting"
     );

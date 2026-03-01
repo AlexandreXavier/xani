@@ -204,9 +204,9 @@ function detectCapabilities(): BrowserCapabilities {
   let warning: string | undefined;
 
   if (!supported) {
-    warning = "Your browser does not support this tool. Please use a modern browser.";
+    warning = "O teu navegador não suporta esta ferramenta. Por favor utiliza um navegador moderno.";
   } else if (isMobile) {
-    warning = "For best results, use a desktop browser.";
+    warning = "Para melhores resultados, utiliza um navegador de computador.";
   }
 
   return {
@@ -341,7 +341,7 @@ export function usePDFConverter() {
           type: "PROCESSING_ERROR",
           error: {
             code: "WORKER_CRASH",
-            message: "Processing failed unexpectedly. Please try again.",
+            message: "O processamento falhou inesperadamente. Por favor tenta novamente.",
             debugToken: generateDebugToken("WORKER_CRASH"),
             recoverable: true,
           },
@@ -361,7 +361,7 @@ export function usePDFConverter() {
           type: "VALIDATION_ERROR",
           error: {
             code: "INVALID_TYPE",
-            message: "Please select a PDF file",
+            message: "Por favor seleciona um ficheiro PDF",
             debugToken: generateDebugToken("INVALID_TYPE"),
             recoverable: false,
           },
@@ -375,7 +375,7 @@ export function usePDFConverter() {
           type: "VALIDATION_ERROR",
           error: {
             code: "SIZE_EXCEEDED",
-            message: "File too large. Maximum size is 25 MB.",
+            message: "Ficheiro demasiado grande. O tamanho máximo é 25 MB.",
             debugToken: generateDebugToken("SIZE_EXCEEDED"),
             recoverable: false,
           },
@@ -420,7 +420,7 @@ export function usePDFConverter() {
               type: "VALIDATION_ERROR",
               error: {
                 code: "PASSWORD_INCORRECT",
-                message: "Incorrect password. Please try again.",
+                message: "Palavra-passe incorreta. Por favor tenta novamente.",
                 debugToken: generateDebugToken("PASSWORD_INCORRECT"),
                 recoverable: true,
               },
@@ -434,7 +434,7 @@ export function usePDFConverter() {
           type: "VALIDATION_ERROR",
           error: {
             code: "PARSE_ERROR",
-            message: `Unable to read PDF. ${errorMessage || "The file may be corrupted."}`,
+            message: `Não foi possível ler o PDF. ${errorMessage || "O ficheiro pode estar corrompido."}`,
             debugToken: generateDebugToken("PARSE_ERROR"),
             recoverable: false,
           },
@@ -488,7 +488,7 @@ export function usePDFConverter() {
         type: "PROCESSING_ERROR",
         error: {
           code: "PARSE_ERROR",
-          message: pageResult.error || "Invalid page range",
+          message: pageResult.error || "Intervalo de páginas inválido",
           debugToken: generateDebugToken("PARSE_ERROR"),
           recoverable: true,
         },
@@ -504,7 +504,7 @@ export function usePDFConverter() {
           type: "PROCESSING_ERROR",
           error: {
             code: "PAGE_LIMIT_EXCEEDED",
-            message: `Too many pages for ${config.dpiPreset} DPI. Maximum is ${dpiCheck.limit} pages.`,
+            message: `Demasiadas páginas para ${config.dpiPreset} DPI. O máximo é ${dpiCheck.limit} páginas.`,
             debugToken: generateDebugToken("PAGE_LIMIT_EXCEEDED"),
             recoverable: true,
           },

@@ -38,10 +38,10 @@ export default function PasswordInput({
     <div className="rounded-lg border border-skin-accent/50 bg-skin-card p-4">
       <div className="mb-3 flex items-center gap-2">
         <Lock className="h-5 w-5 text-skin-accent" />
-        <h3 className="font-medium text-skin-base">Password Required</h3>
+        <h3 className="font-medium text-skin-base">Palavra-passe Necessária</h3>
       </div>
       <p className="mb-4 text-sm text-skin-base opacity-70">
-        This PDF is password-protected. Enter the password to continue.
+        Este PDF está protegido por palavra-passe. Introduz a palavra-passe para continuar.
       </p>
 
       <form onSubmit={handleSubmit}>
@@ -50,7 +50,7 @@ export default function PasswordInput({
             type={showPassword ? "text" : "password"}
             value={password}
             onChange={e => setPassword(e.target.value)}
-            placeholder="Enter password"
+            placeholder="Introduz a palavra-passe"
             disabled={disabled}
             className="w-full rounded border border-skin-line bg-skin-fill p-3 pr-10 text-skin-base focus-outline"
             autoFocus
@@ -61,7 +61,7 @@ export default function PasswordInput({
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-3 top-1/2 -translate-y-1/2 text-skin-base opacity-50 hover:opacity-100"
             tabIndex={-1}
-            aria-label={showPassword ? "Hide password" : "Show password"}
+            aria-label={showPassword ? "Ocultar palavra-passe" : "Mostrar palavra-passe"}
           >
             {showPassword ? (
               <EyeOff className="h-4 w-4" />
@@ -77,8 +77,8 @@ export default function PasswordInput({
             className="mt-2 text-sm text-red-500"
             role="alert"
           >
-            Incorrect password. {attemptsRemaining} attempt
-            {attemptsRemaining !== 1 ? "s" : ""} remaining.
+            Palavra-passe incorreta. {attemptsRemaining} tentativa
+            {attemptsRemaining !== 1 ? "s" : ""} restante{attemptsRemaining !== 1 ? "s" : ""}.
           </p>
         )}
 
@@ -91,7 +91,7 @@ export default function PasswordInput({
             ${disabled || !password.trim() ? "cursor-not-allowed opacity-50" : "hover:opacity-90"}
           `}
         >
-          Unlock PDF
+          Desbloquear PDF
         </button>
       </form>
     </div>

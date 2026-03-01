@@ -28,11 +28,11 @@ export default function FileInfoCard({ fileInfo, onClear, disabled }: Props) {
           <div className="flex items-center gap-2">
             <p className="font-medium text-skin-base">{fileInfo.name}</p>
             {fileInfo.isEncrypted && (
-              <Lock className="h-4 w-4 text-skin-base opacity-50" aria-label="Password protected" />
+              <Lock className="h-4 w-4 text-skin-base opacity-50" aria-label="Protegido por palavra-passe" />
             )}
           </div>
           <p className="text-sm text-skin-base opacity-70">
-            {fileInfo.pageCount} page{fileInfo.pageCount !== 1 ? "s" : ""} &bull;{" "}
+            {fileInfo.pageCount} página{fileInfo.pageCount !== 1 ? "s" : ""} &bull;{" "}
             {formatBytes(fileInfo.sizeBytes)}
           </p>
         </div>
@@ -44,8 +44,8 @@ export default function FileInfoCard({ fileInfo, onClear, disabled }: Props) {
           rounded p-2 text-skin-base opacity-50 transition-opacity hover:opacity-100 focus-outline
           ${disabled ? "cursor-not-allowed" : ""}
         `}
-        title="Remove file"
-        aria-label="Remove uploaded file"
+        title="Remover ficheiro"
+        aria-label="Remover ficheiro carregado"
       >
         <X className="h-5 w-5" />
       </button>

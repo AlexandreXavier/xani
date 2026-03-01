@@ -73,10 +73,10 @@ export default function ResultCard({
         <CheckCircle className="h-8 w-8 text-green-500" />
         <div>
           <h3 className="text-lg font-medium text-skin-base">
-            Ready to download
+            Pronto para transferir
           </h3>
           <p className="text-sm text-skin-base opacity-70">
-            Your files are ready
+            Os teus ficheiros estão prontos
           </p>
         </div>
       </div>
@@ -86,27 +86,27 @@ export default function ResultCard({
         <div>
           <p className="text-2xl font-bold text-skin-accent">{result.itemCount}</p>
           <p className="text-xs text-skin-base opacity-70">
-            {result.itemCount === 1 ? "Page" : "Pages"}
+            {result.itemCount === 1 ? "Página" : "Páginas"}
           </p>
         </div>
         <div>
           <p className="text-2xl font-bold text-skin-accent">
             {formatBytes(result.zipSizeBytes)}
           </p>
-          <p className="text-xs text-skin-base opacity-70">Size</p>
+          <p className="text-xs text-skin-base opacity-70">Tamanho</p>
         </div>
         <div>
           <p className="text-2xl font-bold text-skin-accent">
             {formatDuration(result.durationMs)}
           </p>
-          <p className="text-xs text-skin-base opacity-70">Time</p>
+          <p className="text-xs text-skin-base opacity-70">Tempo</p>
         </div>
       </div>
 
       {/* Duplicates skipped (extract mode) */}
       {result.duplicatesSkipped !== undefined && result.duplicatesSkipped > 0 && (
         <p className="mb-4 text-sm text-skin-base opacity-70">
-          {result.duplicatesSkipped} duplicate{result.duplicatesSkipped !== 1 ? "s" : ""} skipped
+          {result.duplicatesSkipped} duplicado{result.duplicatesSkipped !== 1 ? "s" : ""} ignorado{result.duplicatesSkipped !== 1 ? "s" : ""}
         </p>
       )}
 
@@ -126,12 +126,12 @@ export default function ResultCard({
         {isDownloading ? (
           <>
             <div className="h-5 w-5 animate-spin rounded-full border-2 border-skin-base border-t-transparent" />
-            Saving...
+            A guardar...
           </>
         ) : (
           <>
             <Download className="h-5 w-5" />
-            Download ZIP
+            Transferir ZIP
           </>
         )}
       </button>
@@ -145,7 +145,7 @@ export default function ResultCard({
           aria-live="polite"
         >
           <Clock className="h-4 w-4" />
-          <span>Expires in {formatCountdown(remaining)}</span>
+          <span>Expira em {formatCountdown(remaining)}</span>
         </div>
       )}
     </div>

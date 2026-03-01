@@ -7,11 +7,11 @@ import Footer from "@components/Footer.astro";
 import PDFConverterIsland from "@components/pdf/PDFConverterIsland";
 ---
 
-<Layout title={`PDF to PNG | ${SITE.title}`}>
+<Layout title={`PDF para PNG | ${SITE.title}`}>
   <Header activeNav="lab" />
   <Main
-    pageTitle="PDF to PNG"
-    pageDesc="Convert PDF pages to PNG images or extract embedded images. All processing happens in your browser - no uploads to any server."
+    pageTitle="PDF para PNG"
+    pageDesc="Converte páginas de PDF para imagens PNG ou extrai imagens incorporadas. Todo o processamento acontece no teu navegador - sem envios para qualquer servidor."
   >
     <PDFConverterIsland client:only="react" />
   </Main>

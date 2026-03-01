@@ -80,11 +80,11 @@ export default function PDFConverterIsland() {
       <div className="rounded-lg border border-red-300 bg-red-50 p-6 text-center dark:border-red-800 dark:bg-red-900/20">
         <AlertTriangle className="mx-auto mb-4 h-12 w-12 text-red-500" />
         <h2 className="mb-2 text-lg font-medium text-red-800 dark:text-red-200">
-          Browser Not Supported
+          Navegador Não Suportado
         </h2>
         <p className="text-red-700 dark:text-red-300">{capabilities.warning}</p>
         <p className="mt-4 text-sm text-red-600 dark:text-red-400">
-          Please use Chrome 90+, Firefox 90+, or Safari 16.4+
+          Por favor utiliza Chrome 90+, Firefox 90+ ou Safari 16.4+
         </p>
       </div>
     );
@@ -97,8 +97,8 @@ export default function PDFConverterIsland() {
         <div className="flex items-center gap-3 rounded-lg border border-skin-accent/50 bg-skin-accent/10 p-4">
           <AlertTriangle className="h-5 w-5 flex-shrink-0 text-skin-accent" />
           <p className="text-sm text-skin-base">
-            For best results, use a desktop browser. Processing large PDFs may
-            be slow on mobile devices.
+            Para melhores resultados, utiliza um navegador de computador. O processamento de PDFs grandes pode
+            ser lento em dispositivos móveis.
           </p>
         </div>
       )}
@@ -115,12 +115,12 @@ export default function PDFConverterIsland() {
       {/* Cancelled state - brief message then return to idle */}
       {state.status === "CANCELLED" && (
         <div className="rounded-lg border border-skin-line bg-skin-card p-4 text-center">
-          <p className="text-skin-base">Processing cancelled.</p>
+          <p className="text-skin-base">Processamento cancelado.</p>
           <button
             onClick={reset}
             className="mt-2 text-skin-accent hover:underline focus-outline"
           >
-            Start over
+            Recomeçar
           </button>
         </div>
       )}
@@ -182,13 +182,13 @@ export default function PDFConverterIsland() {
               onClick={startProcessing}
               className="flex-1 rounded-lg bg-skin-accent px-6 py-3 font-medium text-skin-inverted transition-opacity hover:opacity-90 focus-outline"
             >
-              Convert
+              Converter
             </button>
             <button
               onClick={reset}
               className="rounded-lg border border-skin-line bg-skin-card px-6 py-3 font-medium text-skin-base transition-colors hover:bg-skin-card-muted focus-outline"
             >
-              Cancel
+              Cancelar
             </button>
           </div>
         </div>
@@ -208,7 +208,7 @@ export default function PDFConverterIsland() {
             className="flex w-full items-center justify-center gap-2 rounded-lg border border-skin-line bg-skin-card px-6 py-3 font-medium text-skin-base transition-colors hover:bg-skin-card-muted focus-outline"
           >
             <X className="h-5 w-5" />
-            Cancel
+            Cancelar
           </button>
         </div>
       )}
@@ -228,7 +228,7 @@ export default function PDFConverterIsland() {
       {state.status === "DOWNLOADING" && (
         <div className="rounded-lg border border-skin-line bg-skin-card p-6 text-center">
           <Loader2 className="mx-auto mb-4 h-8 w-8 animate-spin text-skin-accent" />
-          <p className="text-skin-base">Preparing download...</p>
+          <p className="text-skin-base">A preparar transferência...</p>
         </div>
       )}
     </div>

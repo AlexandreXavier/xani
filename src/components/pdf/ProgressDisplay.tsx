@@ -9,19 +9,19 @@ interface Props {
 }
 
 const PHASE_LABELS: Record<string, string> = {
-  parsing: "Reading PDF...",
-  rendering: "Rendering pages...",
-  extracting: "Extracting images...",
-  zipping: "Creating ZIP file...",
-  finalizing: "Almost done...",
+  parsing: "A ler PDF...",
+  rendering: "A renderizar páginas...",
+  extracting: "A extrair imagens...",
+  zipping: "A criar ficheiro ZIP...",
+  finalizing: "Quase pronto...",
 };
 
 export default function ProgressDisplay({ progress }: Props) {
   const { phase, current, total, percent } = progress;
-  const phaseLabel = PHASE_LABELS[phase] || "Processing...";
+  const phaseLabel = PHASE_LABELS[phase] || "A processar...";
 
   return (
-    <div className="space-y-3" role="region" aria-label="Processing progress">
+    <div className="space-y-3" role="region" aria-label="Progresso do processamento">
       {/* Status text */}
       <div className="flex justify-between text-sm text-skin-base">
         <span>{phaseLabel}</span>
@@ -39,7 +39,7 @@ export default function ProgressDisplay({ progress }: Props) {
         aria-valuenow={percent}
         aria-valuemin={0}
         aria-valuemax={100}
-        aria-label={`${percent}% complete`}
+        aria-label={`${percent}% completo`}
       >
         <div
           className="h-full bg-skin-accent transition-all duration-300 ease-out"
@@ -55,8 +55,8 @@ export default function ProgressDisplay({ progress }: Props) {
       {/* Screen reader announcements */}
       <div role="status" aria-live="polite" className="sr-only">
         {phase === "finalizing" && percent >= 98
-          ? "Processing complete"
-          : `${phaseLabel} ${percent}% complete`}
+          ? "Processamento concluído"
+          : `${phaseLabel} ${percent}% completo`}
       </div>
     </div>
   );

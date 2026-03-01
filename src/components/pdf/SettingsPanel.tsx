@@ -170,7 +170,7 @@ export default function SettingsPanel({
       {/* Mode Selection */}
       <div>
         <label className="mb-2 block text-sm font-medium text-skin-base">
-          Mode
+          Modo
         </label>
         <div className="flex gap-4">
           <label className="flex cursor-pointer items-center gap-2">
@@ -183,7 +183,7 @@ export default function SettingsPanel({
               disabled={disabled}
               className="h-4 w-4 accent-skin-accent"
             />
-            <span className="text-skin-base">Render pages</span>
+            <span className="text-skin-base">Renderizar páginas</span>
           </label>
           <label className="flex cursor-pointer items-center gap-2">
             <input
@@ -195,7 +195,7 @@ export default function SettingsPanel({
               disabled={disabled}
               className="h-4 w-4 accent-skin-accent"
             />
-            <span className="text-skin-base">Extract embedded images</span>
+            <span className="text-skin-base">Extrair imagens incorporadas</span>
           </label>
         </div>
       </div>
@@ -207,7 +207,7 @@ export default function SettingsPanel({
             htmlFor="dpi-select"
             className="mb-2 block text-sm font-medium text-skin-base"
           >
-            Resolution
+            Resolução
           </label>
           <select
             id="dpi-select"
@@ -216,9 +216,9 @@ export default function SettingsPanel({
             disabled={disabled}
             className="w-full rounded border border-skin-line bg-skin-card p-2 text-skin-base focus-outline"
           >
-            <option value={144}>144 DPI (Screen/Web) - Max {DPI_PAGE_LIMITS[144]} pages</option>
-            <option value={200}>200 DPI (Standard Print) - Max {DPI_PAGE_LIMITS[200]} pages</option>
-            <option value={300}>300 DPI (High Quality) - Max {DPI_PAGE_LIMITS[300]} pages</option>
+            <option value={144}>144 DPI (Ecrã/Web) - Máx {DPI_PAGE_LIMITS[144]} páginas</option>
+            <option value={200}>200 DPI (Impressão Normal) - Máx {DPI_PAGE_LIMITS[200]} páginas</option>
+            <option value={300}>300 DPI (Alta Qualidade) - Máx {DPI_PAGE_LIMITS[300]} páginas</option>
           </select>
         </div>
       )}
@@ -226,7 +226,7 @@ export default function SettingsPanel({
       {/* Page Range */}
       <div>
         <label className="mb-2 block text-sm font-medium text-skin-base">
-          Page Range
+          Intervalo de Páginas
         </label>
 
         {/* Basic range inputs */}
@@ -234,7 +234,7 @@ export default function SettingsPanel({
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <label htmlFor="from-page" className="text-sm text-skin-base">
-                From:
+                De:
               </label>
               <input
                 id="from-page"
@@ -249,7 +249,7 @@ export default function SettingsPanel({
             </div>
             <div className="flex items-center gap-2">
               <label htmlFor="to-page" className="text-sm text-skin-base">
-                To:
+                Até:
               </label>
               <input
                 id="to-page"
@@ -263,7 +263,7 @@ export default function SettingsPanel({
               />
             </div>
             <span className="text-sm text-skin-base opacity-70">
-              of {fileInfo.pageCount}
+              de {fileInfo.pageCount}
             </span>
           </div>
         )}
@@ -276,7 +276,7 @@ export default function SettingsPanel({
           disabled={disabled}
         >
           {showAdvanced ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-          {showAdvanced ? "Hide advanced" : "Advanced"}
+          {showAdvanced ? "Ocultar avançado" : "Avançado"}
         </button>
 
         {/* Advanced range input */}
@@ -286,13 +286,13 @@ export default function SettingsPanel({
               type="text"
               value={rangeString}
               onChange={e => handleAdvancedRangeChange(e.target.value)}
-              placeholder="e.g., 1-3, 8, 10-12"
+              placeholder="ex., 1-3, 8, 10-12"
               disabled={disabled}
               className="w-full rounded border border-skin-line bg-skin-card p-2 text-skin-base focus-outline"
               aria-describedby={rangeError ? "range-error" : undefined}
             />
             <p className="mt-1 text-xs text-skin-base opacity-70">
-              Enter page numbers or ranges separated by commas
+              Introduz números de página ou intervalos separados por vírgulas
             </p>
           </div>
         )}
@@ -307,18 +307,18 @@ export default function SettingsPanel({
         {/* DPI limit warning */}
         {exceedsLimit && (
           <p className="mt-2 text-sm text-red-500" role="alert">
-            Too many pages for {config.dpiPreset} DPI. Maximum is {maxPages} pages.
-            Reduce page range or select a lower DPI.
+            Demasiadas páginas para {config.dpiPreset} DPI. O máximo é {maxPages} páginas.
+            Reduz o intervalo de páginas ou seleciona um DPI inferior.
           </p>
         )}
       </div>
 
       {/* Selected pages summary */}
       <div className="rounded bg-skin-card p-3 text-sm text-skin-base">
-        <strong>{currentPageCount}</strong> page{currentPageCount !== 1 ? "s" : ""} selected
+        <strong>{currentPageCount}</strong> página{currentPageCount !== 1 ? "s" : ""} selecionada{currentPageCount !== 1 ? "s" : ""}
         {config.mode === "render" && (
           <span className="text-skin-base opacity-70">
-            {" "}&bull; Estimated ~{Math.round(currentPageCount * 2)} MB output
+            {" "}&bull; Estimativa ~{Math.round(currentPageCount * 2)} MB de saída
           </span>
         )}
       </div>

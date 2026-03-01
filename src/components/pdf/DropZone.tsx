@@ -91,7 +91,7 @@ export default function DropZone({ onFileDrop, isValidating, disabled }: Props) 
       onKeyDown={handleKeyDown}
       tabIndex={disabled ? -1 : 0}
       role="button"
-      aria-label="Upload PDF file. Drop file here or press Enter to browse"
+      aria-label="Carregar ficheiro PDF. Arrasta para aqui ou pressiona Enter para procurar"
     >
       <input
         ref={inputRef}
@@ -106,16 +106,16 @@ export default function DropZone({ onFileDrop, isValidating, disabled }: Props) 
       {isValidating ? (
         <div className="flex flex-col items-center gap-4">
           <div className="h-12 w-12 animate-spin rounded-full border-4 border-skin-line border-t-skin-accent" />
-          <p className="text-skin-base">Validating PDF...</p>
+          <p className="text-skin-base">A validar PDF...</p>
         </div>
       ) : (
         <>
           <Upload className="mb-4 h-12 w-12 text-skin-base opacity-50" />
           <p className="mb-2 text-lg font-medium text-skin-base">
-            Drop PDF here or click to browse
+            Arrasta o PDF para aqui ou clica para procurar
           </p>
           <p className="text-sm text-skin-base opacity-70">
-            PDF &bull; Max 25MB &bull; Max 50 pages (varies by DPI)
+            PDF &bull; Máx 25MB &bull; Máx 50 páginas (varia com DPI)
           </p>
         </>
       )}
