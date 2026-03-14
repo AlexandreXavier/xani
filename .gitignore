@@ -7,6 +7,11 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+.pnpm-lock.yaml
+
+# testing
+/coverage
+/.playwright-mcp
 
 
 # production
@@ -24,6 +29,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+.env.local
+.env.example
 
 # vercel
 .vercel
@@ -31,3 +38,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# uploads
+public/uploads
