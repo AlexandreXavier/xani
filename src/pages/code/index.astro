@@ -6,7 +6,7 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import { getCollection } from "astro:content";
 
-const codeEntries = await getCollection("code");
+const codeEntries = await getCollection("code", ({ data }) => !data.draft);
 ---
 
 <Layout title={`Code | ${SITE.title}`}>
