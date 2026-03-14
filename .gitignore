@@ -13,9 +13,7 @@
 /coverage
 /.playwright-mcp
 
-# next.js
-/.next/
-/out/
+
 
 # production
 /build
