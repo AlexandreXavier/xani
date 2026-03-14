@@ -4,7 +4,7 @@ import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
 
 export interface Props {
-  activeNav?: "posts" | "tags" | "about" | "search" | "lab" | "estudo";
+  activeNav?: "posts" | "tags" | "about" | "search" | "link" | "lab" | "lesson";
 }
 
 const { activeNav } = Astro.props;
@@ -65,6 +65,11 @@ const { activeNav } = Astro.props;
               Tags
             </a>
           </li>
+          <li>
+            <a href="/link/" class={activeNav === "link" ? "active" : ""}>
+              Link
+            </a>
+          </li>
           <li class="dropdown">
             <button
               class={`dropdown-trigger ${activeNav === "lab" ? "active" : ""}`}
@@ -88,10 +93,35 @@ const { activeNav } = Astro.props;
               </svg>
             </button>
             <ul class="dropdown-menu">
-              <li><a href="/link/">Link</a></li>
-              <li><a href="/estudo/">Estudo</a></li>
               <li><a href="/tempo/">Tempo</a></li>
               <li><a href="/pdf/">PDF</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <button
+              class={`dropdown-trigger ${activeNav === "lesson" ? "active" : ""}`}
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              Lesson
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="chevron"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="/estudo/">Law</a></li>
+              <li><a href="/code/">Code</a></li>
             </ul>
           </li>
           <li>
@@ -276,17 +306,23 @@ const { activeNav } = Astro.props;
     });
 
     // Dropdown toggle for mobile
-    const dropdownTrigger = document.querySelector(".dropdown-trigger");
-    const dropdown = document.querySelector(".dropdown");
+    const dropdownTriggers = document.querySelectorAll(".dropdown-trigger");
 
-    dropdownTrigger?.addEventListener("click", (e) => {
-      // Only toggle on mobile (when hamburger menu is visible)
-      if (window.innerWidth < 640) {
-        e.preventDefault();
-        dropdown?.classList.toggle("is-open");
-        const isOpen = dropdown?.classList.contains("is-open");
-        dropdownTrigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      }
+    dropdownTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", (e) => {
+        // Only toggle on mobile (when hamburger menu is visible)
+        if (window.innerWidth < 640) {
+          e.preventDefault();
+          const dropdown = trigger.closest(".dropdown");
+          // Close other dropdowns
+          document.querySelectorAll(".dropdown").forEach((d) => {
+            if (d !== dropdown) d.classList.remove("is-open");
+          });
+          dropdown?.classList.toggle("is-open");
+          const isOpen = dropdown?.classList.contains("is-open");
+          trigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+      });
     });
   }
 

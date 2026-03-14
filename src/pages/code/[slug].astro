@@ -6,8 +6,8 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 
 export async function getStaticPaths() {
-  const estudoEntries = await getCollection("estudo");
-  return estudoEntries.map(entry => ({
+  const codeEntries = await getCollection("code");
+  return codeEntries.map(entry => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
@@ -17,14 +17,14 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={`${entry.data.title} | Estudo`}>
+<Layout title={`${entry.data.title} | Code`}>
   <Header activeNav="lesson" />
   <Main
     pageTitle={entry.data.title}
-    pageDesc={entry.data.description || "Conteúdo de estudo"}
+    pageDesc={entry.data.description || "Conteúdo de código"}
   >
-    <article class="estudo-content">
-      <div class="estudo-meta">
+    <article class="code-content">
+      <div class="code-meta">
         {entry.data.category && (
           <span class="category">{entry.data.category}</span>
         )}
@@ -43,11 +43,11 @@ const { Content } = await entry.render();
 </Layout>
 
 <style>
-  .estudo-content {
+  .code-content {
     @apply space-y-6;
   }
   
-  .estudo-meta {
+  .code-meta {
     @apply flex flex-wrap items-center gap-4 pb-4 mb-6 border-b;
     @apply border-skin-line;
   }
