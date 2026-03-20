@@ -230,6 +230,18 @@ export const LINKS: LinkItem[] = [
     url: 'https://godly.website',
     category: LinkCategory.DESIGN,
   },
+  {
+    id: 'pinterest',
+    name: 'Pinterest',
+    url: 'https://pt.pinterest.com/',
+    category: LinkCategory.DESIGN,
+  },
+  {
+    id: 'behance',
+    name: 'Behance',
+    url: 'https://www.behance.net/',
+    category: LinkCategory.DESIGN,
+  },
 
   // Tool
   {
