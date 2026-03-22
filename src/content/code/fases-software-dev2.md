@@ -13,6 +13,8 @@ language: "pt"
 
 A era do "Vibe Coding" é um beco sem saída para o profissional. Confiar apenas no instinto da IA, lançando prompts aleatórios, produz dívida técnica imediata. O engenheiro de IA rigoroso utiliza frameworks estruturados para garantir que o software dure. Matt Pocock sistematizou esta abordagem num método de 7 fases que separa o amadorismo da engenharia de precisão.
 
+
+
 ## Da Ideia Versátil ao Cache de Investigação
 
 A jornada começa na **Fase 1 (Ideia)**: definir claramente se o objetivo é uma nova funcionalidade, correção ou refatorização. 
