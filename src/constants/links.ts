@@ -400,30 +400,36 @@ export const LINKS: LinkItem[] = [
     url: 'https://videotranscriber.ai',
     category: LinkCategory.TOOL,
   },
- {
-  id: 'higgsfield',
-  name: 'Higgsfield',
-  url: 'https://higgsfield.ai/create/motion-control',
-  category: LinkCategory.TOOL,
- },
- {
-  id: '3e8blueprint',
-  name: '3E8 Blueprint',
-  url: 'https://www.3e8blueprint.com/',
-  category: LinkCategory.TOOL,
- },
- {
-  id: 'favicon',
-  name: 'Favicon',
-  url: 'https://favicon.io/',
-  category: LinkCategory.TOOL,
- },
-{
-  id: 'png2svg',
-  name: 'PNG to SVG',
-  url: 'https://png2svg.com/',
-  category: LinkCategory.TOOL,
-},
+  {
+    id: 'higgsfield',
+    name: 'Higgsfield',
+    url: 'https://higgsfield.ai/create/motion-control',
+    category: LinkCategory.TOOL,
+  },
+  {
+    id: '3e8blueprint',
+    name: '3E8 Blueprint',
+    url: 'https://www.3e8blueprint.com/',
+    category: LinkCategory.TOOL,
+  },
+  {
+    id: 'favicon',
+    name: 'Favicon',
+    url: 'https://favicon.io/',
+    category: LinkCategory.TOOL,
+  },
+  {
+    id: 'png2svg',
+    name: 'PNG to SVG',
+    url: 'https://png2svg.com/',
+    category: LinkCategory.TOOL,
+  },
+  {
+    id: 'imageresizer',
+    name: 'Image Resizer',
+    url: 'https://imageresizer.com/',
+    category: LinkCategory.TOOL,
+  },
 
   // Cloud
   {
@@ -996,6 +1002,12 @@ export const LINKS: LinkItem[] = [
     id: 'marble',
     name: 'Marble',
     url: 'https://marble.worldlabs.ai/',
+    category: LinkCategory.INSPIRE,
+  },
+  {
+    id: 'fogosagora',
+    name: 'Fogo SAgora',
+    url: 'https://www.fogosagora.pt/',
     category: LinkCategory.INSPIRE,
   },
 ];
