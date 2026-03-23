@@ -8,7 +8,7 @@ language: "pt"
 
 # A Revolução do Processo:
 
-![5 Passos](https://6bhbi182cm.ufs.sh/f/eaJqTiDzJSPWjjPlXwreJdriNkKgqHP94ByZ07S6FzjmQnAD)
+![5 Passos](https://6bhbi182cm.ufs.sh/f/eaJqTiDzJSPWYqP3vJsQeixHUqwVT13fOD49aCclokGhpvXE)
 
 ## O Problema da Amnésia Digital
 

@@ -1010,6 +1010,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.fogosagora.pt/',
     category: LinkCategory.INSPIRE,
   },
+  {
+    id: 'terraink',
+    name: 'Terraink',
+    url: 'https://terraink.app/',
+    category: LinkCategory.INSPIRE,
+  }
 ];
 
 // Helper function to get categories with link counts
