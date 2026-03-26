@@ -816,6 +816,13 @@ export const LINKS: LinkItem[] = [
     url: 'https://skillsmp.com/',
     category: LinkCategory.CODE,
   },
+  {
+    id: 'eraser',
+    name: 'Eraser',
+    url: 'https://app.eraser.io/',
+    category: LinkCategory.CODE,
+  },
+
 
   //Native
   {
@@ -964,6 +971,12 @@ export const LINKS: LinkItem[] = [
     id: 'cryptotaxmap',
     name: 'CryptoTaxMap',
     url: 'https://www.cryptotaxmap.io/',
+    category: LinkCategory.CRYPT,
+  },
+  {
+    id: 'letabuild',
+    name: 'Letabuild',
+    url: 'https://letabuild.com/',
     category: LinkCategory.CRYPT,
   },
 
