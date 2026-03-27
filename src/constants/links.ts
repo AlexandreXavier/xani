@@ -822,6 +822,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://app.eraser.io/',
     category: LinkCategory.CODE,
   },
+  {
+    id: 'claude-status',
+    name: 'Claude Status',
+    url: 'https://status.claude.com/',
+    category: LinkCategory.CODE,
+  },
 
 
   //Native
