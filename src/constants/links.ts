@@ -828,6 +828,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://status.claude.com/',
     category: LinkCategory.CODE,
   },
+  {
+    id: 'mintlify',
+    name: 'Mintlify',
+    url: 'https://dashboard.mintlify.com/casadocanto/casadocanto',
+    category: LinkCategory.CODE,
+  }
 
 
   //Native
@@ -1034,7 +1040,20 @@ export const LINKS: LinkItem[] = [
     name: 'Terraink',
     url: 'https://terraink.app/',
     category: LinkCategory.INSPIRE,
-  }
+  },
+  {
+    id: 'floatingpragma',
+    name: 'Floating Pragma',
+    url: 'https://floatingpragma.io/oph/theory-of-everything/',
+    category: LinkCategory.INSPIRE,
+  },
+  {
+    id: 'opengridworks',
+    name: 'Open Grid Works',
+    url: 'https://opengridworks.com',
+    category: LinkCategory.INSPIRE,
+  },
+
 ];
 
 // Helper function to get categories with link counts
