@@ -833,7 +833,13 @@ export const LINKS: LinkItem[] = [
     name: 'Mintlify',
     url: 'https://dashboard.mintlify.com/casadocanto/casadocanto',
     category: LinkCategory.CODE,
-  }
+  },
+  {
+    id: 'gitlawb',
+    name: 'GitLawB',
+    url: 'https://gitlawb.com/start',
+    category: LinkCategory.CODE,
+  },
 
 
   //Native
