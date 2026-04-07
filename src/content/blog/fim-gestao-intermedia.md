@@ -1,7 +1,7 @@
 ---
 author: Alexandre Xavier
-pubDatetime: 2026-05-03T08:23:00+01:00
-modDatetime: 2026-05-03T08:23:47.400+01:00
+pubDatetime: 2026-04-05T08:23:00+01:00
+modDatetime: 2026-04-05T08:23:47.400+01:00
 title: O Fim da Gestão Intermédia?
 slug: fim-gestao-intermedia
 featured: true
