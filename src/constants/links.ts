@@ -840,6 +840,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://gitlawb.com/start',
     category: LinkCategory.CODE,
   },
+  {
+    id: 'ptdata',
+    name: 'PTData',
+    url: 'https://api.ptdata.org/',
+    category: LinkCategory.CODE,
+  },
 
 
   //Native
