@@ -1065,7 +1065,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://opengridworks.com',
     category: LinkCategory.INSPIRE,
   },
-
+  {
+    id: 'blueprint',
+    name: 'Blueprint',
+    url: 'https://www.blueprint.am/',
+    category: LinkCategory.INSPIRE,
+  },
 ];
 
 // Helper function to get categories with link counts
