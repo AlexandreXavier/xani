@@ -1071,6 +1071,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.blueprint.am/',
     category: LinkCategory.INSPIRE,
   },
+  {
+    id: 'bbycroft',
+    name: 'BBycroft',
+    url: 'https://bbycroft.net/llm',
+    category: LinkCategory.INSPIRE,
+  },
 ];
 
 // Helper function to get categories with link counts
