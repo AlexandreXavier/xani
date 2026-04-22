@@ -159,12 +159,6 @@ export const LINKS: LinkItem[] = [
     category: LinkCategory.DESIGN,
   },
   {
-    id: 'ezgif',
-    name: 'EZGIF',
-    url: 'https://ezgif.com/',
-    category: LinkCategory.DESIGN,
-  },
-  {
     id: 'layers',
     name: 'Layers',
     url: 'https://layers.to',
@@ -213,12 +207,6 @@ export const LINKS: LinkItem[] = [
     category: LinkCategory.DESIGN,
   },
   {
-    id: 'vercel-design',
-    name: 'Vercel Design',
-    url: 'https://vercel.com/design',
-    category: LinkCategory.DESIGN,
-  },
-  {
     id: 'web-gradients',
     name: 'WebGradients',
     url: 'https://webgradients.com',
@@ -254,18 +242,6 @@ export const LINKS: LinkItem[] = [
     id: 'clarity',
     name: 'Clarity',
     url: 'https://clarity.rahul.gs/',
-    category: LinkCategory.TOOL,
-  },
-  {
-    id: 'clawd',
-    name: 'Clawd',
-    url: 'https://clawd.bot/',
-    category: LinkCategory.TOOL,
-  },
-  {
-    id: 'code-pen',
-    name: 'CodePen',
-    url: 'https://codepen.io',
     category: LinkCategory.TOOL,
   },
   {
@@ -341,12 +317,6 @@ export const LINKS: LinkItem[] = [
     category: LinkCategory.TOOL,
   },
   {
-    id: 'replit',
-    name: 'Replit',
-    url: 'https://replit.com',
-    category: LinkCategory.TOOL,
-  },
-  {
     id: 'snappify',
     name: 'snappify',
     url: 'https://snappify.com',
@@ -356,12 +326,6 @@ export const LINKS: LinkItem[] = [
     id: 'svgl',
     name: 'svgl',
     url: 'https://svgl.app',
-    category: LinkCategory.TOOL,
-  },
-  {
-    id: 't3-chat',
-    name: 'T3 Chat',
-    url: 'https://t3.chat/',
     category: LinkCategory.TOOL,
   },
   {
@@ -386,12 +350,6 @@ export const LINKS: LinkItem[] = [
     id: 'tree',
     name: 'Tree',
     url: 'https://tree.nathanfriend.com',
-    category: LinkCategory.TOOL,
-  },
-  {
-    id: 'v0',
-    name: 'v0',
-    url: 'https://v0.dev',
     category: LinkCategory.TOOL,
   },
   {
@@ -428,6 +386,12 @@ export const LINKS: LinkItem[] = [
     id: 'imageresizer',
     name: 'Image Resizer',
     url: 'https://imageresizer.com/',
+    category: LinkCategory.TOOL,
+  },
+  {
+    id: 'ezgif',
+    name: 'EZGIF',
+    url: 'https://ezgif.com/',
     category: LinkCategory.TOOL,
   },
 
@@ -1075,6 +1039,12 @@ export const LINKS: LinkItem[] = [
     id: 'bbycroft',
     name: 'BBycroft',
     url: 'https://bbycroft.net/llm',
+    category: LinkCategory.INSPIRE,
+  },
+  {
+    id: 'worrydream',
+    name: 'Worry Dream',
+    url: 'https://worrydream.com/',
     category: LinkCategory.INSPIRE,
   },
 ];
