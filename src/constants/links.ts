@@ -20,7 +20,8 @@ export type CategoryIconName =
   | 'Lock'
   | 'Sparkles'
   | 'Bot'
-  | 'Smartphone';
+  | 'Smartphone'
+  | 'Sailboat';
 
 export interface CategoryInfo {
   id: LinkCategory;
@@ -94,6 +95,11 @@ export const CATEGORY_CONFIG: Record<LinkCategory, Omit<CategoryInfo, 'id'>> = {
     name: 'Native',
     iconName: 'Smartphone',
     iconColorClassname: 'text-teal-300',
+  },
+  [LinkCategory.VELA]: {
+    name: 'Vela',
+    iconName: 'Sailboat',
+    iconColorClassname: 'text-blue-400',
   },
 };
 
@@ -1046,6 +1052,36 @@ export const LINKS: LinkItem[] = [
     name: 'Worry Dream',
     url: 'https://worrydream.com/',
     category: LinkCategory.INSPIRE,
+  },
+  {
+    id: 'analisa',
+    name: 'Analisa',
+    url: 'https://analisa.pt/',
+    category: LinkCategory.INSPIRE,
+  },
+  {
+    id: 'escora',
+    name: 'Escora',
+    url: 'https://escora.rfgvela.es/',
+    category: LinkCategory.VELA,
+  },
+  {
+    id: 'rfev-regatas',
+    name: 'RFEV Regatas',
+    url: 'https://rfev.es/regatas/',
+    category: LinkCategory.VELA,
+  },
+  {
+    id: 'fpvela',
+    name: 'FP Vela',
+    url: 'https://fpvela.pt/',
+    category: LinkCategory.VELA,
+  },
+  {
+    id: 'fishing-app',
+    name: 'Fishing App',
+    url: 'https://fishing-app.gpsnauticalcharts.com/i-boating-fishing-web-app/fishing-marine-charts-navigation.html#12.81/42.2366/-8.8057',
+    category: LinkCategory.VELA,
   },
 ];
 

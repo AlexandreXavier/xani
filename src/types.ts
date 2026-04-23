@@ -32,6 +32,7 @@ export enum LinkCategory {
   INSPIRE = 'inspire',
   AGENT = 'agent',
   NATIVE = 'native',
+  VELA = 'vela',
 }
 
 export interface LinkItem {
