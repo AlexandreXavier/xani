@@ -816,6 +816,42 @@ export const LINKS: LinkItem[] = [
     url: 'https://api.ptdata.org/',
     category: LinkCategory.CODE,
   },
+  {
+    id:'number',
+    name: '174743599',
+    url: 'https://xani.me',
+    category: LinkCategory.CODE,
+  },
+  {
+    id:'number2',
+    name: '105069744',
+    url: 'https://xani.me',
+    category: LinkCategory.CODE,
+  },
+  {
+    id:'number3',
+    name: '115229353',
+    url: 'https://xani.me',
+    category: LinkCategory.CODE,
+  },
+  {
+    id:'number4',
+    name: '115229345',
+    url: 'https://xani.me',
+    category: LinkCategory.CODE,
+  },
+  {
+    id:'number5',
+    name: '275054098',
+    url: 'https://xani.me',
+    category: LinkCategory.CODE,
+  },
+  {
+    id:'number6',
+    name: '275054330',
+    url: 'https://xani.me',
+    category: LinkCategory.CODE,
+  },
 
 
   //Native
