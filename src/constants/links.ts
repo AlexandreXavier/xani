@@ -236,6 +236,18 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.behance.net/',
     category: LinkCategory.DESIGN,
   },
+  {
+    id: 'flora',
+    name: 'Flora',
+    url: 'https://app.flora.ai/projects',
+    category: LinkCategory.DESIGN,
+  },
+  {
+    id: 'seedance',
+    name: 'Seedance',
+    url: 'https://seedance2.ai/pt/generate',
+    category: LinkCategory.DESIGN,
+  },
 
   // Tool
   {
@@ -752,6 +764,12 @@ export const LINKS: LinkItem[] = [
   id: 'shotdeck',
   name: 'Shotdeck',
   url: 'https://shotdeck.com/browse/stills',
+  category: LinkCategory.WEB,
+},
+{
+  id: 'product-hunt',
+  name: 'Product Hunt',
+  url: 'https://www.producthunt.com/',
   category: LinkCategory.WEB,
 },
 
