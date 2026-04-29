@@ -870,6 +870,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://xani.me',
     category: LinkCategory.CODE,
   },
+  {
+    id: 'nanobanana',
+    name: 'Nanobanana',
+    url: 'https://docs.evolink.ai/en/api-manual/image-series/nanobanana/nanobanana-2-image-generate',
+    category: LinkCategory.CODE,
+  },
 
 
   //Native
