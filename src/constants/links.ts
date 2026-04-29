@@ -876,6 +876,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://docs.evolink.ai/en/api-manual/image-series/nanobanana/nanobanana-2-image-generate',
     category: LinkCategory.CODE,
   },
+  {
+    id: 'evolink-dashboard',
+    name: 'Evolink Dashboard',
+    url: 'https://evolink.ai/dashboard',
+    category: LinkCategory.CODE,
+  },
 
 
   //Native
