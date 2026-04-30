@@ -695,12 +695,6 @@ export const LINKS: LinkItem[] = [
     category: LinkCategory.WEB,
   },
   {
-    id: 'product-hunt',
-    name: 'Product Hunt',
-    url: 'https://www.producthunt.com/',
-    category: LinkCategory.WEB,
-  },
-  {
     id: 'shodan',
     name: 'Shodan',
     url: 'https://shodan.io',
@@ -1125,6 +1119,14 @@ export const LINKS: LinkItem[] = [
     url: 'https://analisa.pt/',
     category: LinkCategory.INSPIRE,
   },
+  {
+    id: 'archaiology',
+    name: 'Archaiology',
+    url: 'https://archaiology.org/',
+    category: LinkCategory.INSPIRE,
+  },
+
+  // Vela
   {
     id: 'escora',
     name: 'Escora',
