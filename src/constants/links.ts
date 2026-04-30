@@ -254,6 +254,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.awwwards.com/',
     category: LinkCategory.DESIGN,
   },
+  {
+    id: 'designaward',
+    name: 'Designaward',
+    url: 'https://designaward.com/',
+    category: LinkCategory.DESIGN,
+  },
 
   // Tool
   {
