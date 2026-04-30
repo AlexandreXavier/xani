@@ -248,6 +248,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://seedance2.ai/pt/generate',
     category: LinkCategory.DESIGN,
   },
+  {
+    id: 'awwwards',
+    name: 'Awwwards',
+    url: 'https://www.awwwards.com/',
+    category: LinkCategory.DESIGN,
+  },
 
   // Tool
   {
