@@ -1078,12 +1078,6 @@ export const LINKS: LinkItem[] = [
     category: LinkCategory.INSPIRE,
   },
   {
-    id: 'visualcapitalist',
-    name: 'Visual Capitalist',
-    url: 'https://www.visualcapitalist.com/',
-    category: LinkCategory.INSPIRE,
-  },
-  {
     id: 'marble',
     name: 'Marble',
     url: 'https://marble.worldlabs.ai/',
