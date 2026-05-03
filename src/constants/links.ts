@@ -1045,6 +1045,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://letabuild.com/',
     category: LinkCategory.CRYPT,
   },
+  {
+    id: 'cryptographyengineering',
+    name: 'Cryptography Engineering',
+    url: 'https://blog.cryptographyengineering.com/',
+    category: LinkCategory.CRYPT,
+  },
 
   // Inspire
   {
@@ -1135,6 +1141,18 @@ export const LINKS: LinkItem[] = [
     id: 'archaiology',
     name: 'Archaiology',
     url: 'https://archaiology.org/',
+    category: LinkCategory.INSPIRE,
+  },
+  {
+    id: 'visualcapitalist',
+    name: 'Visual Capitalist',
+    url: 'https://www.visualcapitalist.com/',
+    category: LinkCategory.INSPIRE,
+  },
+  {
+    id: 'ericfeminella',
+    name: 'Eric Feminella',
+    url: 'https://www.ericfeminella.com/blog',
     category: LinkCategory.INSPIRE,
   },
 
