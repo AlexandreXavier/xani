@@ -1051,6 +1051,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://blog.cryptographyengineering.com/',
     category: LinkCategory.CRYPT,
   },
+  {
+    id: 'fiatjaf',
+    name: 'Fiatjaf',
+    url: 'https://fiatjaf.com/',
+    category: LinkCategory.CRYPT,
+  },
 
   // Inspire
   {
