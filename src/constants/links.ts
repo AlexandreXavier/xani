@@ -778,6 +778,12 @@ export const LINKS: LinkItem[] = [
   url: 'https://www.producthunt.com/',
   category: LinkCategory.WEB,
 },
+{
+  id: 'cryptpad',
+  name: 'CryptPad',
+  url: 'https://cryptpad.fr/drive/',
+  category: LinkCategory.WEB,
+},
 
   // Code
   {
