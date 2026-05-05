@@ -1144,6 +1144,12 @@ export const LINKS: LinkItem[] = [
     category: LinkCategory.INSPIRE,
   },
   {
+    id: 'obraxray',
+    name: 'Obraxray',
+    url: 'https://obraxray.com/',
+    category: LinkCategory.INSPIRE,
+  },
+  {
     id: 'archaiology',
     name: 'Archaiology',
     url: 'https://archaiology.org/',
