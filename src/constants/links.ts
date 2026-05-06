@@ -784,6 +784,12 @@ export const LINKS: LinkItem[] = [
   url: 'https://cryptpad.fr/drive/',
   category: LinkCategory.WEB,
 },
+{
+  id: 'ycombinator',
+  name: 'Y Combinator',
+  url: 'https://www.ycombinator.com/companies',
+  category: LinkCategory.WEB,
+},
 
   // Code
   {
