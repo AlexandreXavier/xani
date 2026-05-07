@@ -260,6 +260,42 @@ export const LINKS: LinkItem[] = [
     url: 'https://designaward.com/',
     category: LinkCategory.DESIGN,
   },
+  {
+    id: 'designspells',
+    name: 'Designspells',
+    url: 'https://www.designspells.com/',
+    category: LinkCategory.DESIGN,
+  },
+  {
+    id: 'refero',
+    name: 'Refero',
+    url: 'https://styles.refero.design/',
+    category: LinkCategory.DESIGN,
+  },
+  {
+    id: 'impeccable',
+    name: 'Impeccable',
+    url: 'https://impeccable.style/',
+    category: LinkCategory.DESIGN,
+  },
+  {
+    id: 'kittl',
+    name: 'Kittl',
+    url: 'https://kittl.com',
+    category: LinkCategory.DESIGN,
+  },
+  {
+    id: 'nexu-io-open-design',
+    name: 'Nexu IO Open Design',
+    url: 'https://github.com/nexu-io/open-design',
+    category: LinkCategory.DESIGN,
+  },
+  {
+    id: 'emilkowal-ski-skill',
+    name: 'Emil Kowal Ski Skill',
+    url: 'https://emilkowal.ski/skill',
+    category: LinkCategory.DESIGN,
+  },
 
   // Tool
   {
@@ -422,6 +458,12 @@ export const LINKS: LinkItem[] = [
     id: 'ezgif',
     name: 'EZGIF',
     url: 'https://ezgif.com/',
+    category: LinkCategory.TOOL,
+  },
+  {
+    id: 'cult-ui',
+    name: 'Cult UI',
+    url: 'https://www.cult-ui.com/',
     category: LinkCategory.TOOL,
   },
 
@@ -600,6 +642,18 @@ export const LINKS: LinkItem[] = [
     id: 'happy-hues',
     name: 'Happy Hues',
     url: 'https://www.happyhues.co/palettes/10',
+    category: LinkCategory.UI,
+  },
+  {
+    id: 'svgl-app',
+    name: 'SVGL App',
+    url: 'https://svgl.app/',
+    category: LinkCategory.UI,
+  },
+  {
+    id: 'untitledui',
+    name: 'Untitled UI',
+    url: 'https://www.untitledui.com/',
     category: LinkCategory.UI,
   },
 
