@@ -1227,6 +1227,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.ericfeminella.com/blog',
     category: LinkCategory.INSPIRE,
   },
+  {
+    id: 'sebastianraschka-llm-architecture-gallery',
+    name: 'Sebastian Raschka LLM Architecture Gallery',
+    url: 'https://sebastianraschka.com/llm-architecture-gallery/?compare=gemma-4-31b%2Cqwen3-6-27b',
+    category: LinkCategory.INSPIRE,
+  },
 
   // Vela
   {
