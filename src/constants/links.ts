@@ -1233,6 +1233,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://sebastianraschka.com/llm-architecture-gallery/?compare=gemma-4-31b%2Cqwen3-6-27b',
     category: LinkCategory.INSPIRE,
   },
+  {
+    id: 'endera',
+    name: 'Endera',
+    url: 'https://www.endera.xyz/',
+    category: LinkCategory.INSPIRE,
+  },
 
   // Vela
   {
