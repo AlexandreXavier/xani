@@ -474,6 +474,7 @@ export const LINKS: LinkItem[] = [
   },
 
   // Cloud
+  
   {
     id: 'azure',
     name: 'Azure',

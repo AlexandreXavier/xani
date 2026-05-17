@@ -1,0 +1,131 @@
+---
+import { SITE } from "@config";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import Layout from "@layouts/Layout.astro";
+
+const fingerprint = "1B1D 0884 996C 75A9 AB07  FF34 BD76 0ACB E2DD 092C";
+const keyId = "BD76 0ACB E2DD 092C";
+
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+const rawKey = readFileSync(join(process.cwd(), "public/pubkey.asc"), "utf-8");
+---
+
+<Layout title={`GPG Public Key | ${SITE.title}`}>
+  <Header activeNav="about" />
+  <main id="main-content" class="gpg-main">
+    <section>
+      <h1>GPG Public Key</h1>
+      <p class="desc">
+        Usa esta chave para enviar mensagens encriptadas ou verificar assinaturas digitais.
+      </p>
+
+      <div class="meta">
+        <div class="meta-row">
+          <span class="label">Utilizador</span>
+          <span class="value">Alexandre Xavier &lt;jalexandre.xavier@gmail.com&gt;</span>
+        </div>
+        <div class="meta-row">
+          <span class="label">Key ID</span>
+          <code class="value mono">{keyId}</code>
+        </div>
+        <div class="meta-row">
+          <span class="label">Algoritmo</span>
+          <span class="value">RSA 3072</span>
+        </div>
+        <div class="meta-row">
+          <span class="label">Criada em</span>
+          <span class="value">2026-05-17</span>
+        </div>
+      </div>
+
+      <div class="fingerprint-block">
+        <span class="fingerprint-label">Fingerprint</span>
+        <code class="fingerprint-value">{fingerprint}</code>
+      </div>
+
+      <div class="actions">
+        <a href="/pubkey.asc" download="alexandre-xavier.asc" class="btn-download">
+          Descarregar .asc
+        </a>
+        <button id="copy-btn" class="btn-copy" data-key={rawKey}>
+          Copiar chave
+        </button>
+      </div>
+
+      <div class="key-block">
+        <pre><code>{rawKey}</code></pre>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .gpg-main {
+    @apply mx-auto w-full max-w-3xl px-4 pb-12 pt-4;
+  }
+  h1 {
+    @apply text-2xl font-semibold tracking-wide sm:text-3xl mb-2;
+  }
+  .desc {
+    @apply mb-6 opacity-80;
+  }
+  .meta {
+    @apply mb-6 flex flex-col gap-2 rounded-lg border border-skin-line bg-skin-card p-4;
+  }
+  .meta-row {
+    @apply flex flex-wrap gap-2;
+  }
+  .label {
+    @apply w-28 shrink-0 text-sm font-medium opacity-60;
+  }
+  .value {
+    @apply text-sm;
+  }
+  .mono {
+    @apply font-mono;
+  }
+  .fingerprint-block {
+    @apply mb-6 flex flex-col gap-1 rounded-lg border border-skin-line bg-skin-card p-4;
+  }
+  .fingerprint-label {
+    @apply text-xs font-semibold uppercase tracking-widest opacity-60;
+  }
+  .fingerprint-value {
+    @apply break-all font-mono text-sm text-skin-accent;
+  }
+  .actions {
+    @apply mb-4 flex flex-wrap gap-3;
+  }
+  .btn-download,
+  .btn-copy {
+    @apply rounded-md px-4 py-2 text-sm font-medium transition-opacity hover:opacity-80 cursor-pointer;
+  }
+  .btn-download {
+    @apply bg-skin-accent text-skin-inverted no-underline;
+  }
+  .btn-copy {
+    @apply border border-skin-line bg-skin-fill;
+  }
+  .key-block {
+    @apply overflow-x-auto rounded-lg border border-skin-line bg-skin-card p-4;
+  }
+  .key-block pre {
+    @apply m-0;
+  }
+  .key-block code {
+    @apply whitespace-pre-wrap break-all font-mono text-xs leading-relaxed;
+  }
+</style>
+
+<script>
+  const btn = document.getElementById("copy-btn");
+  btn?.addEventListener("click", async () => {
+    const key = btn.getAttribute("data-key") ?? "";
+    await navigator.clipboard.writeText(key);
+    btn.textContent = "Copiado!";
+    setTimeout(() => { btn.textContent = "Copiar chave"; }, 2000);
+  });
+</script>

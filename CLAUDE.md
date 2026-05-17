@@ -41,9 +41,16 @@ When adding a new collection, update `src/content/config.ts`, add a matching rou
 - **src/config.ts** - `SITE` (website, author, postPerPage, scheduledPostMargin), `LOCALE`, `LOGO_IMAGE`, `SOCIALS`
 - **src/types.ts** - Shared `Site` / `SocialObjects` types consumed by config
 - **src/constants/** - Static data (e.g. `links.ts` powering `/link`)
-- **src/workers/**, **src/scripts/**, **src/helpers/** - Browser workers, client scripts, and JSON helpers (e.g. `themes.json`)
+- **src/workers/** - Vite ES-module workers (format set to `"es"` in `astro.config.ts`). `pdf-processor.worker.ts` offloads PDF parsing from the main thread for the `/pdf` page.
+- **src/scripts/** - Client-side scripts (e.g. `tempo-chart.ts` drives the `/tempo` visualization)
+- **src/helpers/** - Static JSON data: `themes.json`, `languagesList.json`, `podcastMainCategories.json`. No path alias exists for this directory; import with a relative path or use `public/` if needed client-side.
 - **src/styles/base.css** - Tailwind directives and CSS custom properties for theming
 - **public/** - Static assets served as-is (favicon, `toggle-theme.js`, `robots.txt` fallback)
+
+### Standalone Lab Pages
+- **`/link`** - Curated bookmarks driven entirely by `src/constants/links.ts`. Add a new link by appending a `LinkItem` to that file using the `LinkCategory` enum from `src/types.ts`. No content collection involved.
+- **`/pdf`** - Client-side PDF → PNG converter. Uses `pdfjs-dist` to render pages and `@zip.js/zip.js` to bundle output; `pdf-processor.worker.ts` handles work off the main thread. Nothing is uploaded to a server.
+- **`/tempo`** - Visualization page rendered by `TempoChart.astro` using data from `src/scripts/tempo-chart.ts`.
 
 ### Path Aliases
 Declared in both `tsconfig.json` (for the type checker) and `astro.config.ts` under `vite.resolve.alias` (for the bundler) — keep them in sync when adding a new alias: `@components/*`, `@utils/*`, `@layouts/*`, `@content/*`, `@config`, `@assets/*`, `@styles/*`, `@/types`, `@contexts/*`, `@constants/*`, `@pages/*`.
@@ -52,6 +59,8 @@ Declared in both `tsconfig.json` (for the type checker) and `astro.config.ts` un
 - Astro components (.astro) for static content - preferred when no interactivity needed
 - React components (.tsx) for interactive features (Search, LinkManager, Card, etc.)
 - Props defined with TypeScript interfaces
+- `Search.tsx` uses `fuse.js` for fuzzy client-side search over blog content
+- Deployed on Vercel; `@vercel/analytics` is wired in for page-view tracking
 
 ### Content Processing
 - `postFilter.ts` / `episodeFilter.ts` - Excludes drafts and future posts (15-min margin configured in `SITE.scheduledPostMargin`). Any new listing page must apply one of these filters to avoid leaking drafts/scheduled items.
