@@ -6,3 +6,9 @@ A Software Developer with a passion for building innovative solutions and a spir
 
 
 Or you can even give any feedback via my [email](mailto:jalexandre.xavier@gmail.com).
+
+## Contacto Seguro
+
+Para comunicações encriptadas ou verificação de identidade, podes usar a minha chave pública GPG.
+
+[Chave GPG Pública →](/gpg/)
