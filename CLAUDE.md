@@ -36,7 +36,7 @@ When adding a new collection, update `src/content/config.ts`, add a matching rou
 ### Key Directories
 - **src/components/** - Astro (static) and React (interactive) components
 - **src/layouts/** - Page templates (Layout.astro is the main HTML wrapper; PostDetails, Posts, TagPosts, AboutLayout, Main)
-- **src/pages/** - File-based routing. Top-level routes: `/` (index), `/about`, `/search`, `/404`, plus content sections `/posts`, `/estudo`, `/code`, `/tags`, and standalone features `/link`, `/pdf`, `/tempo`. Endpoints: `og.png.ts`, `robots.txt.ts`, `rss.xml.ts`
+- **src/pages/** - File-based routing. Top-level routes: `/` (index), `/about`, `/search`, `/404`, plus content sections `/posts`, `/estudo`, `/code`, `/tags`, and standalone features `/link`, `/pdf`, `/tempo`, `/gpg`. Endpoints: `og.png.ts`, `robots.txt.ts`, `rss.xml.ts`
 - **src/utils/** - Post/episode filtering, sorting, pagination, tag aggregation, OG image generation (`og-templates/` holds JSX templates consumed by Satori)
 - **src/config.ts** - `SITE` (website, author, postPerPage, scheduledPostMargin), `LOCALE`, `LOGO_IMAGE`, `SOCIALS`
 - **src/types.ts** - Shared `Site` / `SocialObjects` types consumed by config
@@ -51,6 +51,7 @@ When adding a new collection, update `src/content/config.ts`, add a matching rou
 - **`/link`** - Curated bookmarks driven entirely by `src/constants/links.ts`. Add a new link by appending a `LinkItem` to that file using the `LinkCategory` enum from `src/types.ts`. No content collection involved.
 - **`/pdf`** - Client-side PDF → PNG converter. Uses `pdfjs-dist` to render pages and `@zip.js/zip.js` to bundle output; `pdf-processor.worker.ts` handles work off the main thread. Nothing is uploaded to a server.
 - **`/tempo`** - Visualization page rendered by `TempoChart.astro` using data from `src/scripts/tempo-chart.ts`.
+- **`/gpg`** - Static page exposing the author's GPG public key for secure contact (single `index.astro`).
 
 ### Path Aliases
 Declared in both `tsconfig.json` (for the type checker) and `astro.config.ts` under `vite.resolve.alias` (for the bundler) — keep them in sync when adding a new alias: `@components/*`, `@utils/*`, `@layouts/*`, `@content/*`, `@config`, `@assets/*`, `@styles/*`, `@/types`, `@contexts/*`, `@constants/*`, `@pages/*`.
