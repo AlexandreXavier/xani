@@ -2,6 +2,8 @@
 import { LOGO_IMAGE, SITE } from "@config";
 import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
+import LabMenuItem from "./LabMenuItem.astro";
+import { LAB_MENU } from "@constants/labMenu";
 
 export interface Props {
   activeNav?: "posts" | "tags" | "about" | "search" | "link" | "lab" | "lesson";
@@ -93,29 +95,7 @@ const { activeNav } = Astro.props;
               </svg>
             </button>
             <ul class="dropdown-menu">
-              <li><a href="/tempo/">Tempo</a></li>
-              <li><a href="/pdf/">PDF</a></li>
-              <li>
-                <a
-                  href="https://corte-imagem-em-varias.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer">Image</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://image-webp-alpha.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer">Convert Image</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://second-brain-kappa-azure.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer">memoria</a
-                >
-              </li>
+              {LAB_MENU.map(item => <LabMenuItem item={item} />)}
             </ul>
           </li>
           <li class="dropdown">
@@ -262,23 +242,45 @@ const { activeNav } = Astro.props;
   .dropdown-menu li a {
     @apply block w-full px-4 py-2 text-sm hover:bg-skin-card hover:text-skin-accent;
   }
-  /* Desktop: show on hover */
+  /* Desktop: show on hover. Use direct-child selector so hovering a parent
+     dropdown doesn't auto-open its nested submenus. */
   @media (min-width: 640px) {
-    .dropdown:hover .dropdown-menu,
-    .dropdown:focus-within .dropdown-menu {
+    .dropdown:hover > .dropdown-menu,
+    .dropdown:focus-within > .dropdown-menu {
       @apply block;
     }
-    .dropdown:hover .chevron,
-    .dropdown:focus-within .chevron {
+    .dropdown:hover > .dropdown-trigger .chevron,
+    .dropdown:focus-within > .dropdown-trigger .chevron {
       @apply rotate-180;
     }
   }
-  /* Mobile: show when open */
-  .dropdown.is-open .dropdown-menu {
+  /* Mobile: show when open. Direct-child so an open parent doesn't force
+     its nested submenus open. */
+  .dropdown.is-open > .dropdown-menu {
     @apply block static translate-x-0 mt-2 border-0 shadow-none bg-transparent;
   }
-  .dropdown.is-open .chevron {
+  .dropdown.is-open > .dropdown-trigger .chevron {
     @apply rotate-180;
+  }
+
+  /* Nested submenu (one level inside Lab). Flyout to the right on desktop;
+     accordion inline-indented on mobile. CSS currently supports only one
+     level of nesting — see memory `lab-menu-architecture`. */
+  .dropdown-trigger-nested {
+    @apply w-full justify-between text-sm;
+  }
+  .dropdown-submenu {
+    @apply left-full top-0 mt-0 ml-1;
+    transform: none;
+  }
+  .dropdown-nested.is-open > .dropdown-submenu {
+    @apply ml-4 mt-1;
+  }
+  .chevron-right {
+    @apply transition-transform duration-200;
+  }
+  .dropdown-nested.is-open > .dropdown-trigger-nested .chevron-right {
+    @apply rotate-90;
   }
 
   nav button {
@@ -335,12 +337,22 @@ const { activeNav } = Astro.props;
         if (window.innerWidth < 640) {
           e.preventDefault();
           const dropdown = trigger.closest(".dropdown");
-          // Close other dropdowns
-          document.querySelectorAll(".dropdown").forEach((d) => {
-            if (d !== dropdown) d.classList.remove("is-open");
-          });
-          dropdown?.classList.toggle("is-open");
-          const isOpen = dropdown?.classList.contains("is-open");
+          if (!dropdown) return;
+          // Close sibling dropdowns at the same nesting level, leaving
+          // ancestors (and unrelated levels) untouched.
+          const parent = dropdown.parentElement;
+          if (parent) {
+            Array.from(parent.children).forEach((sibling) => {
+              if (
+                sibling !== dropdown &&
+                sibling.classList.contains("dropdown")
+              ) {
+                sibling.classList.remove("is-open");
+              }
+            });
+          }
+          dropdown.classList.toggle("is-open");
+          const isOpen = dropdown.classList.contains("is-open");
           trigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
         }
       });

@@ -1,0 +1,53 @@
+---
+import type { LabMenuItem } from "@constants/labMenu";
+import Self from "./LabMenuItem.astro";
+
+interface Props {
+  item: LabMenuItem;
+}
+
+const { item } = Astro.props;
+---
+
+{
+  item.kind === "link" ? (
+    <li>
+      {item.external ? (
+        <a href={item.href} target="_blank" rel="noopener noreferrer">
+          {item.label}
+        </a>
+      ) : (
+        <a href={item.href}>{item.label}</a>
+      )}
+    </li>
+  ) : (
+    <li class="dropdown dropdown-nested">
+      <button
+        class="dropdown-trigger dropdown-trigger-nested"
+        aria-expanded="false"
+        aria-haspopup="true"
+      >
+        {item.label}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="chevron-right"
+        >
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+      <ul class="dropdown-menu dropdown-submenu">
+        {item.children.map(child => (
+          <Self item={child} />
+        ))}
+      </ul>
+    </li>
+  )
+}
