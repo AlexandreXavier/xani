@@ -33,6 +33,7 @@ export enum LinkCategory {
   AGENT = 'agent',
   NATIVE = 'native',
   VELA = 'vela',
+  SKILL = 'skill',
 }
 
 export interface LinkItem {

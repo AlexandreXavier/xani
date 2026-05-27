@@ -21,7 +21,8 @@ export type CategoryIconName =
   | 'Sparkles'
   | 'Bot'
   | 'Smartphone'
-  | 'Sailboat';
+  | 'Sailboat'
+  | 'Zap';
 
 export interface CategoryInfo {
   id: LinkCategory;
@@ -100,6 +101,11 @@ export const CATEGORY_CONFIG: Record<LinkCategory, Omit<CategoryInfo, 'id'>> = {
     name: 'Vela',
     iconName: 'Sailboat',
     iconColorClassname: 'text-blue-400',
+  },
+  [LinkCategory.SKILL]: {
+    name: 'Skill',
+    iconName: 'Zap',
+    iconColorClassname: 'text-yellow-400',
   },
 };
 
@@ -311,12 +317,6 @@ export const LINKS: LinkItem[] = [
     category: LinkCategory.TOOL,
   },
   {
-    id: 'crontab-guru',
-    name: 'crontab guru',
-    url: 'https://crontab.guru',
-    category: LinkCategory.TOOL,
-  },
-  {
     id: 'css-hd-gradients',
     name: 'CSS HD Gradients',
     url: 'https://gradient.style',
@@ -425,12 +425,6 @@ export const LINKS: LinkItem[] = [
     category: LinkCategory.TOOL,
   },
   {
-    id: 'higgsfield',
-    name: 'Higgsfield',
-    url: 'https://higgsfield.ai/create/motion-control',
-    category: LinkCategory.TOOL,
-  },
-  {
     id: '3e8blueprint',
     name: '3E8 Blueprint',
     url: 'https://www.3e8blueprint.com/',
@@ -467,14 +461,14 @@ export const LINKS: LinkItem[] = [
     category: LinkCategory.TOOL,
   },
   {
-    id:'everymac',
-    name:'everymac',
-    url:'https://everymac.com/ultimate-mac-lookup/?identify=C02M90HLFD56&g-recaptcha-response=P1_eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.haJwZACjZXhwzmoFa1OncGFzc2tlecUFFZO_O_IHY-PZfJSPQbv9ELSbzK3FnRH44AhVOLWU87dJemHNsXDjKm_AMALxLswctdFKZH7P-loQFPTb0XOoQL_7_6gq7Q0Fy8Tx-veNxDCuYoHTAfoE4OHPQR3aPMygKsJKaZ1qTqi2YNR9EgeY0NZ1UGC8x0wU8TEFIa9LTbL4vwvDM14JJSPNOo77QRU-sUDu8foY14E-KffDmak6Z7t8YOxPfwX5R4UA02HCQ_mJhgAecGDM3G7JbYwO7K6_6yF3rwWTCTjHa-gGy1nlx4iN4Iu7pLEhp1uyNRKjOKOmZ6bjFegYd-TkNFz2_fCObWU4a6m4yB--pf7ivRB7MU2yjgwp-kK_tK9RSaWoyJw6Pl6tNS7jjBcBJFgq7Rh4QZqutZ161CSbByXnFgOt7CbF5h-NmhYMgioF4OyfAEXJLE6mQk_DYZNYx6A_7XXI8VvKuTY0QgBsbDcCi5YQ8CA9MLG3yAxwZDRbuodF9NJfuTURw7-9r_iqc7snamZoHisRjbm1EuQp433MSXgGXcRf0WMzzBy2MCzIXxe_5PjpkLjihUN1k6xGXgegJxJXuppM5MtTjm_lo08dA0FcPvAHngi7R8AB6mNDu_JeZl6Kuoz-gYWt9MC3wqpmQm9gLaBkdrcHKgshi6PwktzTbIimdibYtCpHNikA6iOLgXlkCPkM5r2VA5hLeUsfLIY77DfeFirlgydvxv_Sv5_TDAeFOcQYZ-LFHgSWtewSPuQcfJhlKfIXy3uB_sHsKMZB6IuRp2twAmECiuQo5JixU5G3bZwFxYbleh8z2x48WbS_BPj7GYvSm15HgTyYmm9on5zLf2cJzIGG9IDBAQxuWuv_zw9wJfA9MzghDgXADIgyR4XSoxBciveXk7qZ_UkIcWhSv8zNbjdV3V1Xz2hlO_bQfA70U_X3udAYp_1xFCkxAlKq3PzeUxw4VKt7WM9TQ_UKTVdW1guSjfofvCO_2dkYUy0LuO6SB8B32oTpmv6UG2afFmndSWpv5MUK96W5j6tq2E89Hkync6yDmkYsj1Vmz-v2LfH9a-6GRe_xIdBKvcLhSCv7PTm43ESS5hCpW95tRcdP7wJfBIBwBEntYhN31bX5Knnl3aEF9Mkuv-OQzbVaJd1m9mbvtOoTA1pY-SRwGANs7qyhjbecOPEIiDIxo80gRkUSf7PQzZehC7sDfb4h_S4BgY9cfa0m7y2lFXw9MJbwE5tVyhx7oHAqgBOqkAXqWTaF6GBSX1JjCTQr8pV6krXsHOkXsWf11ePDvs5-OxZXyZ7QFiQrDI8UDxOcdcywe7dlsqNToqyL5NbWVYoVs9gRAe_7I6BUSATBMo5qLIAoaFL0DyteIU7vKPUNxUYRZivpkNG0I5OdvA33_awt5w_wGDwpAmjaqco3uWRT4y3FxvJsBnzFfJupz71P6NPQWk-UyuNzRsAuyr3iWGvq3McGjgnvZdVMq5CPub22tNne0lO2D9XwJLrB5RQZYCbzGIqsbdRPZGzwmxpiIBbg2GqoyaPKSZq3XRUCgGHF-fgJWDvAUcRZ8aSTrFy3D0qXLF2D2jxCNZM8DstPNg_JjScH6Cu-PnjFHJPYLGQffmzUKtotV01_rtauujvjWVyOQPiONvZ25WrGyOaoMaoykBnfr0tFOcK9vShuzMEG8MRIEcjF1K0BKBEGMf3HtaieBYiJTGKyQ3WsdliQB4Fiso0op4TdYQReL1OsMBfak-rzomtyp2IwNmUwMWWoc2hhcmRfaWTOAzGDbw.55y8f2KMRgf6D5Oc91zb-ZiymddFxEBbe2Y2j6ol1r8&h-captcha-response=P1_eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.haJwZACjZXhwzmoFa1OncGFzc2tlecUFFZO_O_IHY-PZfJSPQbv9ELSbzK3FnRH44AhVOLWU87dJemHNsXDjKm_AMALxLswctdFKZH7P-loQFPTb0XOoQL_7_6gq7Q0Fy8Tx-veNxDCuYoHTAfoE4OHPQR3aPMygKsJKaZ1qTqi2YNR9EgeY0NZ1UGC8x0wU8TEFIa9LTbL4vwvDM14JJSPNOo77QRU-sUDu8foY14E-KffDmak6Z7t8YOxPfwX5R4UA02HCQ_mJhgAecGDM3G7JbYwO7K6_6yF3rwWTCTjHa-gGy1nlx4iN4Iu7pLEhp1uyNRKjOKOmZ6bjFegYd-TkNFz2_fCObWU4a6m4yB--pf7ivRB7MU2yjgwp-kK_tK9RSaWoyJw6Pl6tNS7jjBcBJFgq7Rh4QZqutZ161CSbByXnFgOt7CbF5h-NmhYMgioF4OyfAEXJLE6mQk_DYZNYx6A_7XXI8VvKuTY0QgBsbDcCi5YQ8CA9MLG3yAxwZDRbuodF9NJfuTURw7-9r_iqc7snamZoHisRjbm1EuQp433MSXgGXcRf0WMzzBy2MCzIXxe_5PjpkLjihUN1k6xGXgegJxJXuppM5MtTjm_lo08dA0FcPvAHngi7R8AB6mNDu_JeZl6Kuoz-gYWt9MC3wqpmQm9gLaBkdrcHKgshi6PwktzTbIimdibYtCpHNikA6iOLgXlkCPkM5r2VA5hLeUsfLIY77DfeFirlgydvxv_Sv5_TDAeFOcQYZ-LFHgSWtewSPuQcfJhlKfIXy3uB_sHsKMZB6IuRp2twAmECiuQo5JixU5G3bZwFxYbleh8z2x48WbS_BPj7GYvSm15HgTyYmm9on5zLf2cJzIGG9IDBAQxuWuv_zw9wJfA9MzghDgXADIgyR4XSoxBciveXk7qZ_UkIcWhSv8zNbjdV3V1Xz2hlO_bQfA70U_X3udAYp_1xFCkxAlKq3PzeUxw4VKt7WM9TQ_UKTVdW1guSjfofvCO_2dkYUy0LuO6SB8B32oTpmv6UG2afFmndSWpv5MUK96W5j6tq2E89Hkync6yDmkYsj1Vmz-v2LfH9a-6GRe_xIdBKvcLhSCv7PTm43ESS5hCpW95tRcdP7wJfBIBwBEntYhN31bX5Knnl3aEF9Mkuv-OQzbVaJd1m9mbvtOoTA1pY-SRwGANs7qyhjbecOPEIiDIxo80gRkUSf7PQzZehC7sDfb4h_S4BgY9cfa0m7y2lFXw9MJbwE5tVyhx7oHAqgBOqkAXqWTaF6GBSX1JjCTQr8pV6krXsHOkXsWf11ePDvs5-OxZXyZ7QFiQrDI8UDxOcdcywe7dlsqNToqyL5NbWVYoVs9gRAe_7I6BUSATBMo5qLIAoaFL0DyteIU7vKPUNxUYRZivpkNG0I5OdvA33_awt5w_wGDwpAmjaqco3uWRT4y3FxvJsBnzFfJupz71P6NPQWk-UyuNzRsAuyr3iWGvq3McGjgnvZdVMq5CPub22tNne0lO2D9XwJLrB5RQZYCbzGIqsbdRPZGzwmxpiIBbg2GqoyaPKSZq3XRUCgGHF-fgJWDvAUcRZ8aSTrFy3D0qXLF2D2jxCNZM8DstPNg_JjScH6Cu-PnjFHJPYLGQffmzUKtotV01_rtauujvjWVyOQPiONvZ25WrGyOaoMaoykBnfr0tFOcK9vShuzMEG8MRIEcjF1K0BKBEGMf3HtaieBYiJTGKyQ3WsdliQB4Fiso0op4TdYQReL1OsMBfak-rzomtyp2IwNmUwMWWoc2hhcmRfaWTOAzGDbw.55y8f2KMRgf6D5Oc91zb-ZiymddFxEBbe2Y2j6ol1r8',
+    id: 'everymac',
+    name: 'everymac',
+    url: 'https://everymac.com/ultimate-mac-lookup/?identify=C02M90HLFD56&g-recaptcha-response=P1_eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.haJwZACjZXhwzmoFa1OncGFzc2tlecUFFZO_O_IHY-PZfJSPQbv9ELSbzK3FnRH44AhVOLWU87dJemHNsXDjKm_AMALxLswctdFKZH7P-loQFPTb0XOoQL_7_6gq7Q0Fy8Tx-veNxDCuYoHTAfoE4OHPQR3aPMygKsJKaZ1qTqi2YNR9EgeY0NZ1UGC8x0wU8TEFIa9LTbL4vwvDM14JJSPNOo77QRU-sUDu8foY14E-KffDmak6Z7t8YOxPfwX5R4UA02HCQ_mJhgAecGDM3G7JbYwO7K6_6yF3rwWTCTjHa-gGy1nlx4iN4Iu7pLEhp1uyNRKjOKOmZ6bjFegYd-TkNFz2_fCObWU4a6m4yB--pf7ivRB7MU2yjgwp-kK_tK9RSaWoyJw6Pl6tNS7jjBcBJFgq7Rh4QZqutZ161CSbByXnFgOt7CbF5h-NmhYMgioF4OyfAEXJLE6mQk_DYZNYx6A_7XXI8VvKuTY0QgBsbDcCi5YQ8CA9MLG3yAxwZDRbuodF9NJfuTURw7-9r_iqc7snamZoHisRjbm1EuQp433MSXgGXcRf0WMzzBy2MCzIXxe_5PjpkLjihUN1k6xGXgegJxJXuppM5MtTjm_lo08dA0FcPvAHngi7R8AB6mNDu_JeZl6Kuoz-gYWt9MC3wqpmQm9gLaBkdrcHKgshi6PwktzTbIimdibYtCpHNikA6iOLgXlkCPkM5r2VA5hLeUsfLIY77DfeFirlgydvxv_Sv5_TDAeFOcQYZ-LFHgSWtewSPuQcfJhlKfIXy3uB_sHsKMZB6IuRp2twAmECiuQo5JixU5G3bZwFxYbleh8z2x48WbS_BPj7GYvSm15HgTyYmm9on5zLf2cJzIGG9IDBAQxuWuv_zw9wJfA9MzghDgXADIgyR4XSoxBciveXk7qZ_UkIcWhSv8zNbjdV3V1Xz2hlO_bQfA70U_X3udAYp_1xFCkxAlKq3PzeUxw4VKt7WM9TQ_UKTVdW1guSjfofvCO_2dkYUy0LuO6SB8B32oTpmv6UG2afFmndSWpv5MUK96W5j6tq2E89Hkync6yDmkYsj1Vmz-v2LfH9a-6GRe_xIdBKvcLhSCv7PTm43ESS5hCpW95tRcdP7wJfBIBwBEntYhN31bX5Knnl3aEF9Mkuv-OQzbVaJd1m9mbvtOoTA1pY-SRwGANs7qyhjbecOPEIiDIxo80gRkUSf7PQzZehC7sDfb4h_S4BgY9cfa0m7y2lFXw9MJbwE5tVyhx7oHAqgBOqkAXqWTaF6GBSX1JjCTQr8pV6krXsHOkXsWf11ePDvs5-OxZXyZ7QFiQrDI8UDxOcdcywe7dlsqNToqyL5NbWVYoVs9gRAe_7I6BUSATBMo5qLIAoaFL0DyteIU7vKPUNxUYRZivpkNG0I5OdvA33_awt5w_wGDwpAmjaqco3uWRT4y3FxvJsBnzFfJupz71P6NPQWk-UyuNzRsAuyr3iWGvq3McGjgnvZdVMq5CPub22tNne0lO2D9XwJLrB5RQZYCbzGIqsbdRPZGzwmxpiIBbg2GqoyaPKSZq3XRUCgGHF-fgJWDvAUcRZ8aSTrFy3D0qXLF2D2jxCNZM8DstPNg_JjScH6Cu-PnjFHJPYLGQffmzUKtotV01_rtauujvjWVyOQPiONvZ25WrGyOaoMaoykBnfr0tFOcK9vShuzMEG8MRIEcjF1K0BKBEGMf3HtaieBYiJTGKyQ3WsdliQB4Fiso0op4TdYQReL1OsMBfak-rzomtyp2IwNmUwMWWoc2hhcmRfaWTOAzGDbw.55y8f2KMRgf6D5Oc91zb-ZiymddFxEBbe2Y2j6ol1r8&h-captcha-response=P1_eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.haJwZACjZXhwzmoFa1OncGFzc2tlecUFFZO_O_IHY-PZfJSPQbv9ELSbzK3FnRH44AhVOLWU87dJemHNsXDjKm_AMALxLswctdFKZH7P-loQFPTb0XOoQL_7_6gq7Q0Fy8Tx-veNxDCuYoHTAfoE4OHPQR3aPMygKsJKaZ1qTqi2YNR9EgeY0NZ1UGC8x0wU8TEFIa9LTbL4vwvDM14JJSPNOo77QRU-sUDu8foY14E-KffDmak6Z7t8YOxPfwX5R4UA02HCQ_mJhgAecGDM3G7JbYwO7K6_6yF3rwWTCTjHa-gGy1nlx4iN4Iu7pLEhp1uyNRKjOKOmZ6bjFegYd-TkNFz2_fCObWU4a6m4yB--pf7ivRB7MU2yjgwp-kK_tK9RSaWoyJw6Pl6tNS7jjBcBJFgq7Rh4QZqutZ161CSbByXnFgOt7CbF5h-NmhYMgioF4OyfAEXJLE6mQk_DYZNYx6A_7XXI8VvKuTY0QgBsbDcCi5YQ8CA9MLG3yAxwZDRbuodF9NJfuTURw7-9r_iqc7snamZoHisRjbm1EuQp433MSXgGXcRf0WMzzBy2MCzIXxe_5PjpkLjihUN1k6xGXgegJxJXuppM5MtTjm_lo08dA0FcPvAHngi7R8AB6mNDu_JeZl6Kuoz-gYWt9MC3wqpmQm9gLaBkdrcHKgshi6PwktzTbIimdibYtCpHNikA6iOLgXlkCPkM5r2VA5hLeUsfLIY77DfeFirlgydvxv_Sv5_TDAeFOcQYZ-LFHgSWtewSPuQcfJhlKfIXy3uB_sHsKMZB6IuRp2twAmECiuQo5JixU5G3bZwFxYbleh8z2x48WbS_BPj7GYvSm15HgTyYmm9on5zLf2cJzIGG9IDBAQxuWuv_zw9wJfA9MzghDgXADIgyR4XSoxBciveXk7qZ_UkIcWhSv8zNbjdV3V1Xz2hlO_bQfA70U_X3udAYp_1xFCkxAlKq3PzeUxw4VKt7WM9TQ_UKTVdW1guSjfofvCO_2dkYUy0LuO6SB8B32oTpmv6UG2afFmndSWpv5MUK96W5j6tq2E89Hkync6yDmkYsj1Vmz-v2LfH9a-6GRe_xIdBKvcLhSCv7PTm43ESS5hCpW95tRcdP7wJfBIBwBEntYhN31bX5Knnl3aEF9Mkuv-OQzbVaJd1m9mbvtOoTA1pY-SRwGANs7qyhjbecOPEIiDIxo80gRkUSf7PQzZehC7sDfb4h_S4BgY9cfa0m7y2lFXw9MJbwE5tVyhx7oHAqgBOqkAXqWTaF6GBSX1JjCTQr8pV6krXsHOkXsWf11ePDvs5-OxZXyZ7QFiQrDI8UDxOcdcywe7dlsqNToqyL5NbWVYoVs9gRAe_7I6BUSATBMo5qLIAoaFL0DyteIU7vKPUNxUYRZivpkNG0I5OdvA33_awt5w_wGDwpAmjaqco3uWRT4y3FxvJsBnzFfJupz71P6NPQWk-UyuNzRsAuyr3iWGvq3McGjgnvZdVMq5CPub22tNne0lO2D9XwJLrB5RQZYCbzGIqsbdRPZGzwmxpiIBbg2GqoyaPKSZq3XRUCgGHF-fgJWDvAUcRZ8aSTrFy3D0qXLF2D2jxCNZM8DstPNg_JjScH6Cu-PnjFHJPYLGQffmzUKtotV01_rtauujvjWVyOQPiONvZ25WrGyOaoMaoykBnfr0tFOcK9vShuzMEG8MRIEcjF1K0BKBEGMf3HtaieBYiJTGKyQ3WsdliQB4Fiso0op4TdYQReL1OsMBfak-rzomtyp2IwNmUwMWWoc2hhcmRfaWTOAzGDbw.55y8f2KMRgf6D5Oc91zb-ZiymddFxEBbe2Y2j6ol1r8',
     category: LinkCategory.TOOL,
   },
 
   // Cloud
-  
+
   {
     id: 'azure',
     name: 'Azure',
@@ -549,6 +543,7 @@ export const LINKS: LinkItem[] = [
   },
 
   // UI
+
   {
     id: '21st',
     name: '21st',
@@ -827,32 +822,33 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.exploit-db.com/',
     category: LinkCategory.WEB,
   },
-{
-  id: 'shotdeck',
-  name: 'Shotdeck',
-  url: 'https://shotdeck.com/browse/stills',
-  category: LinkCategory.WEB,
-},
-{
-  id: 'product-hunt',
-  name: 'Product Hunt',
-  url: 'https://www.producthunt.com/',
-  category: LinkCategory.WEB,
-},
-{
-  id: 'cryptpad',
-  name: 'CryptPad',
-  url: 'https://cryptpad.fr/drive/',
-  category: LinkCategory.WEB,
-},
-{
-  id: 'ycombinator',
-  name: 'Y Combinator',
-  url: 'https://www.ycombinator.com/companies',
-  category: LinkCategory.WEB,
-},
+  {
+    id: 'shotdeck',
+    name: 'Shotdeck',
+    url: 'https://shotdeck.com/browse/stills',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'product-hunt',
+    name: 'Product Hunt',
+    url: 'https://www.producthunt.com/',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'cryptpad',
+    name: 'CryptPad',
+    url: 'https://cryptpad.fr/drive/',
+    category: LinkCategory.WEB,
+  },
+  {
+    id: 'ycombinator',
+    name: 'Y Combinator',
+    url: 'https://www.ycombinator.com/companies',
+    category: LinkCategory.WEB,
+  },
 
   // Code
+
   {
     id: 'aimpl',
     name: 'AIMPL',
@@ -869,18 +865,6 @@ export const LINKS: LinkItem[] = [
     id: 'huggingface',
     name: 'Hugging Face',
     url: 'https://huggingface.co/',
-    category: LinkCategory.CODE,
-  },
-  {
-    id: 'skills-sh',
-    name: 'Skills.sh',
-    url: 'https://skills.sh/',
-    category: LinkCategory.CODE,
-  },
-  {
-    id: 'skillsmp',
-    name: 'SkillsMP',
-    url: 'https://skillsmp.com/',
     category: LinkCategory.CODE,
   },
   {
@@ -914,37 +898,37 @@ export const LINKS: LinkItem[] = [
     category: LinkCategory.CODE,
   },
   {
-    id:'number',
+    id: 'number',
     name: '174743599',
     url: 'https://xani.me',
     category: LinkCategory.CODE,
   },
   {
-    id:'number2',
+    id: 'number2',
     name: '105069744',
     url: 'https://xani.me',
     category: LinkCategory.CODE,
   },
   {
-    id:'number3',
+    id: 'number3',
     name: '115229353',
     url: 'https://xani.me',
     category: LinkCategory.CODE,
   },
   {
-    id:'number4',
+    id: 'number4',
     name: '115229345',
     url: 'https://xani.me',
     category: LinkCategory.CODE,
   },
   {
-    id:'number5',
+    id: 'number5',
     name: '275054098',
     url: 'https://xani.me',
     category: LinkCategory.CODE,
   },
   {
-    id:'number6',
+    id: 'number6',
     name: '275054330',
     url: 'https://xani.me',
     category: LinkCategory.CODE,
@@ -962,8 +946,8 @@ export const LINKS: LinkItem[] = [
     category: LinkCategory.CODE,
   },
 
-
   //Native
+
   {
     id: 'reactive-x',
     name: 'Reactive X',
@@ -972,6 +956,7 @@ export const LINKS: LinkItem[] = [
   },
 
   //Agent
+
   {
     id: 'moltyscan',
     name: 'Moltyscan',
@@ -986,6 +971,7 @@ export const LINKS: LinkItem[] = [
   },
 
   // Sound
+
   {
     id: 'aiva',
     name: 'AIVA',
@@ -1024,6 +1010,7 @@ export const LINKS: LinkItem[] = [
   },
 
   // Scrapy
+
   {
     id: 'brightdata',
     name: 'BrightData',
@@ -1068,6 +1055,7 @@ export const LINKS: LinkItem[] = [
   },
 
   // Fintech
+
   {
     id: 'ai-startup-data',
     name: 'AI Startup Data',
@@ -1094,6 +1082,7 @@ export const LINKS: LinkItem[] = [
   },
 
   // Crypt
+
   {
     id: 'bitcoinheiros',
     name: 'Bitcoin Heiros',
@@ -1132,6 +1121,7 @@ export const LINKS: LinkItem[] = [
   },
 
   // Inspire
+
   {
     id: 'microsculpture',
     name: 'Microsculpture',
@@ -1248,6 +1238,7 @@ export const LINKS: LinkItem[] = [
   },
 
   // Vela
+
   {
     id: 'escora',
     name: 'Escora',
@@ -1271,6 +1262,75 @@ export const LINKS: LinkItem[] = [
     name: 'Fishing App',
     url: 'https://fishing-app.gpsnauticalcharts.com/i-boating-fishing-web-app/fishing-marine-charts-navigation.html#12.81/42.2366/-8.8057',
     category: LinkCategory.VELA,
+  },
+
+  //SKILL
+  
+  {
+    id: 'skills-sh',
+    name: 'Skills.sh',
+    url: 'https://skills.sh/',
+    category: LinkCategory.SKILL,
+  },
+  {
+    id: 'skillsmp',
+    name: 'SkillsMP',
+    url: 'https://skillsmp.com/',
+    category: LinkCategory.SKILL,
+  },
+  {
+    id: 'skills',
+    name: 'Skills',
+    url: 'https://github.com/mattpocock/skills',
+    category: LinkCategory.SKILL,
+  },
+  {
+    id: 'gstack',
+    name: 'GStack',
+    url: 'https://github.com/garrytan/gstack',
+    category: LinkCategory.SKILL,
+  },
+  {
+    id: 'paperspine',
+    name: 'PaperSpine',
+    url: 'https://github.com/WUBING2023/PaperSpine',
+    category: LinkCategory.SKILL,
+  },
+  {
+    id: 'agentic-coding-starter-kit',
+    name: 'Agentic Coding Starter Kit',
+    url: 'https://github.com/leonvanzyl/agentic-coding-starter-kit',
+    category: LinkCategory.SKILL,
+  },
+  {
+    id: 'nurijanian-skills',
+    name: 'NuriJanian Skills',
+    url: 'https://github.com/gnurio/nurijanian-skills',
+    category: LinkCategory.SKILL,
+  },
+  {
+    id: 'ui-ux-pro-max-skill',
+    name: 'UI/UX Pro Max Skill',
+    url: 'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill',
+    category: LinkCategory.SKILL,
+  },
+  {
+    id: 'awesome-design-md',
+    name: 'Awesome Design MD',
+    url: 'https://github.com/VoltAgent/awesome-design-md',
+    category: LinkCategory.SKILL,
+  },
+  {
+    id: 'npxskillui',
+    name: 'NPX Skill UI',
+    url: 'https://github.com/amaancoderx/npxskillui',
+    category: LinkCategory.SKILL,
+  },
+  {
+    id: 'impeccable',
+    name: 'Impeccable',
+    url: 'https://github.com/pbakaus/impeccable',
+    category: LinkCategory.SKILL,
   },
 ];
 
