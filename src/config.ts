@@ -4,7 +4,7 @@ export const SITE: Site = {
   website: "https://xani.me/", // replace this with your deployed domain
   author: "Alexandre Xavier",
   desc: "Alexandre Xavier - IT Analyst & AI Developer with 25+ years experience. Insights on AI context pipelines, RAG, Python, Go, cloud architecture, and software development.",
-  title: "Alexandre Xavier",
+  title: "JAAX",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 3,
@@ -17,10 +17,10 @@ export const LOCALE = {
 } as const;
 
 export const LOGO_IMAGE = {
-  enable: false,
+  enable: true,
   svg: true,
-  width: 216,
-  height: 46,
+  width: 80,
+  height: 80,
 };
 
 export const SOCIALS: SocialObjects = [
