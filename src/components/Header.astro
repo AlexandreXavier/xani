@@ -33,14 +33,14 @@ const { activeNav } = Astro.props;
                 alt={SITE.title}
                 width={LOGO_IMAGE.width}
                 height={LOGO_IMAGE.height}
-                class="logo-light aspect-square object-contain min-[800px]:h-60 min-[800px]:w-60"
+                class="logo-light aspect-square object-contain min-[800px]:h-72 min-[800px]:w-72"
               />
               <img
                 src="/assets/logo-dark.svg"
                 alt={SITE.title}
                 width={LOGO_IMAGE.width}
                 height={LOGO_IMAGE.height}
-                class="logo-dark aspect-square object-contain min-[800px]:h-60 min-[800px]:w-60"
+                class="logo-dark aspect-square object-contain min-[800px]:h-72 min-[800px]:w-72"
               />
             </>
           ) : (
@@ -212,10 +212,10 @@ const { activeNav } = Astro.props;
     @apply mx-auto flex max-w-3xl flex-col items-center justify-between sm:flex-row;
   }
   .top-nav-wrap {
-    @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8;
+    @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-2;
   }
   .logo {
-    @apply absolute py-1 text-xl font-semibold sm:static sm:text-2xl;
+    @apply absolute py-1 text-xl font-semibold sm:static sm:shrink-0 sm:text-2xl;
   }
   .hamburger-menu {
     @apply self-end p-2 sm:hidden;
