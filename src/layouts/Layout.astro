@@ -1,10 +1,14 @@
 ---
+import fs from "node:fs";
 import { LOCALE, SITE } from "@config";
 import "@styles/base.css";
 import { ClientRouter } from "astro:transitions";
-import Analytics from '@vercel/analytics/astro';  
+import Analytics from '@vercel/analytics/astro';
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
+const toggleThemeScript = fs.readFileSync("public/toggle-theme.js", "utf-8");
+const fontsHref =
+  "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap";
 
 export interface Props {
   title?: string;
@@ -84,13 +88,19 @@ const socialImageURL = new URL(
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={socialImageURL} />
 
-    <!-- Google Font -->
+    <!-- Google Font (non-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href={fontsHref} />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
       rel="stylesheet"
+      href={fontsHref}
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link rel="stylesheet" href={fontsHref} />
+    </noscript>
 
     <meta name="theme-color" content="" />
 
@@ -108,7 +118,7 @@ const socialImageURL = new URL(
 
     <ClientRouter />
 
-    <script is:inline src="/toggle-theme.js"></script>
+    <script is:inline set:html={toggleThemeScript}></script>
 
     <Analytics />
   </head>
