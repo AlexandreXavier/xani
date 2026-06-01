@@ -55,4 +55,7 @@ export default defineConfig({
     },
   },
   scopedStyleStrategy: "where",
+  build: {
+    inlineStylesheets: "always",
+  },
 });
