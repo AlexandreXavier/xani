@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Xani is a personal blog and portfolio website built with Astro 5, featuring type-safe content collections, multi-language support (pt/en), and dynamic OG image generation.
+Xani is a personal blog and portfolio website built with Astro 5, featuring type-safe content collections, multi-language support (pt/en), and dynamic OG image generation. The repo/project is "Xani" but the public-facing site title (`SITE.title` in `src/config.ts`) is **"JAAX"** — keep this distinction in mind when editing copy, OG output, or schema markup.
+
+See **`CONTEXT.md`** for project-specific terminology (Lab dropdown, Lab group, `/link` bookmarks). Terms defined there have a specific meaning in this codebase — prefer them over generic synonyms.
 
 ## Build & Development Commands
 
@@ -34,13 +36,17 @@ Type-safe markdown content with Zod schemas defined in `src/content/config.ts`:
 When adding a new collection, update `src/content/config.ts`, add a matching route under `src/pages/`, and run `npm run sync` to regenerate types before using the new schema.
 
 ### Key Directories
-- **src/components/** - Astro (static) and React (interactive) components
+- **src/components/** - Astro (static) and React (interactive) components. Two notable subdirectories:
+  - **schema/** - JSON-LD structured-data components (`BlogPostingSchema`, `BreadcrumbSchema`, `PersonWebsiteSchema`). Inject these in layouts/pages to emit SEO schema; do not hand-roll `<script type="application/ld+json">` elsewhere.
+  - **pdf/** - React island for the `/pdf` page (`PDFConverterIsland` + sub-components and `hooks/`). Keep new PDF UI code here, not at the top level.
 - **src/layouts/** - Page templates (Layout.astro is the main HTML wrapper; PostDetails, Posts, TagPosts, AboutLayout, Main)
 - **src/pages/** - File-based routing. Top-level routes: `/` (index), `/about`, `/search`, `/404`, plus content sections `/posts`, `/estudo`, `/code`, `/tags`, and standalone features `/link`, `/pdf`, `/tempo`, `/gpg`. Endpoints: `og.png.ts`, `robots.txt.ts`, `rss.xml.ts`
-- **src/utils/** - Post/episode filtering, sorting, pagination, tag aggregation, OG image generation (`og-templates/` holds JSX templates consumed by Satori)
+- **src/utils/** - Post/episode filtering, sorting, pagination, tag aggregation, OG image generation (`og-templates/` holds JSX templates consumed by Satori). `pdf/` holds helpers used by the `/pdf` page and its worker.
 - **src/config.ts** - `SITE` (website, author, postPerPage, scheduledPostMargin), `LOCALE`, `LOGO_IMAGE`, `SOCIALS`
 - **src/types.ts** - Shared `Site` / `SocialObjects` types consumed by config
-- **src/constants/** - Static data (e.g. `links.ts` powering `/link`)
+- **src/constants/** - Static data tables that drive UI without a content collection:
+  - `links.ts` — bookmarks shown on the `/link` page (typed by `LinkItem`/`LinkCategory` in `src/types.ts`).
+  - `labMenu.ts` — entries for the Lab dropdown in `Header.astro` (see CONTEXT.md for the Lab link vs. Lab group distinction; groups are one level deep only). Edit this file to add/reorder Lab menu items rather than touching the header markup.
 - **src/workers/** - Vite ES-module workers (format set to `"es"` in `astro.config.ts`). `pdf-processor.worker.ts` offloads PDF parsing from the main thread for the `/pdf` page.
 - **src/scripts/** - Client-side scripts (e.g. `tempo-chart.ts` drives the `/tempo` visualization)
 - **src/helpers/** - Static JSON data: `themes.json`, `languagesList.json`, `podcastMainCategories.json`. No path alias exists for this directory; import with a relative path or use `public/` if needed client-side.

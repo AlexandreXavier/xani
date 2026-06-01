@@ -14,3 +14,18 @@ An entry in the Lab dropdown. Two kinds:
 
 ### `/link` page bookmarks
 Curated bookmarks shown on the `/link` page. Each is a `LinkItem` (see `src/types.ts`) belonging to a `LinkCategory`. These are unrelated to the Lab dropdown: a URL appearing in the Lab dropdown does **not** appear on `/link`, and vice versa.
+
+## Themes
+
+A **theme** is a single domain concept that surfaces in more than one place in the nav. The same theme name applies to *both* surfaces; the URLs across those surfaces stay disjoint (no URL appears on more than one surface).
+
+### Vela
+The sailing/sea theme. Surfaces in two places, with disjoint URLs:
+- **`/link` page**, under `LinkCategory.VELA` — third-party reference sites (federations, regattas, charts).
+- **Vela dropdown** in the top nav — Alexandre's own sailing-adjacent mini-apps (e.g. `mare`).
+
+A URL belongs to at most one of these surfaces. If a third-party sailing site exists, it goes under `/link`; if it's one of Alexandre's apps, it goes in the dropdown.
+
+## Flagged ambiguities
+
+- "Vela" previously referred only to the `LinkCategory` on `/link`. It now also names a top-level dropdown. Resolved: same theme, two surfaces, disjoint URLs (mirrors the Lab vs. `/link` rule).

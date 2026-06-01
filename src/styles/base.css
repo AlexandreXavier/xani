@@ -28,6 +28,13 @@
   html[data-theme="dark"] #sun-svg {
     display: block;
   }
+  .logo-dark,
+  html[data-theme="dark"] .logo-light {
+    display: none;
+  }
+  html[data-theme="dark"] .logo-dark {
+    display: inline-block;
+  }
   body {
     @apply flex min-h-[100svh] flex-col bg-skin-fill font-mono text-skin-base 
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;

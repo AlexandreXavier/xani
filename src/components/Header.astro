@@ -6,7 +6,15 @@ import LabMenuItem from "./LabMenuItem.astro";
 import { LAB_MENU } from "@constants/labMenu";
 
 export interface Props {
-  activeNav?: "posts" | "tags" | "about" | "search" | "link" | "lab" | "lesson";
+  activeNav?:
+    | "posts"
+    | "tags"
+    | "about"
+    | "search"
+    | "link"
+    | "lab"
+    | "vela"
+    | "lesson";
 }
 
 const { activeNav } = Astro.props;
@@ -19,12 +27,22 @@ const { activeNav } = Astro.props;
       <a href="/" class="logo whitespace-nowrap">
         {
           LOGO_IMAGE.enable ? (
-            <img
-              src={`/assets/${LOGO_IMAGE.svg ? "logo.svg" : "logo.png"}`}
-              alt={SITE.title}
-              width={LOGO_IMAGE.width}
-              height={LOGO_IMAGE.height}
-            />
+            <>
+              <img
+                src={`/assets/${LOGO_IMAGE.svg ? "logo.svg" : "logo.png"}`}
+                alt={SITE.title}
+                width={LOGO_IMAGE.width}
+                height={LOGO_IMAGE.height}
+                class="logo-light aspect-square object-contain min-[800px]:h-60 min-[800px]:w-60"
+              />
+              <img
+                src="/assets/logo-dark.svg"
+                alt={SITE.title}
+                width={LOGO_IMAGE.width}
+                height={LOGO_IMAGE.height}
+                class="logo-dark aspect-square object-contain min-[800px]:h-60 min-[800px]:w-60"
+              />
+            </>
           ) : (
             SITE.title
           )
@@ -39,9 +57,9 @@ const { activeNav } = Astro.props;
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
+            width="44"
+            height="44"
+            viewBox="0 0 44 44"
             fill="none"
             stroke="currentColor"
             stroke-width="1.5"
@@ -81,8 +99,8 @@ const { activeNav } = Astro.props;
               Lab
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="12"
-                height="12"
+                width="22"
+                height="22"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -97,6 +115,16 @@ const { activeNav } = Astro.props;
             <ul class="dropdown-menu">
               {LAB_MENU.map(item => <LabMenuItem item={item} />)}
             </ul>
+          </li>
+          <li>
+            <a
+              href="https://mare-xi.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class={activeNav === "vela" ? "active" : ""}
+            >
+              Vela
+            </a>
           </li>
           <li class="dropdown">
             <button
@@ -193,7 +221,7 @@ const { activeNav } = Astro.props;
     @apply self-end p-2 sm:hidden;
   }
   .hamburger-menu svg {
-    @apply h-6 w-6 scale-125 fill-skin-base;
+    @apply h-12 w-12 scale-125 fill-skin-base;
   }
 
   nav {
