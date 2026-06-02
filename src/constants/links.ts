@@ -1316,13 +1316,13 @@ export const LINKS: LinkItem[] = [
   },
   {
     id: 'awesome-design-md',
-    name: 'Awesome Design MD',
+    name: 'Awesome',
     url: 'https://github.com/VoltAgent/awesome-design-md',
     category: LinkCategory.SKILL,
   },
   {
     id: 'npxskillui',
-    name: 'NPX Skill UI',
+    name: 'NPX',
     url: 'https://github.com/amaancoderx/npxskillui',
     category: LinkCategory.SKILL,
   },
