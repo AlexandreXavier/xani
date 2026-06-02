@@ -1332,6 +1332,36 @@ export const LINKS: LinkItem[] = [
     url: 'https://github.com/pbakaus/impeccable',
     category: LinkCategory.SKILL,
   },
+  {
+    id: 'interview-me',
+    name: 'Interview Me',
+    url: 'https://github.com/addyosmani/agent-skills/blob/main/skills/interview-me/SKILL.md',
+    category: LinkCategory.SKILL,
+  },
+  {
+    id: 'ecc',
+    name: 'ECC',
+    url: 'https://github.com/affaan-m/ECC',
+    category: LinkCategory.SKILL,
+  },
+  {
+    id: 'superpowers',
+    name: 'Superpowers',
+    url: 'https://github.com/obra/superpowers',
+    category: LinkCategory.SKILL,
+  },
+  {
+    id: 'bmad-method',
+    name: 'BMAD Method',
+    url: 'https://github.com/bmad-code-org/BMAD-METHOD',
+    category: LinkCategory.SKILL,
+  },
+  {
+    id: 'get-shit-done',
+    name: 'Get Shit Done',
+    url: 'https://github.com/gsd-build/get-shit-done',
+    category: LinkCategory.SKILL,
+  },
 ];
 
 // Helper function to get categories with link counts
