@@ -32,6 +32,9 @@ Type-safe markdown content with Zod schemas defined in `src/content/config.ts`:
 - **blog/** - Blog posts: title, pubDatetime, modDatetime?, description, tags, language (pt/en, default en), draft, featured, ogImage (enforced ≥ 1200×630)
 - **estudo/** - Study materials: title, category, tags (default `["direito"]`), language (default pt), draft
 - **code/** - Code-focused notes: same shape as `estudo` with default tag `["code"]`
+- **vela/** - Sailing notes (the Vela theme; see CONTEXT.md): same shape as `estudo` with default tag `["vela"]`, served at `/vela`
+
+The registered collections are `{ blog, estudo, code, vela }` in `src/content/config.ts`. Note the directory is **blog/** but its public route is `/posts` (the listing layouts read the `blog` collection).
 
 When adding a new collection, update `src/content/config.ts`, add a matching route under `src/pages/`, and run `npm run sync` to regenerate types before using the new schema.
 
@@ -40,7 +43,7 @@ When adding a new collection, update `src/content/config.ts`, add a matching rou
   - **schema/** - JSON-LD structured-data components (`BlogPostingSchema`, `BreadcrumbSchema`, `PersonWebsiteSchema`). Inject these in layouts/pages to emit SEO schema; do not hand-roll `<script type="application/ld+json">` elsewhere.
   - **pdf/** - React island for the `/pdf` page (`PDFConverterIsland` + sub-components and `hooks/`). Keep new PDF UI code here, not at the top level.
 - **src/layouts/** - Page templates (Layout.astro is the main HTML wrapper; PostDetails, Posts, TagPosts, AboutLayout, Main)
-- **src/pages/** - File-based routing. Top-level routes: `/` (index), `/about`, `/search`, `/404`, plus content sections `/posts`, `/estudo`, `/code`, `/tags`, and standalone features `/link`, `/pdf`, `/tempo`, `/gpg`. Endpoints: `og.png.ts`, `robots.txt.ts`, `rss.xml.ts`
+- **src/pages/** - File-based routing. Top-level routes: `/` (index), `/about`, `/search`, `/404`, plus content sections `/posts` (the `blog` collection), `/estudo`, `/code`, `/vela`, `/tags`, and standalone features `/link`, `/pdf`, `/tempo`, `/gpg`. Endpoints: `og.png.ts`, `robots.txt.ts`, `rss.xml.ts`
 - **src/utils/** - Post/episode filtering, sorting, pagination, tag aggregation, OG image generation (`og-templates/` holds JSX templates consumed by Satori). `pdf/` holds helpers used by the `/pdf` page and its worker.
 - **src/config.ts** - `SITE` (website, author, postPerPage, scheduledPostMargin), `LOCALE`, `LOGO_IMAGE`, `SOCIALS`
 - **src/types.ts** - Shared `Site` / `SocialObjects` types consumed by config
