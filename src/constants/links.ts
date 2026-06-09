@@ -945,6 +945,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://evolink.ai/dashboard',
     category: LinkCategory.CODE,
   },
+  {
+    id: 'npm-xani',
+    name: 'NPM XANI',
+    url: 'https://www.npmjs.com/~xani',
+    category: LinkCategory.CODE,
+  },
 
   //Native
 
@@ -1360,6 +1366,12 @@ export const LINKS: LinkItem[] = [
     id: 'get-shit-done',
     name: 'Get Shit Done',
     url: 'https://github.com/gsd-build/get-shit-done',
+    category: LinkCategory.SKILL,
+  },
+  {
+    id: 'ui-skills',
+    name: 'UI Skills',
+    url: 'https://www.ui-skills.com/',
     category: LinkCategory.SKILL,
   },
 ];

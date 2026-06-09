@@ -48,4 +48,16 @@ const code = defineCollection({
   }),
 });
 
-export const collections = { blog, estudo, code };
+const vela = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    category: z.string().optional(),
+    tags: z.array(z.string()).default(["vela"]),
+    language: z.enum(["pt", "en"]).default("pt"),
+    draft: z.boolean().optional(),
+  }),
+});
+
+export const collections = { blog, estudo, code, vela };

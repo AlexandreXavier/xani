@@ -1,0 +1,90 @@
+---
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import { getCollection } from "astro:content";
+
+const velaEntries = await getCollection("vela", ({ data }) => !data.draft);
+---
+
+<Layout title={`Vela | ${SITE.title}`}>
+  <Header activeNav="lesson" />
+  <Main
+    pageTitle="Vela"
+    pageDesc="Conteúdo sobre vela, navegação e mar."
+  >
+    <div class="vela-container">
+      <div class="vela-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {velaEntries.map(entry => (
+          <article class="vela-card">
+            <a href={`/vela/${entry.slug}/`} class="vela-link">
+              <h2 class="vela-title">{entry.data.title}</h2>
+              {entry.data.description && (
+                <p class="vela-description">{entry.data.description}</p>
+              )}
+              {entry.data.category && (
+                <span class="vela-category">{entry.data.category}</span>
+              )}
+              <div class="vela-tags">
+                {entry.data.tags.map(tag => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+      {velaEntries.length === 0 && (
+        <div class="empty-state">
+          <p>Nenhum conteúdo de vela encontrado.</p>
+        </div>
+      )}
+    </div>
+  </Main>
+  <Footer />
+</Layout>
+
+<style>
+  .vela-container {
+    @apply space-y-8;
+  }
+
+  .vela-grid {
+    @apply grid gap-6;
+  }
+
+  .vela-card {
+    @apply rounded-lg border p-6 transition-all hover:shadow-lg;
+    @apply border-skin-line bg-skin-card;
+  }
+
+  .vela-link {
+    @apply block space-y-3;
+  }
+
+  .vela-title {
+    @apply text-xl font-semibold text-skin-base hover:text-skin-accent;
+  }
+
+  .vela-description {
+    @apply text-sm text-skin-base opacity-70 line-clamp-3;
+  }
+
+  .vela-category {
+    @apply inline-block rounded-full bg-skin-accent px-3 py-1 text-xs font-medium text-skin-inverted;
+  }
+
+  .vela-tags {
+    @apply flex flex-wrap gap-2;
+  }
+
+  .tag {
+    @apply rounded bg-skin-fill px-2 py-1 text-xs text-skin-base opacity-70;
+  }
+
+  .empty-state {
+    @apply text-center py-12 text-skin-base opacity-70;
+  }
+</style>
