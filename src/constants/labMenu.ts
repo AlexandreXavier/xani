@@ -40,4 +40,10 @@ export const LAB_MENU: LabMenuItem[] = [
     href: 'https://hide-whatsapp-mini.vercel.app/',
     external: true,
   },
+  {
+    kind: 'link',
+    label: 'Fotos',
+    href: 'https://mosaico-canvas.vercel.app/',
+    external: true,
+  },
 ];
