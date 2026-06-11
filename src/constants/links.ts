@@ -1242,6 +1242,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.endera.xyz/',
     category: LinkCategory.INSPIRE,
   },
+  {
+    id: 'danybittel',
+    name: 'Dany Bittel',
+    url: 'https://danybittel.ch/',
+    category: LinkCategory.INSPIRE,
+  },
 
   // Vela
 
