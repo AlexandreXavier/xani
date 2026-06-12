@@ -951,6 +951,12 @@ export const LINKS: LinkItem[] = [
     url: 'https://www.npmjs.com/~xani',
     category: LinkCategory.CODE,
   },
+  {
+    id: '21st-dev',
+    name: '21st.dev',
+    url: 'https://21st.dev/community/components/week/2026-W02',
+    category: LinkCategory.CODE,
+  },
 
   //Native
 
