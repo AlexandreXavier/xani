@@ -1,7 +1,7 @@
 ---
 author: Alexandre Xavier
-pubDatetime: 2026-06-12T20:22:00+01:00
-modDatetime: 2026-06-12T21:23:47.400+01:00
+pubDatetime: 2026-06-13T20:22:00+01:00
+modDatetime: 2026-06-13T21:23:47.400+01:00
 title: O Fim da IA Centralizada
 slug: o-fim-da-ia-centralizada
 featured: true
