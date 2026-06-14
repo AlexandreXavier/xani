@@ -116,15 +116,38 @@ const { activeNav } = Astro.props;
               {LAB_MENU.map(item => <LabMenuItem item={item} />)}
             </ul>
           </li>
-          <li>
-            <a
-              href="https://mare-xi.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class={activeNav === "vela" ? "active" : ""}
+          <li class="dropdown">
+            <button
+              class={`dropdown-trigger ${activeNav === "vela" ? "active" : ""}`}
+              aria-expanded="false"
+              aria-haspopup="true"
             >
               Vela
-            </a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="chevron"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="/vela/calendario/">Calendário</a></li>
+              <li>
+                <a
+                  href="https://mare-xi.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer">Maré</a
+                >
+              </li>
+            </ul>
           </li>
           <li class="dropdown">
             <button

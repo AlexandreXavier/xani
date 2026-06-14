@@ -1,0 +1,107 @@
+---
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import CalendarioBoard from "@components/CalendarioBoard";
+import { CALENDARIO_2026, CALENDARIO_YEAR } from "@constants/calendario2026";
+---
+
+<Layout title={`Calendário de Regatas ${CALENDARIO_YEAR} | ${SITE.title}`}>
+  <Header activeNav="vela" />
+  <Main
+    pageTitle={`Calendário de Regatas ${CALENDARIO_YEAR}`}
+    pageDesc="Calendário nacional de regatas de cruzeiro em Portugal. Filtra por região, classe e estado."
+  >
+    <CalendarioBoard client:load regatas={CALENDARIO_2026} />
+  </Main>
+  <Footer />
+</Layout>
+
+<style is:global>
+  .calendario .filters {
+    @apply mb-6 flex flex-wrap items-center gap-3;
+  }
+
+  .calendario .filter-search {
+    @apply min-w-[12rem] flex-1 rounded border border-skin-line bg-skin-fill px-3 py-2;
+    @apply placeholder:italic placeholder:opacity-60 focus:border-skin-accent focus:outline-none;
+  }
+
+  .calendario .filter-select {
+    @apply rounded border border-skin-line bg-skin-fill px-3 py-2;
+    @apply focus:border-skin-accent focus:outline-none;
+  }
+
+  .calendario .filter-reset {
+    @apply rounded border border-skin-line px-3 py-2 text-sm;
+    @apply hover:text-skin-accent disabled:cursor-not-allowed disabled:opacity-40;
+  }
+
+  .calendario .count {
+    @apply mb-3 text-sm opacity-70;
+  }
+
+  /* Table */
+  .calendario .board {
+    @apply w-full border-collapse text-left text-sm;
+  }
+
+  .calendario .board th {
+    @apply border-b border-skin-line py-2 pr-4 font-semibold;
+  }
+
+  .calendario .board td {
+    @apply border-b border-skin-line py-2 pr-4 align-top;
+  }
+
+  .calendario .board tr.featured td {
+    @apply bg-skin-card font-medium;
+  }
+
+  .calendario .board .nowrap {
+    @apply whitespace-nowrap;
+  }
+
+  .calendario .sort-btn {
+    @apply font-semibold hover:text-skin-accent;
+  }
+
+  .calendario .star {
+    @apply mr-1 text-skin-accent;
+  }
+
+  /* Cards (mobile) */
+  .calendario .cards {
+    @apply space-y-3;
+  }
+
+  .calendario .card {
+    @apply rounded-lg border border-skin-line bg-skin-card p-4;
+  }
+
+  .calendario .card.featured {
+    @apply border-skin-accent;
+  }
+
+  .calendario .card-top {
+    @apply mb-1 flex items-center justify-between text-xs opacity-70;
+  }
+
+  .calendario .card-name {
+    @apply text-base font-semibold;
+  }
+
+  .calendario .card-local {
+    @apply text-sm opacity-80;
+  }
+
+  .calendario .card-classes {
+    @apply mt-1 text-xs opacity-70;
+  }
+
+  .calendario .empty {
+    @apply py-12 text-center opacity-70;
+  }
+</style>

@@ -20,11 +20,18 @@ Curated bookmarks shown on the `/link` page. Each is a `LinkItem` (see `src/type
 A **theme** is a single domain concept that surfaces in more than one place in the nav. The same theme name applies to *both* surfaces; the URLs across those surfaces stay disjoint (no URL appears on more than one surface).
 
 ### Vela
-The sailing/sea theme. Surfaces in two places, with disjoint URLs:
+The sailing/sea theme. Surfaces in three places, with disjoint URLs:
 - **`/link` page**, under `LinkCategory.VELA` — third-party reference sites (federations, regattas, charts).
-- **Vela dropdown** in the top nav — Alexandre's own sailing-adjacent mini-apps (e.g. `mare`).
+- **Vela dropdown** in the top nav — Alexandre's own sailing surfaces: external mini-apps (e.g. `mare`) and internal tools (the **Calendario** board at `/vela/calendario`).
+- **`/vela` content collection** — Alexandre's own sailing *notes* (prose). Reached via the **Lesson** dropdown, not the Vela dropdown.
 
-A URL belongs to at most one of these surfaces. If a third-party sailing site exists, it goes under `/link`; if it's one of Alexandre's apps, it goes in the dropdown.
+A URL belongs to at most one of these surfaces. Third-party sailing sites go under `/link`; Alexandre's own apps/tools go in the Vela dropdown; his written notes are the `/vela` collection.
+
+### Calendario
+The interactive sailing-race board at `/vela/calendario`, listed in the Vela dropdown. Shows the year's regattas (filter by region/class/status, free-text search). Its source of truth is a typed constants file, **not** the `/vela` content collection — see ADR.
+
+### Regata
+A single sailing race/event in the Calendario. Each Regata is one entry regardless of how many regional tables it appeared in originally (the source markdown listed some races more than once; the board holds each once).
 
 ## Flagged ambiguities
 
