@@ -1,0 +1,367 @@
+---
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import ResultadosBoard from "@components/ResultadosBoard";
+import { RESULTADOS_2026, RESULTADOS_YEAR } from "@constants/resultados2026";
+---
+
+<Layout title={`Resultados de Regatas ${RESULTADOS_YEAR} | ${SITE.title}`}>
+  <Header activeNav="vela" />
+  <Main
+    pageTitle={`Resultados de Regatas ${RESULTADOS_YEAR}`}
+    pageDesc="Pódios das regatas de cruzeiro já realizadas em Portugal, por classe e região. Pesquise por nome do barco."
+  >
+    <ResultadosBoard client:load events={RESULTADOS_2026} />
+  </Main>
+  <Footer />
+</Layout>
+
+<style is:global>
+  .resultados {
+    /* Derived from the site theme tokens (src/styles/base.css). */
+    --r-ink: rgb(var(--color-text-base));
+    --r-muted: rgba(var(--color-text-base), 0.64);
+    --r-muted-2: rgba(var(--color-text-base), 0.42);
+    --r-accent: rgb(var(--color-accent));
+    --r-panel: rgb(var(--color-card));
+    --r-line: rgba(var(--color-text-base), 0.14);
+    --r-line-strong: rgba(var(--color-text-base), 0.28);
+
+    /* Podium + region accents (dark default). */
+    --p1: #ff6b01;
+    --p2: #7c9bd1;
+    --p3: #b3702f;
+    --centro: #ff6b01;
+    --norte: #e0533f;
+    --madeira: #2f9d86;
+    --sul: #e0a13a;
+    --nacional: #7c9bd1;
+  }
+  html[data-theme="light"] .resultados {
+    --p1: #e06600;
+    --p2: #3f6fb0;
+    --p3: #a25b22;
+    --centro: #e06600;
+    --norte: #c63a2a;
+    --madeira: #1f7e69;
+    --sul: #b9791f;
+    --nacional: #3f6fb0;
+  }
+
+  /* ===== Stats ===== */
+  .resultados .stats {
+    @apply mb-8 grid grid-cols-2 gap-px border border-skin-line sm:grid-cols-4;
+    background: var(--r-line);
+  }
+  .resultados .stat {
+    @apply p-5;
+    background: var(--r-panel);
+  }
+  .resultados .stat .n {
+    @apply text-4xl font-bold leading-none;
+  }
+  .resultados .stat .l {
+    @apply mt-2 text-[11px] uppercase tracking-wider;
+    color: var(--r-muted);
+  }
+  .resultados .stat:nth-child(1) .n {
+    color: var(--centro);
+  }
+  .resultados .stat:nth-child(2) .n {
+    color: var(--madeira);
+  }
+  .resultados .stat:nth-child(3) .n {
+    color: var(--sul);
+  }
+  .resultados .stat:nth-child(4) .n {
+    color: var(--nacional);
+  }
+
+  /* ===== Chart ===== */
+  .resultados .chart {
+    @apply mb-4 mt-10;
+  }
+  .resultados .sec-head {
+    @apply flex flex-wrap items-baseline gap-4;
+  }
+  .resultados .sec-head h2 {
+    @apply m-0 text-2xl font-semibold;
+  }
+  .resultados .sec-head .sub {
+    @apply text-xs tracking-wide;
+    color: var(--r-muted-2);
+  }
+  .resultados .chart-card {
+    @apply mt-4 border border-skin-line px-6 py-5;
+    background: var(--r-panel);
+  }
+  .resultados .legend {
+    @apply mb-4 flex flex-wrap gap-5 text-xs;
+  }
+  .resultados .legend span {
+    @apply inline-flex items-center gap-2;
+    color: var(--r-muted);
+  }
+  .resultados .legend i {
+    @apply inline-block h-3 w-3;
+  }
+  .resultados .legend i.p1 {
+    background: var(--p1);
+  }
+  .resultados .legend i.p2 {
+    background: var(--p2);
+  }
+  .resultados .legend i.p3 {
+    background: var(--p3);
+  }
+  .resultados .podium-chart text.name {
+    fill: var(--r-ink);
+    @apply text-[13px] font-semibold;
+  }
+  .resultados .podium-chart text.val {
+    fill: var(--r-muted);
+    @apply text-xs font-bold;
+  }
+  .resultados .podium-chart text.seg {
+    fill: #10131c;
+    @apply text-[11px] font-bold;
+  }
+  .resultados .podium-chart rect.bar.p1 {
+    fill: var(--p1);
+  }
+  .resultados .podium-chart rect.bar.p2 {
+    fill: var(--p2);
+  }
+  .resultados .podium-chart rect.bar.p3 {
+    fill: var(--p3);
+  }
+  .resultados .chart-foot {
+    @apply mt-3 text-xs;
+    color: var(--r-muted-2);
+  }
+
+  /* ===== Controls ===== */
+  .resultados .controls {
+    @apply mb-2 mt-8 py-3;
+  }
+  .resultados .controls-inner {
+    @apply flex flex-wrap items-center gap-3;
+  }
+  .resultados .search {
+    @apply relative min-w-[240px] flex-1;
+  }
+  .resultados .search input {
+    @apply w-full rounded border border-skin-line px-4 py-3 text-[15px] outline-none;
+    background: var(--r-panel);
+    color: var(--r-ink);
+  }
+  .resultados .search input:focus {
+    border-color: var(--r-accent);
+  }
+  .resultados .chips {
+    @apply flex flex-wrap gap-2;
+  }
+  .resultados .chip {
+    @apply inline-flex cursor-pointer items-center gap-2 rounded border border-skin-line bg-transparent px-3.5 py-2 text-[13px] font-semibold transition-colors;
+    color: var(--r-muted);
+  }
+  .resultados .chip:hover {
+    color: var(--r-ink);
+  }
+  .resultados .chip .fdot {
+    @apply h-2.5 w-2.5 rounded-full;
+    background: var(--c, var(--r-accent));
+  }
+  .resultados .chip[data-region="centro"] {
+    --c: var(--centro);
+  }
+  .resultados .chip[data-region="norte"] {
+    --c: var(--norte);
+  }
+  .resultados .chip[data-region="madeira"] {
+    --c: var(--madeira);
+  }
+  .resultados .chip[data-region="sul"] {
+    --c: var(--sul);
+  }
+  .resultados .chip[data-region="nacional"] {
+    --c: var(--nacional);
+  }
+  .resultados .chip.active {
+    color: rgb(var(--color-fill));
+    background: var(--c, var(--r-accent));
+    border-color: var(--c, var(--r-accent));
+  }
+  .resultados .chip.active .fdot {
+    background: rgb(var(--color-fill));
+  }
+  .resultados .classsel {
+    @apply cursor-pointer rounded border border-skin-line px-3.5 py-2.5 text-[13px] font-semibold outline-none;
+    background: var(--r-panel);
+    color: var(--r-ink);
+  }
+  .resultados .reset {
+    @apply rounded border border-skin-line px-3.5 py-2.5 text-[13px] font-semibold disabled:cursor-not-allowed disabled:opacity-40;
+    color: var(--r-muted);
+  }
+  .resultados .reset:not(:disabled):hover {
+    color: var(--r-accent);
+  }
+  .resultados .count {
+    @apply mt-2 min-h-[18px] px-0.5 text-xs;
+    color: var(--r-muted-2);
+  }
+  .resultados .count b {
+    color: var(--r-accent);
+  }
+
+  /* ===== Grid + cards ===== */
+  .resultados .event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 3.5rem;
+  }
+  .resultados .card {
+    @apply flex flex-col overflow-hidden border border-skin-line transition-colors;
+    background: var(--r-panel);
+  }
+  .resultados .card:hover {
+    border-color: var(--r-accent);
+  }
+  .resultados .card .stripe {
+    @apply h-1;
+    background: var(--c);
+  }
+  .resultados .card[data-region="centro"] {
+    --c: var(--centro);
+  }
+  .resultados .card[data-region="norte"] {
+    --c: var(--norte);
+  }
+  .resultados .card[data-region="madeira"] {
+    --c: var(--madeira);
+  }
+  .resultados .card[data-region="sul"] {
+    --c: var(--sul);
+  }
+  .resultados .card[data-region="nacional"] {
+    --c: var(--nacional);
+  }
+  .resultados .card .body {
+    @apply px-5 pb-5 pt-4;
+  }
+  .resultados .card .rgn {
+    @apply mb-2.5 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest;
+    color: var(--c);
+  }
+  .resultados .card .rgn .fdot {
+    @apply h-2 w-2 rounded-full;
+    background: var(--c);
+  }
+  .resultados .card h3 {
+    @apply m-0 mb-2.5 text-xl font-medium italic leading-tight;
+    color: var(--r-ink);
+  }
+  .resultados .meta {
+    @apply mb-4 flex flex-wrap gap-x-3.5 gap-y-1.5 text-xs;
+    color: var(--r-muted);
+  }
+  .resultados .meta .mono {
+    @apply font-bold;
+    color: var(--r-accent);
+  }
+
+  .resultados .classblock + .classblock {
+    @apply mt-4 border-t border-dashed border-skin-line pt-4;
+  }
+  .resultados .classchip {
+    @apply mb-2.5 inline-block border border-skin-line px-2.5 py-1 text-[10.5px] font-bold uppercase tracking-wider;
+    color: var(--r-muted);
+  }
+
+  .resultados table.res {
+    @apply w-full border-collapse;
+  }
+  .resultados table.res td {
+    @apply border-b border-skin-line px-1 py-2 align-middle;
+  }
+  .resultados table.res tr:last-child td {
+    @apply border-b-0;
+  }
+  .resultados td.pos {
+    @apply w-[30px];
+  }
+  .resultados .medal {
+    @apply grid h-[25px] w-[25px] place-items-center rounded text-[12.5px] font-bold;
+    color: #10131c;
+  }
+  .resultados .medal.p1 {
+    background: var(--p1);
+  }
+  .resultados .medal.p2 {
+    background: var(--p2);
+  }
+  .resultados .medal.p3 {
+    background: var(--p3);
+    color: #fff;
+  }
+  .resultados .medal.px {
+    @apply border border-skin-line bg-transparent;
+    color: var(--r-muted);
+  }
+  .resultados td.boat {
+    @apply text-[14.5px] font-bold;
+    color: var(--r-ink);
+  }
+  .resultados td.boat .skip {
+    @apply mt-px block text-[11.5px] font-normal;
+    color: var(--r-muted-2);
+  }
+  .resultados td.club {
+    @apply w-[60px] text-right;
+  }
+  .resultados .club-chip {
+    @apply whitespace-nowrap border border-skin-line px-1.5 py-0.5 text-[10.5px] font-bold;
+    color: var(--r-muted);
+  }
+  .resultados tr.hit td.boat {
+    color: var(--r-accent);
+  }
+  .resultados tr.hit .medal.px {
+    border-color: var(--r-accent);
+    color: var(--r-accent);
+  }
+
+  .resultados .note {
+    @apply mt-3.5 border-l-4 pl-3 text-xs italic leading-relaxed;
+    border-color: var(--r-accent);
+    color: var(--r-muted-2);
+  }
+
+  /* Pending state */
+  .resultados .card.pending .pendbox {
+    @apply flex items-center gap-3 pb-1 pt-2;
+  }
+  .resultados .pulse {
+    @apply relative h-2.5 w-2.5 rounded-full;
+    background: var(--nacional);
+  }
+  .resultados .pendbox .t {
+    @apply font-bold;
+    color: var(--r-ink);
+  }
+  .resultados .pendbox .s {
+    @apply text-xs;
+    color: var(--r-muted);
+  }
+
+  .resultados .empty {
+    @apply py-12 text-center;
+    color: var(--r-muted);
+  }
+</style>

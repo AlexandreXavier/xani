@@ -22,7 +22,7 @@ A **theme** is a single domain concept that surfaces in more than one place in t
 ### Vela
 The sailing/sea theme. Surfaces in three places, with disjoint URLs:
 - **`/link` page**, under `LinkCategory.VELA` — third-party reference sites (federations, regattas, charts).
-- **Vela dropdown** in the top nav — Alexandre's own sailing surfaces: external mini-apps (e.g. `mare`) and internal tools (the **Calendario** board at `/vela/calendario`).
+- **Vela dropdown** in the top nav — Alexandre's own sailing surfaces: external mini-apps (e.g. `mare`) and internal tools (the **Calendario** board at `/vela/calendario` and the **Resultados** board at `/vela/resultados`).
 - **`/vela` content collection** — Alexandre's own sailing *notes* (prose). Reached via the **Lesson** dropdown, not the Vela dropdown.
 
 A URL belongs to at most one of these surfaces. Third-party sailing sites go under `/link`; Alexandre's own apps/tools go in the Vela dropdown; his written notes are the `/vela` collection.
@@ -32,6 +32,9 @@ The interactive sailing-race board at `/vela/calendario`, listed in the Vela dro
 
 ### Regata
 A single sailing race/event in the Calendario. Each Regata is one entry regardless of how many regional tables it appeared in originally (the source markdown listed some races more than once; the board holds each once).
+
+### Resultados
+The race-results board at `/vela/resultados`, listed in the Vela dropdown. Shows the season's *finished* events with their podium standings per class (filter by region/class, free-text boat search). Its source of truth is a typed constants file (`src/constants/resultados2026.ts`), mirroring Calendario. Independent of the Calendario board: it has its own data and does **not** share a key with `Regata`, even though the same race may appear in both boards (worded slightly differently). An event here lists podium **rows** (boat, skipper, club) grouped by **class**; an event with no published standings is marked **pending**.
 
 ## Flagged ambiguities
 
