@@ -1,14 +1,19 @@
 /**
- * Pre-generate the Narração (spoken-word MP3) for each blog Post.
+ * Pre-generate the Narração (spoken-word audio) for each blog Post using a
+ * local Voicebox instance (https://github.com/jamiepine/voicebox).
  *
- * Run manually at publish time: `npm run tts` (add `--force` to regenerate
- * everything). It reads the `blog` collection, extracts each post's spoken
- * text, and (re)generates only the posts that are new or whose text changed
- * (tracked by hash in public/audio/manifest.json). MP3s are written to
- * public/audio/<slug>.mp3 and served as static files.
+ * Run manually at publish time:
+ *   npm run tts                 # generate what's new/changed
+ *   npm run tts -- --force      # regenerate everything
+ *   npm run tts -- --dry-run    # list work without calling Voicebox
  *
- * Until a TTS provider is wired into synthesize.ts this runs as a dry run,
- * printing what it would generate. Deliberately NOT part of `astro build`.
+ * It reads the `blog` collection, extracts each post's spoken text, and
+ * (re)generates only posts that are new or whose text changed (tracked by hash
+ * in public/audio/manifest.json). Audio is written to public/audio/<slug>.<ext>
+ * and served as a static file. Deliberately NOT part of `astro build`.
+ *
+ * Requires Voicebox running and VOICEBOX_PROFILE_ID set to the cloned voice's
+ * profile id (find it via `curl http://127.0.0.1:17493/profiles`).
  */
 import {
   readdirSync,
@@ -26,7 +31,7 @@ import {
   type NarrationManifest,
   type NarrationPost,
 } from "../src/utils/narration/narrationManifest";
-import { getTtsAdapter, VOICE_ID } from "../src/utils/narration/synthesize";
+import { getTtsAdapter } from "../src/utils/narration/synthesize";
 
 const ROOT = process.cwd();
 const BLOG_DIR = join(ROOT, "src/content/blog");
@@ -34,8 +39,10 @@ const AUDIO_DIR = join(ROOT, "public/audio");
 const MANIFEST_PATH = join(AUDIO_DIR, "manifest.json");
 
 const force = process.argv.includes("--force");
+const dryRun = process.argv.includes("--dry-run");
 
-const audioPath = (slug: string) => join(AUDIO_DIR, `${slug}.mp3`);
+const audioPath = (slug: string, ext: string) =>
+  join(AUDIO_DIR, `${slug}.${ext}`);
 
 function loadManifest(): NarrationManifest {
   if (!existsSync(MANIFEST_PATH)) return {};
@@ -46,12 +53,16 @@ function loadManifest(): NarrationManifest {
   }
 }
 
+type PostWithText = NarrationPost & { text: string; language: string };
+
 async function main() {
+  const manifest = loadManifest();
+
   const files = readdirSync(BLOG_DIR).filter((f) =>
     [".md", ".mdx"].includes(extname(f)),
   );
 
-  const posts: (NarrationPost & { text: string })[] = [];
+  const posts: PostWithText[] = [];
   for (const file of files) {
     const { data, content } = matter(
       readFileSync(join(BLOG_DIR, file), "utf8"),
@@ -60,16 +71,19 @@ async function main() {
     const slug: string = data.slug ?? basename(file, extname(file));
     const title: string = data.title ?? slug;
     const text = extractNarrationText({ title, body: content });
+    // An audio file exists if the manifest's recorded extension is on disk.
+    const knownExt = manifest[slug]?.ext;
+    const hasAudio = knownExt ? existsSync(audioPath(slug, knownExt)) : false;
     posts.push({
       slug,
       hash: hashNarrationText(text),
-      hasAudio: existsSync(audioPath(slug)),
+      hasAudio,
       text,
+      language: data.language === "pt" ? "pt" : "en",
     });
   }
 
-  const manifest = loadManifest();
-  const { decisions, nextManifest } = planNarration(posts, manifest, { force });
+  const { decisions } = planNarration(posts, manifest, { force });
   const work = decisions.filter((d) => d.action !== "skip");
 
   console.log(
@@ -78,18 +92,17 @@ async function main() {
 
   const adapter = getTtsAdapter();
 
-  if (!adapter.configured) {
-    console.log(`\nTTS adapter "${adapter.name}" is not configured — dry run.`);
-    for (const d of work) console.log(`  would ${d.action}: ${d.slug}.mp3`);
-    console.log(
-      "\nWire a provider in src/utils/narration/synthesize.ts (and set TTS_VOICE_ID), then re-run `npm run tts`.",
-    );
-    return;
-  }
-
-  if (!VOICE_ID) {
-    console.error("TTS_VOICE_ID is not set. Aborting.");
-    process.exitCode = 1;
+  if (dryRun || !adapter.configured) {
+    const why = dryRun
+      ? "--dry-run"
+      : `adapter "${adapter.name}" is not configured (set VOICEBOX_PROFILE_ID)`;
+    console.log(`\nDry run (${why}).`);
+    for (const d of work) console.log(`  would ${d.action}: ${d.slug}`);
+    if (!adapter.configured && !dryRun) {
+      console.log(
+        "\nStart Voicebox and set VOICEBOX_PROFILE_ID (see `curl http://127.0.0.1:17493/profiles`), then re-run `npm run tts`.",
+      );
+    }
     return;
   }
 
@@ -98,13 +111,20 @@ async function main() {
     return;
   }
 
+  // Build the manifest to commit, carrying over unchanged entries.
+  const nextManifest: NarrationManifest = {};
+  for (const post of posts) nextManifest[post.slug] = manifest[post.slug];
+
   mkdirSync(AUDIO_DIR, { recursive: true });
   for (const d of work) {
     const post = posts.find((p) => p.slug === d.slug)!;
-    process.stdout.write(`  ${d.action}: ${d.slug}.mp3 … `);
-    const audio = await adapter.synthesize(post.text, VOICE_ID);
-    writeFileSync(audioPath(d.slug), audio);
-    console.log("done");
+    process.stdout.write(`  ${d.action}: ${d.slug} … `);
+    const { data, extension } = await adapter.synthesize(post.text, {
+      language: post.language,
+    });
+    writeFileSync(audioPath(d.slug, extension), data);
+    nextManifest[d.slug] = { hash: post.hash, ext: extension };
+    console.log(`done (${extension}, ${(data.length / 1024).toFixed(0)} KB)`);
   }
 
   writeFileSync(MANIFEST_PATH, JSON.stringify(nextManifest, null, 2) + "\n");

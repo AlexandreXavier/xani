@@ -1,8 +1,11 @@
 import { createHash } from "node:crypto";
 
 export interface ManifestEntry {
-  /** Hash of the spoken text the MP3 was generated from. */
+  /** Hash of the spoken text the audio was generated from. */
   hash: string;
+  /** Audio file extension Voicebox produced (mp3/wav/ogg). Filled by the
+   * generator after synthesis; absent for entries planned but not yet built. */
+  ext?: string;
 }
 
 /** Maps a post slug to the state of its committed Narração. */

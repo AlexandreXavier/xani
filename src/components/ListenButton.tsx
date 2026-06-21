@@ -2,8 +2,8 @@ import { useRef, useState } from "react";
 import { Pause, Play } from "lucide-react";
 
 interface Props {
-  /** Post slug; the Narração is served from /audio/<slug>.mp3. */
-  slug: string;
+  /** URL of the post's Narração audio file (e.g. /audio/<slug>.mp3). */
+  src: string;
   /** Post language, used to localize the control label. */
   lang?: "pt" | "en";
 }
@@ -15,9 +15,9 @@ const LABELS = {
 
 /**
  * The Ouvir control: a compact play/pause button that plays a post's Narração.
- * Rendered only when an MP3 exists for the post (the layout decides that).
+ * Rendered only when audio exists for the post (the layout decides that).
  */
-export default function ListenButton({ slug, lang = "en" }: Props) {
+export default function ListenButton({ src, lang = "en" }: Props) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
   const labels = LABELS[lang] ?? LABELS.en;
@@ -51,7 +51,7 @@ export default function ListenButton({ slug, lang = "en" }: Props) {
       </button>
       <audio
         ref={audioRef}
-        src={`/audio/${slug}.mp3`}
+        src={src}
         preload="none"
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
