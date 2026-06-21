@@ -32,7 +32,7 @@ Type-safe markdown content with Zod schemas defined in `src/content/config.ts`:
 - **blog/** - Blog posts: title, pubDatetime, modDatetime?, description, tags, language (pt/en, default en), draft, featured, ogImage (enforced ≥ 1200×630)
 - **estudo/** - Study materials: title, category, tags (default `["direito"]`), language (default pt), draft
 - **code/** - Code-focused notes: same shape as `estudo` with default tag `["code"]`
-- **vela/** - Sailing notes (the Vela theme; see CONTEXT.md): same shape as `estudo` with default tag `["vela"]`, served at `/vela`
+- **vela/** - Sailing notes (the Vela theme; see CONTEXT.md): same shape as `estudo` with default tag `["vela"]`, served at `/vela`. The `/vela` section also hosts two **regatta boards** that are NOT markdown — see "Vela regatta boards" below.
 
 The registered collections are `{ blog, estudo, code, vela }` in `src/content/config.ts`. Note the directory is **blog/** but its public route is `/posts` (the listing layouts read the `blog` collection).
 
@@ -50,6 +50,7 @@ When adding a new collection, update `src/content/config.ts`, add a matching rou
 - **src/constants/** - Static data tables that drive UI without a content collection:
   - `links.ts` — bookmarks shown on the `/link` page (typed by `LinkItem`/`LinkCategory` in `src/types.ts`).
   - `labMenu.ts` — entries for the Lab dropdown in `Header.astro` (see CONTEXT.md for the Lab link vs. Lab group distinction; groups are one level deep only). Edit this file to add/reorder Lab menu items rather than touching the header markup.
+  - `calendario2026.ts` / `resultados2026.ts` — typed source-of-truth data for the Vela regatta boards (see "Vela regatta boards" below). These define their own exported types inline (not in `src/types.ts`).
 - **src/workers/** - Vite ES-module workers (format set to `"es"` in `astro.config.ts`). `pdf-processor.worker.ts` offloads PDF parsing from the main thread for the `/pdf` page.
 - **src/scripts/** - Client-side scripts (e.g. `tempo-chart.ts` drives the `/tempo` visualization)
 - **src/helpers/** - Static JSON data: `themes.json`, `languagesList.json`, `podcastMainCategories.json`. No path alias exists for this directory; import with a relative path or use `public/` if needed client-side.
@@ -61,6 +62,16 @@ When adding a new collection, update `src/content/config.ts`, add a matching rou
 - **`/pdf`** - Client-side PDF → PNG converter. Uses `pdfjs-dist` to render pages and `@zip.js/zip.js` to bundle output; `pdf-processor.worker.ts` handles work off the main thread. Nothing is uploaded to a server.
 - **`/tempo`** - Visualization page rendered by `TempoChart.astro` using data from `src/scripts/tempo-chart.ts`.
 - **`/gpg`** - Static page exposing the author's GPG public key for secure contact (single `index.astro`).
+
+### Vela regatta boards
+The `/vela` section serves two data-driven boards alongside the markdown `vela` collection:
+- **`/vela/calendario`** (`calendario.astro`) — Portuguese cruising-regatta calendar, driven by `src/constants/calendario2026.ts`. Uses **ISO dates** because the board sorts/filters by date and recomputes the cross-region "Próximas provas" view.
+- **`/vela/resultados`** (`resultados.astro`) — regatta standings, driven by `src/constants/resultados2026.ts`. Orders by **region** and never sorts by date, so `date` is kept as the free-text display string exactly as published (do not "fix" these to ISO).
+
+These boards deliberately keep their data as typed constants in `src/constants/` rather than a content collection. The rationale is recorded in `docs/adr/0001-calendario-source-of-truth.md` — read it before migrating this data or proposing a collection. The file header comments also list the authoritative per-region source URLs; preserve them when editing.
+
+### Architecture Decision Records
+`docs/adr/` holds ADRs documenting non-obvious decisions (currently `0001-calendario-source-of-truth.md`). Consult the relevant ADR before reversing a decision it covers, and add a new ADR when making a similarly load-bearing choice.
 
 ### Path Aliases
 Declared in both `tsconfig.json` (for the type checker) and `astro.config.ts` under `vite.resolve.alias` (for the bundler) — keep them in sync when adding a new alias: `@components/*`, `@utils/*`, `@layouts/*`, `@content/*`, `@config`, `@assets/*`, `@styles/*`, `@/types`, `@contexts/*`, `@constants/*`, `@pages/*`.
