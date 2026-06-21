@@ -36,6 +36,24 @@ A single sailing race/event in the Calendario. Each Regata is one entry regardle
 ### Resultados
 The race-results board at `/vela/resultados`, listed in the Vela dropdown. Shows the season's *finished* events with their podium standings per class (filter by region/class, free-text boat search). Its source of truth is a typed constants file (`src/constants/resultados2026.ts`), mirroring Calendario. Independent of the Calendario board: it has its own data and does **not** share a key with `Regata`, even though the same race may appear in both boards (worded slightly differently). An event here lists podium **rows** (boat, skipper, club) grouped by **class**; an event with no published standings is marked **pending**.
 
+## Audio
+
+### Narração
+The spoken-word version of a blog **Post**: an MP3 synthesized from the post's text in Alexandre's cloned voice, played from the **Ouvir control** on the post's date line. Pre-generated when the post is published/edited and served as a static file; not produced at read time. _Avoid_: podcast, audiobook, gravação.
+
+### Voz clonada
+Alexandre's voice reproduced by a third-party TTS provider's voice-cloning model — the single voice that reads every **Narração**, in both pt and en. The provider is accessed behind a swappable adapter, so "Voz clonada" names the voice, not any one vendor. _Avoid_: gravação (implies a hand-recorded human take, which this is not).
+
+### Ouvir control
+The compact play/pause button shown inline on a blog post's date line that plays the post's **Narração**. Present only when a Narração exists for that post.
+
+## Relationships
+
+- A blog **Post** has at most one **Narração**; the `estudo`, `code`, and `vela` collections have none (no date line, no Narração).
+- Every **Narração** is produced by the same **Voz clonada**.
+- The **Ouvir control** plays exactly one **Narração** — the one for the Post it sits on.
+
 ## Flagged ambiguities
 
+- "biblioteca de voz" / "gravei a minha voz" was first read as hand-recorded audio files, one per article. Resolved: it means a **Voz clonada** (voice samples → a TTS model that reads any text); there is no per-article human recording. The synthesized output is a **Narração**.
 - "Vela" previously referred only to the `LinkCategory` on `/link`. It now also names a top-level dropdown. Resolved: same theme, two surfaces, disjoint URLs (mirrors the Lab vs. `/link` rule).
