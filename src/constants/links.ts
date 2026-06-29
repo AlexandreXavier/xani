@@ -1254,6 +1254,18 @@ export const LINKS: LinkItem[] = [
     url: 'https://danybittel.ch/',
     category: LinkCategory.INSPIRE,
   },
+  {
+    id: 'clearerthinking',
+    name: 'Clearer Thinking',
+    url: 'https://society.clearerthinking.org/',
+    category: LinkCategory.INSPIRE,
+  },
+  {
+    id: 'aiengineeringfromscratch',
+    name: 'AI Engineering from Scratch',
+    url: 'https://aiengineeringfromscratch.com/',
+    category: LinkCategory.INSPIRE,
+  },
 
   // Vela
 
