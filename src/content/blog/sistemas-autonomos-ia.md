@@ -4,7 +4,7 @@ pubDatetime: 2026-06-23T20:22:00+01:00
 modDatetime: 2026-06-23T21:23:47.400+01:00
 title: Sistemas Autônomos de IA
 slug: sistemas-autonomos-ia
-featured: false
+featured: true
 draft: false
 tags:
   - ia
