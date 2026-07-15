@@ -1020,6 +1020,13 @@ export const LINKS: LinkItem[] = [
     url: 'https://elevenlabs.io/app/home',
     category: LinkCategory.SOUND,
   },
+  {
+    id: 'audiocutter',
+    name: 'AudioCutter',
+    url: 'https://audiocutter.online/',
+    category: LinkCategory.SOUND,
+  },
+
 
   // Scrapy
 
