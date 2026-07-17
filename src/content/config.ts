@@ -24,40 +24,24 @@ const blog = defineCollection({
     }),
 });
 
-const estudo = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    category: z.string().optional(),
-    tags: z.array(z.string()).default(["direito"]),
-    language: z.enum(["pt", "en"]).default("pt"),
-    draft: z.boolean().optional(),
-  }),
-});
+// The estudo/code/vela "Note collections" share one shape and differ only in
+// their default tag (see CONTEXT.md → "Note collection"). One factory keeps the
+// shared shape in a single place; adding a note section is a one-line call.
+const makeNoteCollection = (defaultTag: string) =>
+  defineCollection({
+    type: "content",
+    schema: z.object({
+      title: z.string(),
+      description: z.string().optional(),
+      category: z.string().optional(),
+      tags: z.array(z.string()).default([defaultTag]),
+      language: z.enum(["pt", "en"]).default("pt"),
+      draft: z.boolean().optional(),
+    }),
+  });
 
-const code = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    category: z.string().optional(),
-    tags: z.array(z.string()).default(["code"]),
-    language: z.enum(["pt", "en"]).default("pt"),
-    draft: z.boolean().optional(),
-  }),
-});
-
-const vela = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    category: z.string().optional(),
-    tags: z.array(z.string()).default(["vela"]),
-    language: z.enum(["pt", "en"]).default("pt"),
-    draft: z.boolean().optional(),
-  }),
-});
+const estudo = makeNoteCollection("direito");
+const code = makeNoteCollection("code");
+const vela = makeNoteCollection("vela");
 
 export const collections = { blog, estudo, code, vela };

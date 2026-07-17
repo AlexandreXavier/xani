@@ -1,0 +1,95 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import { NOTE_COLLECTIONS, type NoteCollection } from "@constants/noteCollections";
+
+interface Props {
+  collection: NoteCollection;
+  notes: CollectionEntry<NoteCollection>[];
+}
+
+const { collection, notes } = Astro.props;
+const meta = NOTE_COLLECTIONS[collection];
+const base = `/${collection}`;
+---
+
+<Layout title={`${meta.label} | ${SITE.title}`}>
+  <Header activeNav="lesson" />
+  <Main pageTitle={meta.label} pageDesc={meta.listDesc}>
+    <div class="note-container">
+      <div class="note-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {notes.map(entry => (
+          <article class="note-card">
+            <a href={`${base}/${entry.slug}/`} class="note-link">
+              <h2 class="note-title">{entry.data.title}</h2>
+              {entry.data.description && (
+                <p class="note-description">{entry.data.description}</p>
+              )}
+              {entry.data.category && (
+                <span class="note-category">{entry.data.category}</span>
+              )}
+              <div class="note-tags">
+                {entry.data.tags.map(tag => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+      {notes.length === 0 && (
+        <div class="empty-state">
+          <p>{meta.empty}</p>
+        </div>
+      )}
+    </div>
+  </Main>
+  <Footer />
+</Layout>
+
+<style>
+  .note-container {
+    @apply space-y-8;
+  }
+
+  .note-grid {
+    @apply grid gap-6;
+  }
+
+  .note-card {
+    @apply rounded-lg border p-6 transition-all hover:shadow-lg;
+    @apply border-skin-line bg-skin-card;
+  }
+
+  .note-link {
+    @apply block space-y-3;
+  }
+
+  .note-title {
+    @apply text-xl font-semibold text-skin-base hover:text-skin-accent;
+  }
+
+  .note-description {
+    @apply text-sm text-skin-base opacity-70 line-clamp-3;
+  }
+
+  .note-category {
+    @apply inline-block rounded-full bg-skin-accent px-3 py-1 text-xs font-medium text-skin-inverted;
+  }
+
+  .note-tags {
+    @apply flex flex-wrap gap-2;
+  }
+
+  .tag {
+    @apply rounded bg-skin-fill px-2 py-1 text-xs text-skin-base opacity-70;
+  }
+
+  .empty-state {
+    @apply text-center py-12 text-skin-base opacity-70;
+  }
+</style>

@@ -45,6 +45,14 @@ A single sailing race/event in the Calendario. Each Regata is one entry regardle
 
 The race-results board at `/vela/resultados`, listed in the Vela dropdown. Shows the season's _finished_ events with their podium standings per class (filter by region/class, free-text boat search). Its source of truth is a typed constants file (`src/constants/resultados2026.ts`), mirroring Calendario. Independent of the Calendario board: it has its own data and does **not** share a key with `Regata`, even though the same race may appear in both boards (worded slightly differently). An event here lists podium **rows** (boat, skipper, club) grouped by **class**; an event with no published standings is marked **pending**.
 
+## Content
+
+### Note collection
+
+The family of markdown collections that share one shape (title / description / category / tags / language / draft) and one listing UI: **estudo** (labeled "Law" in the nav), **code**, and **vela** (sailing notes). All three are reached via the **Lesson dropdown** and rendered by the shared `NoteListing` / `NoteArticle` components fed by `getNotes()`; their per-section display copy lives in `src/constants/noteCollections.ts`.
+
+The **blog** collection is deliberately **not** a Note collection — a blog entry is a **Post** (with `pubDatetime`, `ogImage`, and an optional **Narração**) and has its own listing, sorting, and detail layout. Draft notes are hidden in production and shown only in dev; `getNotes` (via the pure `isNoteVisible` rule) owns that contract for **both** the index and the detail pages, so a draft never leaks a card or a built page.
+
 ## Audio
 
 ### Narração
