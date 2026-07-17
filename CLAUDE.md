@@ -19,11 +19,13 @@ npm run format       # Prettier format all files
 npm run format:check # Check formatting without modifying
 npm run sync         # Regenerate Astro TypeScript types
 npm run cz           # Commitizen conventional-commit prompt
+npm test             # Run the Vitest unit tests once
+npm run test:watch   # Vitest in watch mode
 ```
 
 Note: `@divriots/jampack` is installed as a devDependency but is not wired into any npm script. If optimization is needed, run `npx jampack ./dist` after `npm run build`.
 
-No test suite is configured.
+Tests use **Vitest** (config in `vitest.config.ts`, which globs `src/**/*.test.ts`). Coverage is partial — currently the narration utils (`src/utils/narration/*.test.ts`) and the Note collection visibility rule (`src/utils/noteVisibility.test.ts`). Pure, framework-free helpers (no `astro:content` import) are the testable seam; `.astro` components and modules that import `astro:content` are not exercised.
 
 ## Architecture
 
