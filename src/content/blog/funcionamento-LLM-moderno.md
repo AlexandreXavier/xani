@@ -1,7 +1,7 @@
 ---
 author: Alexandre Xavier
-pubDatetime: 2026-08-02T08:23:00+01:00
-modDatetime: 2026-08-02T08:23:47.400+01:00
+pubDatetime: 2026-08-01T15:12:00Z
+modDatetime: 2026-08-01T15:12:00Z
 title: Como funciona um “ChatGPT” da nossa vida.
 slug: como-funciona-um-chatgpt-da-nossa-vida
 featured: true
@@ -12,6 +12,7 @@ language: pt
 description:
   Como funciona um “ChatGPT” da nossa vida.
 ---
+
 ![](https://6bhbi182cm.ufs.sh/f/eaJqTiDzJSPWpUZqKmYSGDacmv89F42kRr5OqQMWjVTKguH3)
 # Explicação de como funciona um “ChatGPT” da nossa vida.
 
