@@ -1,7 +1,7 @@
 ---
 author: Alexandre Xavier
-pubDatetime: 2026-08-01T05:05:00Z
-modDatetime: 2026-08-01T05:05:00Z
+pubDatetime: 2026-08-06T17:07:00Z
+modDatetime: 2026-08-06T17:07:00Z
 title: Funcionamento de um LLM Moderno
 slug: funcionamento-llm-moderno
 featured: true
