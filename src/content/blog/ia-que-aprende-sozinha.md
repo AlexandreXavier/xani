@@ -1,7 +1,7 @@
 ---
 author: Alexandre Xavier
-pubDatetime: 2026-08-10T17:07:00Z
-modDatetime: 2026-08-10T17:07:00Z
+pubDatetime: 2026-08-10T08:00:00Z
+modDatetime: 2026-08-10T08:00:00Z
 title: IA que Aprende Sozinha
 slug: ia-que-aprende-sozinha
 featured: true
