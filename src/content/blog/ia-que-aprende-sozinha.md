@@ -1,7 +1,7 @@
 ---
 author: Alexandre Xavier
-pubDatetime: 2026-08-09T17:07:00Z
-modDatetime: 2026-08-09T17:07:00Z
+pubDatetime: 2026-08-10T17:07:00Z
+modDatetime: 2026-08-10T17:07:00Z
 title: IA que Aprende Sozinha
 slug: ia-que-aprende-sozinha
 featured: true
@@ -9,8 +9,7 @@ draft: false
 tags:
   - ia
 language: pt
-description:
-  IA que Aprende Sozinha: O Fim dos Empregos como os Conhecemos?
+description: "IA que Aprende Sozinha: O Fim dos Empregos como os Conhecemos?"
 ---
 
 ![IA que Aprende Sozinha](https://6bhbi182cm.ufs.sh/f/eaJqTiDzJSPWc2s5hTG8Xmbo5910hnEdju6U4q7OPiFltCvs)
